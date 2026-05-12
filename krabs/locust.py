@@ -10,11 +10,15 @@ class StepLoadShape(LoadTestShape):
         {"duration": 100, "users": 100, "spawn_rate": 5},
         {"duration": 120, "users": 100, "spawn_rate": 5},
         {"duration": 140, "users": 100, "spawn_rate": 5},
-        {"duration": 160, "users": 100, "spawn_rate": 5},
-        {"duration": 180, "users": 100, "spawn_rate": 5},
+        {"duration": 160, "users": 150, "spawn_rate": 5},
+        {"duration": 180, "users": 150, "spawn_rate": 5},
         {"duration": 200, "users": 150, "spawn_rate": 5},
-        {"duration": 220, "users": 150, "spawn_rate": 5},
-        {"duration": 240, "users": 150, "spawn_rate": 5},
+        {"duration": 220, "users": 200, "spawn_rate": 5},
+        {"duration": 240, "users": 200, "spawn_rate": 5},
+        {"duration": 260, "users": 200, "spawn_rate": 5},
+        {"duration": 280, "users": 250, "spawn_rate": 5},
+        {"duration": 300, "users": 250, "spawn_rate": 5},
+        {"duration": 320, "users": 250, "spawn_rate": 5},
     ]
 
     def tick(self):
