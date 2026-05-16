@@ -5,11 +5,11 @@ class StepLoadShape(LoadTestShape):
     stages = [
         {"duration": 20, "users": 10, "spawn_rate": 5},
         {"duration": 40, "users": 50, "spawn_rate": 5},
-        {"duration": 60, "users": 50, "spawn_rate": 5},
-        {"duration": 80, "users": 100, "spawn_rate": 5},
-        {"duration": 100, "users": 100, "spawn_rate": 5},
-        {"duration": 200, "users": 150, "spawn_rate": 5},
-        {"duration": 300, "users": 150, "spawn_rate": 5},
+        {"duration": 60, "users": 100, "spawn_rate": 10},
+        {"duration": 80, "users": 120, "spawn_rate": 5},
+        {"duration": 120, "users": 100, "spawn_rate": 5},
+        {"duration": 180, "users": 150, "spawn_rate": 10},
+        {"duration": 200, "users": 150, "spawn_rate": 10},
     ]
 
     def tick(self):
