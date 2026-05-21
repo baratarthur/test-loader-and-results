@@ -4,12 +4,10 @@ from locust import FastHttpUser, task, constant_throughput, tag, LoadTestShape
 class StepLoadShape(LoadTestShape):
     stages = [
         {"duration": 20, "users": 10, "spawn_rate": 5},
-        {"duration": 30, "users": 50, "spawn_rate": 5},
+        {"duration": 30, "users": 50, "spawn_rate": 10},
         {"duration": 40, "users": 100, "spawn_rate": 10},
-        {"duration": 100, "users": 120, "spawn_rate": 5},
-        {"duration": 120, "users": 120, "spawn_rate": 5},
+        {"duration": 100, "users": 120, "spawn_rate": 10},
         {"duration": 180, "users": 150, "spawn_rate": 10},
-        {"duration": 200, "users": 150, "spawn_rate": 10},
     ]
 
     def tick(self):
@@ -46,4 +44,9 @@ class SocialMediaUser(FastHttpUser):
     @task(9)
     def view_items(self):
         # name parameter groups URLs with dynamic IDs into one entry in the UI
-        self.client.get(f"/feed/{self.user_id}", name="/feed/[id]")
+        with self.client.get(f"/feed/{self.user_id}", name="/feed/[id]") as response:
+            if response.status_code != 200:
+                response.failure(f"Feed failed with status: {response.status_code}")
+            for item in response.json():
+                if item.get("content") != "foo":
+                    response.failure(f"Feed item userId mismatch: item content different of foo")
