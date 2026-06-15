@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define a URL base da API
-API_URL="http://192.168.5.20:30080" # 
+API_URL="http://127.0.0.1:30080"
 FILENAME=$1
 
 # 1. Marca o início do teste nos logs da API
