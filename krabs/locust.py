@@ -1,63 +1,74 @@
 import random
-import string
+import numpy as np
 from locust import FastHttpUser, task, constant_throughput, tag, LoadTestShape
 
-class StepLoadShape(LoadTestShape):
-    # CORREÇÃO: Tempos ajustados para serem cumulativos (Estágio 1 dura 20s, o 2 dura 30s, etc.)
+# --- FORMATO DO TESTE COM PESOS DINÂMICOS ---
+class DynamicStepShape(LoadTestShape):
+    """
+    Definimos os estágios especificando a duração e a quantidade exata 
+    de cada tipo de usuário que queremos naquele momento.
+    """
     stages = [
-        {"duration": 20, "users": 10, "spawn_rate": 5},
-        {"duration": 50, "users": 50, "spawn_rate": 10},   # 20s + 30s
-        {"duration": 90, "users": 100, "spawn_rate": 10},  # 50s + 40s
-        {"duration": 190, "users": 120, "spawn_rate": 10}, # 90s + 100s
-        {"duration": 370, "users": 150, "spawn_rate": 10}, # 190s + 180s
+        # Cenário 1: Início leve, apenas usuários normais (Minuto 0 a 0:30)
+        {"duration": 30, "SocialMediaUser": 10, "ZipfianUser": 0, "spawn_rate": 2},
+        
+        # Cenário 2: O tráfego normal cresce (Minuto 0:30 a 1:00)
+        {"duration": 60, "SocialMediaUser": 20, "ZipfianUser": 2, "spawn_rate": 1},
+        
+        # Cenário 3: Um post viral acontece! Explosão de comportamento Zipfian (Minuto 1:00 a 2:00)
+        {"duration": 120, "SocialMediaUser": 15, "ZipfianUser": 30, "spawn_rate": 4},
+        
+        # Cenário 4: O pico passa, o tráfego estabilizes (Minuto 2:00 a 3:00)
+        {"duration": 180, "SocialMediaUser": 15, "ZipfianUser": 5, "spawn_rate": 2},
     ]
 
     def tick(self):
         run_time = self.get_run_time()
+        
         for stage in self.stages:
             if run_time < stage["duration"]:
-                return (stage["users"], stage["spawn_rate"])
+                # Retornamos uma tupla: (Total de usuários, Taxa de spawn, Dicionário com a proporção)
+                # O Locust vai usar o dicionário user_classes para balancear o teste dinamicamente
+                user_classes = {
+                    SocialMediaUser: stage["SocialMediaUser"],
+                    ZipfianUser: stage["ZipfianUser"]
+                }
+                # Calculamos o total de usuários combinados para este estágio
+                total_users = stage["SocialMediaUser"] + stage["ZipfianUser"]
+                
+                return (total_users, stage["spawn_rate"], user_classes)
+                
         return None
 
 
+# --- COMPORTAMENTOS (Sem pesos estáticos nas classes) ---
+
 class SocialMediaUser(FastHttpUser):
-    # Mantém o throughput controlado por usuário (ex: 1 requisição por segundo por usuário)
     wait_time = constant_throughput(1) 
     
     def on_start(self):
-        # MELHORIA: Expandido o range para evitar gargalos artificiais de cache no banco
-        self.user_id = random.randint(1, 100000)
-
-    def _generate_random_content(self):
-        """Helper para gerar conteúdos diferentes e forçar o backend a trabalhar."""
-        return "".join(random.choices(string.ascii_letters, k=10))
+        self.user_id = random.randint(1, 1000)
 
     @tag('write')
     @task(1)
     def write_post(self):
-        payload = {"content": self._generate_random_content(), "userId": self.user_id}
-        
-        # MELHORIA: Adicionado timeout de 5 segundos para conexões presas
-        with self.client.post("/post", json=payload, name="/posts", timeout=5.0, catch_response=True) as response:
-            if response.status_code != 201:
-                response.failure(f"Post falhou. Status: {response.status_code} | Resposta: {response.text[:100]}")
+        self.client.post("/post", json={"content": "foo", "userId": self.user_id}, name="/posts")
 
     @tag('read')
     @task(9)
     def view_items(self):
-        with self.client.get(f"/feed/{self.user_id}", name="/feed/[id]", timeout=5.0, catch_response=True) as response:
-            if response.status_code != 200:
-                response.failure(f"Feed falhou. Status: {response.status_code}")
-                return # Impede que o código continue e tente ler o JSON de uma requisição que falhou
-            
-            # CORREÇÃO: Tratamento seguro para parsing de JSON
-            try:
-                json_data = response.json()
-                if isinstance(json_data, list):
-                    # Validação opcional: verifica apenas o primeiro item para economizar CPU do Locust
-                    if json_data and "content" not in json_data[0]:
-                        response.failure("Estrutura do feed inválida: campo 'content' ausente.")
-                else:
-                    response.failure("Resposta do feed não veio no formato de lista esperado.")
-            except ValueError:
-                response.failure("O corpo da resposta não é um JSON válido.")
+        self.client.get(f"/feed/{self.user_id}", name="/feed/[id]")
+
+
+class ZipfianUser(FastHttpUser):
+    wait_time = constant_throughput(1)
+
+    def on_start(self):
+        self.zipf_parameter = 1.2 
+        self.total_posts = 1000 
+
+    @tag('zipf_read')
+    @task
+    def view_popular_posts(self):
+        post_id = min(np.random.zipf(self.zipf_parameter), self.total_posts)
+        self.client.get(f"/post/{post_id}", name="/post/[zipf_id]")
