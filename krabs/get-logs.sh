@@ -11,8 +11,8 @@ if ! command -v kubectl &> /dev/null; then
     exit 1
 fi
 
-echo "Buscando logs do pod '$POD_NAME' e filtrando por [STORE]..."
+echo "Buscando logs do pod '$POD_NAME' e filtrando por [STORE] salvando em '$OUTPUT_FILE_PATH'..."
 echo "--------------------------------------------------------"
 
 # Executa o kubectl, filtra com grep e exibe no terminal
-kubectl logs "$POD_NAME" -n "$NAMESPACE" | grep '\[STORE\]' > OUTPUT_FILE_PATH
+kubectl logs "$POD_NAME" -n "$NAMESPACE" | grep '\[STORE\]' > $OUTPUT_FILE_PATH
