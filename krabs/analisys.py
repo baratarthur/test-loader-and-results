@@ -4,7 +4,7 @@ import datetime
 
 # 1. Carregar os dados
 # Substitua 'seu_arquivo_stats_history.csv' pelo nome do seu arquivo
-file_path = 'results_csv/test_adaptation_4_stats_history.csv'
+file_path = 'results_csv/test_monolith_stats_history.csv'
 
 # Lendo o CSV e tratando valores 'N/A' como NaN
 df = pd.read_csv(file_path, na_values=['N/A'])

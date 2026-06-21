@@ -2,73 +2,65 @@ import random
 import numpy as np
 from locust import FastHttpUser, task, constant_throughput, tag, LoadTestShape
 
-# --- FORMATO DO TESTE COM PESOS DINÂMICOS ---
-class DynamicStepShape(LoadTestShape):
-    """
-    Definimos os estágios especificando a duração e a quantidade exata 
-    de cada tipo de usuário que queremos naquele momento.
-    """
+# Variáveis globais para controle de estado compartilhado entre o Shape e os Usuários
+CURRENT_ZIPF_PROBABILITY = 0.0
+
+class DynamicBehaviorShape(LoadTestShape):
     stages = [
-        # Cenário 1: Início leve, apenas usuários normais (Minuto 0 a 0:30)
-        {"duration": 30, "SocialMediaUser": 10, "ZipfianUser": 0, "spawn_rate": 2},
+        # Cenário 1: Apenas tráfego normal (0% Zipfian) (0:00 a 0:30)
+        {"duration": 30, "total_users": 10, "spawn_rate": 2, "zipf_ratio": 0.0},
         
-        # Cenário 2: O tráfego normal cresce (Minuto 0:30 a 1:00)
-        {"duration": 60, "SocialMediaUser": 20, "ZipfianUser": 2, "spawn_rate": 1},
+        # Cenário 2: Tráfego normal cresce, um pouco de Zipfian aparece (9% Zipfian) (0:30 a 1:00)
+        {"duration": 60, "total_users": 30, "spawn_rate": 1, "zipf_ratio": 0.09},
+
+        # Cenário 2: Tráfego normal cresce, um pouco de Zipfian aparece (9% Zipfian) (1:00 a 2:00)
+        {"duration": 120, "total_users": 40, "spawn_rate": 1, "zipf_ratio": 0.3},
         
-        # Cenário 3: Um post viral acontece! Explosão de comportamento Zipfian (Minuto 1:00 a 2:00)
-        {"duration": 120, "SocialMediaUser": 15, "ZipfianUser": 30, "spawn_rate": 4},
+        # Cenário 3: O pico viral acontece! Explosão drástica de comportamento Zipfian (66% Zipfian) (2:00 a 4:00)
+        {"duration": 240, "total_users": 60, "spawn_rate": 4, "zipf_ratio": 0.66},
         
-        # Cenário 4: O pico passa, o tráfego estabilizes (Minuto 2:00 a 3:00)
-        {"duration": 180, "SocialMediaUser": 15, "ZipfianUser": 5, "spawn_rate": 2},
+        # Cenário 4: O pico passa, tráfego Zipfian reduz drasticamente (25% Zipfian) (4:00 a 6:00)
+        {"duration": 360, "total_users": 20, "spawn_rate": 2, "zipf_ratio": 0.25},
     ]
 
     def tick(self):
+        global CURRENT_ZIPF_PROBABILITY
         run_time = self.get_run_time()
         
         for stage in self.stages:
             if run_time < stage["duration"]:
-                # Retornamos uma tupla: (Total de usuários, Taxa de spawn, Dicionário com a proporção)
-                # O Locust vai usar o dicionário user_classes para balancear o teste dinamicamente
-                user_classes = {
-                    SocialMediaUser: stage["SocialMediaUser"],
-                    ZipfianUser: stage["ZipfianUser"]
-                }
-                # Calculamos o total de usuários combinados para este estágio
-                total_users = stage["SocialMediaUser"] + stage["ZipfianUser"]
-                
-                return (total_users, stage["spawn_rate"], user_classes)
+                # Atualiza a probabilidade global que os usuários usam para decidir a tarefa
+                CURRENT_ZIPF_PROBABILITY = stage["zipf_ratio"]
+                return (stage["total_users"], stage["spawn_rate"])
                 
         return None
 
 
-# --- COMPORTAMENTOS (Sem pesos estáticos nas classes) ---
-
-class SocialMediaUser(FastHttpUser):
+class CombinedUser(FastHttpUser):
     wait_time = constant_throughput(1) 
     
     def on_start(self):
         self.user_id = random.randint(1, 1000)
-
-    @tag('write')
-    @task(1)
-    def write_post(self):
-        self.client.post("/post", json={"content": "foo", "userId": self.user_id}, name="/posts")
-
-    @tag('read')
-    @task(9)
-    def view_items(self):
-        self.client.get(f"/feed/{self.user_id}", name="/feed/[id]")
-
-
-class ZipfianUser(FastHttpUser):
-    wait_time = constant_throughput(1)
-
-    def on_start(self):
         self.zipf_parameter = 1.2 
         self.total_posts = 1000 
 
-    @tag('zipf_read')
     @task
-    def view_popular_posts(self):
-        post_id = min(np.random.zipf(self.zipf_parameter), self.total_posts)
-        self.client.get(f"/post/{post_id}", name="/post/[zipf_id]")
+    def dynamic_router(self):
+        """
+        Em vez de deixar o Locust decidir qual usuário spawnar, o próprio usuário
+        decide dinamicamente qual comportamento assumir com base no momento do teste.
+        """
+        global CURRENT_ZIPF_PROBABILITY
+        
+        # Decisão baseada na probabilidade do estágio atual
+        if random.random() < CURRENT_ZIPF_PROBABILITY:
+            # --- COMPORTAMENTO ZIPFIAN ---
+            post_id = min(np.random.zipf(self.zipf_parameter), self.total_posts) + 1000
+            self.client.get(f"/post/{post_id}", name="/post/[zipf_id]")
+        else:
+            # --- COMPORTAMENTO REDE SOCIAL NORMAL ---
+            # Proporção interna de 1 escrita para 9 leituras
+            if random.randint(1, 10) == 1:
+                self.client.post("/post", json={"content": "foo", "userId": self.user_id}, name="/posts")
+            else:
+                self.client.get(f"/feed/{self.user_id}", name="/feed/[id]")
