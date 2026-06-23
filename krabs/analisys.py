@@ -18,11 +18,11 @@ start_time = df['Time'].min()
 df['Elapsed'] = (df['Time'] - start_time).dt.total_seconds()
 
 # 3. Criar a visualização
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 15), sharex=True)
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 15), sharex=True)
 plt.subplots_adjust(hspace=0.3)
 
 # --- Gráfico 1: Usuários e Throughput (RPS) ---
-ax1.set_title('Carga vs Throughput', fontsize=14, fontweight='bold')
+ax1.set_title('Workload vs Throughput', fontsize=14, fontweight='bold')
 ax1.plot(df['Elapsed'], df['User Count'], color='tab:blue', label='User Count', linewidth=2)
 ax1.set_ylabel('Users', color='tab:blue', fontsize=12)
 ax1.tick_params(axis='y', labelcolor='tab:blue')
@@ -34,25 +34,25 @@ ax1_2.tick_params(axis='y', labelcolor='tab:green')
 ax1.grid(True, which='both', linestyle='--', alpha=0.5)
 
 # --- Gráfico 2: Tempos de Resposta (Percentis) ---
-ax2.set_title('Latência (Percentis)', fontsize=14, fontweight='bold')
+ax2.set_title('Latency (percentiles)', fontsize=14, fontweight='bold')
 ax2.plot(df['Elapsed'], df['50%'], label='Mediana (50%)', color='green')
 ax2.plot(df['Elapsed'], df['95%'], label='P95', color='orange')
 ax2.plot(df['Elapsed'], df['99%'], label='P99', color='red')
 ax2.set_ylabel('Response Time (ms)', fontsize=12)
+ax2.set_xlabel('Elapsed Time (seconds)', fontsize=12)
 ax2.legend(loc='upper left')
 ax2.grid(True, linestyle='--', alpha=0.5)
 
 # --- Gráfico 3: Falhas por Segundo ---
-ax3.set_title('Falhas por Segundo', fontsize=14, fontweight='bold')
-ax3.fill_between(df['Elapsed'], df['Failures/s'], color='tab:red', alpha=0.3)
-ax3.plot(df['Elapsed'], df['Failures/s'], color='tab:red', label='Failures/s')
-ax3.set_ylabel('Failures/s', fontsize=12)
-ax3.set_xlabel('Tempo decorrido (segundos)', fontsize=12)
-ax3.grid(True, linestyle='--', alpha=0.5)
+# ax3.set_title('Fails per second', fontsize=14, fontweight='bold')
+# ax3.fill_between(df['Elapsed'], df['Failures/s'], color='tab:red', alpha=0.3)
+# ax3.plot(df['Elapsed'], df['Failures/s'], color='tab:red', label='Failures/s')
+# ax3.set_ylabel('Failures/s', fontsize=12)
+# ax3.grid(True, linestyle='--', alpha=0.5)
 
 # Finalizar e salvar
 plt.tight_layout()
-output_filename = 'resultado_teste_locust.png'
+output_filename = 'results/results_monolith.png'
 plt.savefig(output_filename, dpi=300)
 print(f"Gráfico gerado com sucesso: {output_filename}")
 plt.show()
