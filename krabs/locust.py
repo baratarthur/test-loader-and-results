@@ -16,11 +16,17 @@ class DynamicBehaviorShape(LoadTestShape):
         # Cenário 2: Tráfego normal cresce, um pouco de Zipfian aparece (9% Zipfian) (1:00 a 2:00)
         {"duration": 120, "total_users": 40, "spawn_rate": 1, "zipf_ratio": 0.3},
         
-        # Cenário 3: O pico viral acontece! Explosão drástica de comportamento Zipfian (66% Zipfian) (2:00 a 4:00)
-        {"duration": 240, "total_users": 60, "spawn_rate": 4, "zipf_ratio": 0.66},
+        # Cenário 3: O pico viral acontece! Explosão drástica de comportamento Zipfian (66% Zipfian) (2:00 a 3:00)
+        {"duration": 180, "total_users": 60, "spawn_rate": 4, "zipf_ratio": 0.66},
+
+        # Cenário 4: O pico viral acontece! Explosão drástica de comportamento Zipfian (80% Zipfian) (3:00 a 4:00)
+        {"duration": 240, "total_users": 100, "spawn_rate": 2, "zipf_ratio": 0.8},
         
-        # Cenário 4: O pico passa, tráfego Zipfian reduz drasticamente (25% Zipfian) (4:00 a 6:00)
-        {"duration": 360, "total_users": 20, "spawn_rate": 2, "zipf_ratio": 0.25},
+        # Cenário 4: O pico viral acontece! Explosão drástica de comportamento Zipfian (80% Zipfian) (4:00 a 5:00)
+        {"duration": 300, "total_users": 140, "spawn_rate": 2, "zipf_ratio": 0.8},
+        
+        # Cenário 5: O pico passa, tráfego Zipfian reduz drasticamente (25% Zipfian) (5:00 a 6:00)
+        {"duration": 360, "total_users": 20, "spawn_rate": 5, "zipf_ratio": 0.25},
     ]
 
     def tick(self):
