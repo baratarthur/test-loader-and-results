@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 
 # 1. List of your Locust stats_history.csv files to compare
 csv_files = [
-    'results_csv/test_max_monolith_behavior_stats_history.csv',
-    'results_csv/test_max_distributed_proxy1_behavior_stats_history.csv',
-    'results_csv/test_max_distributed_proxy2_behavior_stats_history.csv',
-    'results_csv/test_max_distributed_proxy3_behavior_stats_history.csv',
-    'results_csv/test_max_distributed_proxy4_behavior_stats_history.csv'
+    'results_csv/test_12_components_less_logs/max_monolith_stats_history.csv',
+    'results_csv/test_12_components_less_logs/max_proxy_replicate_strong_stats_history.csv',
+    'results_csv/test_12_components_less_logs/max_proxy_replicate_weak_stats_history.csv',
+    'results_csv/test_12_components_less_logs/max_proxy_fragment_strong_stats_history.csv',
+    'results_csv/test_12_components_less_logs/max_proxy_fragment_weak_stats_history.csv'
 ]
 
 locust_file = 'locust.py'
