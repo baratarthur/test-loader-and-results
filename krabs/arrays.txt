@@ -1,0 +1,52 @@
+Amount of components
+===========
+FRAGMENT STRONG
+    'results_csv/test_5_components_close_to_database/max_fragment_strong_stats_history.csv',
+    'results_csv/test_8_components_close_to_database/max_fragment_strong_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_fragment_strong_stats_history.csv',
+===========
+===========
+FRAGMENT WEAK
+    'results_csv/test_5_components_close_to_database/max_fragment_weak_stats_history.csv',
+    'results_csv/test_8_components_close_to_database/max_fragment_weak_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_fragment_weak_stats_history.csv',
+===========
+===========
+REPLICATE STRONG
+    'results_csv/test_5_components_close_to_database/max_replicate_strong_stats_history.csv',
+    'results_csv/test_8_components_close_to_database/max_replicate_strong_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_replicate_strong_stats_history.csv',
+===========
+===========
+REPLICATE WEAK
+    'results_csv/test_5_components_close_to_database/max_replicate_weak_stats_history.csv',
+    'results_csv/test_8_components_close_to_database/max_replicate_weak_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_replicate_weak_stats_history.csv',
+===========
+
+=======================================================================================================
+Closeness of application
+===========
+FRAGMENT STRONG
+    'results_csv/test_5_components_close_to_database/max_fragment_strong_stats_history.csv',
+    'results_csv/test_5_components_close_to_app/max_fragment_strong_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_fragment_strong_stats_history.csv',
+===========
+===========
+FRAGMENT WEAK
+    'results_csv/test_5_components_close_to_database/max_fragment_weak_stats_history.csv',
+    'results_csv/test_5_components_close_to_app/max_fragment_weak_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_fragment_weak_stats_history.csv',
+===========
+===========
+REPLICATE STRONG
+    'results_csv/test_5_components_close_to_database/max_replicate_strong_stats_history.csv',
+    'results_csv/test_5_components_close_to_app/max_replicate_strong_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_replicate_weak_stats_history.csv',
+===========
+===========
+REPLICATE WEAK
+    'results_csv/test_5_components_close_to_database/max_replicate_weak_stats_history.csv',
+    'results_csv/test_5_components_close_to_app/max_replicate_weak_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_replicate_weak_stats_history.csv',
+===========

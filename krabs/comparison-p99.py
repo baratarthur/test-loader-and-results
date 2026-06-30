@@ -4,12 +4,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 1. List of your Locust stats_history.csv files to compare
+
 csv_files = [
-    'results_csv/test_12_components_less_logs/max_monolith_stats_history.csv',
+    'results_csv/test_5_components_close_to_database/max_fragment_strong_stats_history.csv',
     'results_csv/test_8_components_close_to_database/max_fragment_strong_stats_history.csv',
-    'results_csv/test_8_components_close_to_database/max_fragment_weak_stats_history.csv',
-    'results_csv/test_8_components_close_to_database/max_replicate_strong_stats_history.csv',
-    'results_csv/test_8_components_close_to_database/max_replicate_weak_stats_history.csv',
+    'results_csv/test_12_components_mix/max_proxy_fragment_strong_stats_history.csv',
 ]
 
 locust_file = 'locust.py'
@@ -107,12 +106,13 @@ for file_path in csv_files:
         
     # Clean label for the legend
     label_name = os.path.basename(file_path).replace('_stats_history.csv', '')
-    
+    end_label = f"{file_path.split('/')[1].replace('_', ' ')}  {label_name}"
+
     # Plot the P99 Latency line on the main axis
     ax.plot(
         df_filtered['Elapsed Time (s)'], 
         df_filtered[p99_col], 
-        label=label_name, 
+        label=end_label, 
         linewidth=2
     )
 
