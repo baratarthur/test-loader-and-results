@@ -3,13 +3,13 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
+method = 'fragment-weak'
+analysis_folder = 'test_4_components_lesser_logs_10ms_latency'
+
 # 1. List of your Locust stats_history.csv files to compare
 csv_files = [
-    'results_csv/test_4_components_lesser_logs_10ms_latency/monolith_stats_history.csv',
-    'results_csv/test_4_components_lesser_logs_10ms_latency/close-to-app/replicate-weak_stats_history.csv',
-    'results_csv/test_4_components_lesser_logs_10ms_latency/close-to-app/replicate-strong_stats_history.csv',
-    'results_csv/test_4_components_lesser_logs_10ms_latency/close-to-app/fragment-weak_stats_history.csv',
-    'results_csv/test_4_components_lesser_logs_10ms_latency/close-to-app/fragment-strong_stats_history.csv'
+    f'results_csv/{analysis_folder}/close-to-database/{method}_stats_history.csv',
+    f'results_csv/{analysis_folder}/close-to-app/{method}_stats_history.csv',
 ]
 
 locust_file = 'locust.py'
@@ -92,7 +92,7 @@ for file_path in csv_files:
         timestamps = pd.to_datetime(df_filtered['Timestamp'])
         df_filtered['Elapsed Time (s)'] = (timestamps - timestamps.iloc[0]).dt.total_seconds()
     
-    # 4. Identify the Throughput column (Locust uses 'Requests/s' or 'Current RPS')
+    # Identify the Throughput column
     rps_col = None
     for col in ['Requests/s', 'Current RPS', 'RPS', 'Total Requests/s']:
         if col in df_filtered.columns:
@@ -104,7 +104,7 @@ for file_path in csv_files:
         continue
         
     # Clean label for the legend
-    label_name = os.path.basename(file_path).replace('_stats_history.csv', '')
+    label_name = os.path.basename(file_path).replace('_stats_histlocust_throughput_same_scaleory.csv', '')
     
     # Plot the Throughput (RPS) line on the main axis
     ax.plot(
@@ -114,33 +114,36 @@ for file_path in csv_files:
         linewidth=2
     )
 
-# Add Locust user load overlay from locust.py
+# 2. Add Locust user load overlay directly on the MAIN axis (ax)
 stages = parse_locust_stages(locust_file)
 load_times, load_users = build_user_load_curve(stages)
 
 if load_times is not None and load_users is not None:
-    ax2 = ax.twinx()
-    ax2.step(load_times, load_users, where='pre', color='gray', linestyle='--', linewidth=1.5, label='Locust user load')
-    ax2.set_ylabel('Active Users', fontsize=12, labelpad=10)
-    ax2.grid(False)
+    # Plotted directly on 'ax' so it shares the exact same Y scale
+    ax.step(
+        load_times, 
+        load_users, 
+        where='pre', 
+        color='gray', 
+        linestyle='--', 
+        linewidth=1.5, 
+        label='Locust user load'
+    )
 
-    # Combine legends from both axes safely
-    handles, labels = ax.get_legend_handles_labels()
-    handles2, labels2 = ax2.get_legend_handles_labels()
-    ax.legend(handles + handles2, labels + labels2, title='Test Runs / Metrics', fontsize=10, title_fontsize=11, loc='upper left')
-else:
-    ax.legend(title='Test Runs', fontsize=10, title_fontsize=11, loc='upper left')
+# 3. Simplified Legend Handling (Everything is on a single axis now)
+ax.legend(title='Test Runs / Metrics', fontsize=10, title_fontsize=11, loc='upper left')
 
-# Chart Styling (Titles and Legends in English)
-ax.set_title('Locust Performance Test - Throughput (RPS) Comparison', fontsize=14, fontweight='bold', pad=15)
+# 4. Chart Styling (Updated Y-label to reflect shared scale)
+ax.set_title('Locust Performance Test - Throughput & User Load Comparison', fontsize=14, fontweight='bold', pad=15)
 ax.set_xlabel('Elapsed Time (seconds)', fontsize=12, labelpad=10)
-ax.set_ylabel('Throughput (Requests/s)', fontsize=12, labelpad=10)
+ax.set_ylabel('Scale (Requests/s or Active Users)', fontsize=12, labelpad=10)
 ax.grid(True, linestyle='--', alpha=0.5)
 
 plt.tight_layout()
 
+
 # Save and display the graph
-output_image = 'locust_throughput_comparison.png'
+output_image = f'results/{analysis_folder}/comparisons/{method}/throughput.pdf'
 plt.savefig(output_image, dpi=300)
 print(f"\nGraph successfully generated and saved as '{output_image}'")
-plt.show()
+# plt.show()

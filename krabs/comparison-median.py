@@ -3,15 +3,14 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
+method = 'fragment-weak'
+analysis_folder = 'test_4_components_lesser_logs_10ms_latency'
+
 # 1. List of your Locust stats_history.csv files to compare
 csv_files = [
-    'results_csv/test_4_components_lesser_logs_10ms_latency/monolith_stats_history.csv',
-    'results_csv/test_4_components_lesser_logs_10ms_latency/close-to-app/replicate-weak_stats_history.csv',
-    'results_csv/test_4_components_lesser_logs_10ms_latency/close-to-app/replicate-strong_stats_history.csv',
-    'results_csv/test_4_components_lesser_logs_10ms_latency/close-to-app/fragment-weak_stats_history.csv',
-    'results_csv/test_4_components_lesser_logs_10ms_latency/close-to-app/fragment-strong_stats_history.csv'
+    f'results_csv/{analysis_folder}/close-to-database/{method}_stats_history.csv',
+    f'results_csv/{analysis_folder}/close-to-app/{method}_stats_history.csv',
 ]
-
 locust_file = 'locust.py'
 
 
@@ -140,7 +139,7 @@ ax.grid(True, linestyle='--', alpha=0.5)
 plt.tight_layout()
 
 # Save and display the graph
-output_image = 'locust_mean_comparison.png'
+output_image = f'results/{analysis_folder}/comparisons/{method}/median.pdf'
 plt.savefig(output_image, dpi=300)
 print(f"\nGraph successfully generated and saved as '{output_image}'")
-plt.show()
+# plt.show()
