@@ -3,16 +3,13 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-method = 'fragment-weak'
+method = 'replicate-weak'
 analysis_folder = 'test_4_components_lesser_logs_35ms_latency'
 
 # 1. List of your Locust stats_history.csv files to compare
 csv_files = [
-    f'results_csv/{analysis_folder}/monolith_stats_history.csv',
-    f'results_csv/{analysis_folder}/close-to-app/replicate-strong_stats_history.csv',
-    f'results_csv/{analysis_folder}/close-to-app/replicate-weak_stats_history.csv',
-    f'results_csv/{analysis_folder}/close-to-app/fragment-strong_stats_history.csv',
-    f'results_csv/{analysis_folder}/close-to-app/fragment-weak_stats_history.csv',
+    f'results_csv/{analysis_folder}/close-to-database/{method}_stats_history.csv',
+    f'results_csv/{analysis_folder}/close-to-app/{method}_stats_history.csv',
 ]
 
 locust_file = 'high-latency-locust.py'
@@ -146,7 +143,7 @@ plt.tight_layout()
 
 
 # Save and display the graph
-output_image = f'results/{analysis_folder}/close-to-app/throughput.pdf'
+output_image = f'results/{analysis_folder}/comparison/{method}/throughput.pdf'
 plt.savefig(output_image, dpi=300)
 print(f"\nGraph successfully generated and saved as '{output_image}'")
 # plt.show()
