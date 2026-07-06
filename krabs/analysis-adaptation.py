@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Análise de história de estatísticas do Locust com marcação de momentos de adaptação e componentes."""
+"""Analysis of Locust statistics history with adaptation moments and components marking."""
 
 import argparse
 import datetime
@@ -10,28 +10,28 @@ import pandas as pd
 
 DEFAULT_CSV = 'results_csv/edge-adaptation-10ms/round1_stats_history.csv'
 DEFAULT_OUTPUT_DIR = 'results/analysis-adaptation'
-# Novo padrão aceita tempo:componentes
+# New pattern accepts time:components
 DEFAULT_ADAPTATION_SECONDS = '80:2,180:0,310:0,322:3,420:2,540:0'
 
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description='Analisa um arquivo Locust stats_history, marcando adaptações e componentes ativos.'
+        description='Analyzes a Locust stats_history file, marking adaptations and active components.'
     )
     parser.add_argument(
         '--csv-file',
         default=DEFAULT_CSV,
-        help='Caminho para o arquivo stats_history CSV.',
+        help='Path to the stats_history CSV file.',
     )
     parser.add_argument(
         '--adaptation-times',
         default=DEFAULT_ADAPTATION_SECONDS,
-        help="Lista de tempos e componentes opcionais separados por vírgula. Ex: '80:2,180:0'",
+        help="List of times and optional components separated by commas. Ex: '80:2,180:0'",
     )
     parser.add_argument(
         '--output-dir',
         default=DEFAULT_OUTPUT_DIR,
-        help='Pasta onde o gráfico será salvo.',
+        help='Folder where the graph will be saved.',
     )
     return parser.parse_args()
 
@@ -53,7 +53,7 @@ def parse_adaptation_inputs(value):
                     'components': int(comp_part.strip())
                 })
             except ValueError:
-                raise ValueError(f"Formato inválido. Use 'tempo:componentes' (ex: 80:2). Erro em: '{item}'")
+                raise ValueError(f"Invalid format. Use 'time:components' (ex: 80:2). Error in: '{item}'")
         else:
             try:
                 events_data.append({
@@ -61,13 +61,13 @@ def parse_adaptation_inputs(value):
                     'components': None
                 })
             except ValueError:
-                raise ValueError(f"Tempo inválido: '{item}'. Use número simples ou 'tempo:componentes'.")
+                raise ValueError(f"Invalid time: '{item}'. Use simple number or 'time:components'.")
     return events_data
 
 
 def load_stats_history(csv_path):
     if not os.path.exists(csv_path):
-        raise FileNotFoundError(f"Arquivo não encontrado: {csv_path}")
+        raise FileNotFoundError(f"File not found: {csv_path}")
 
     df = pd.read_csv(csv_path, na_values=['N/A'])
     df.columns = df.columns.str.strip()
@@ -76,10 +76,10 @@ def load_stats_history(csv_path):
         df = df[df['Name'] == 'Aggregated'].copy()
     
     if df.empty:
-        raise ValueError("O CSV está vazio ou não contém a linha métrica global 'Aggregated'.")
+        raise ValueError("The CSV is empty or does not contain the 'Aggregated' global metric line.")
 
     if 'Timestamp' not in df.columns:
-        raise ValueError('Coluna Timestamp não encontrada no CSV.')
+        raise ValueError('Timestamp column not found in CSV.')
 
     if pd.api.types.is_numeric_dtype(df['Timestamp']):
         df['Time'] = pd.to_datetime(df['Timestamp'], unit='s', origin='unix', errors='coerce')
@@ -87,7 +87,7 @@ def load_stats_history(csv_path):
         df['Time'] = pd.to_datetime(df['Timestamp'], errors='coerce')
 
     if df['Time'].isna().all():
-        raise ValueError('Não foi possível converter nenhum Timestamp para datetime.')
+        raise ValueError('Unable to convert any Timestamp to datetime.')
 
     df = df[df['Time'].notna()].copy()
     df = df.sort_values('Time').reset_index(drop=True)
@@ -100,7 +100,7 @@ def build_adaptation_events(start_time, parsed_inputs):
     for i, data in enumerate(parsed_inputs):
         events.append(
             {
-                'name': f'Adaptação {i + 1}',
+                'name': f'Adaptation {i + 1}',
                 'elapsed': data['elapsed'],
                 'components': data['components'],
                 'timestamp': start_time + datetime.timedelta(seconds=data['elapsed']),
@@ -112,15 +112,15 @@ def build_adaptation_events(start_time, parsed_inputs):
 def plot_analysis(df, adaptation_events, output_dir, csv_path):
     os.makedirs(output_dir, exist_ok=True)
 
-    # Alterado para 3 subplots para abrir espaço exclusivo para os componentes remotos
+    # Changed to 3 subplots to open exclusive space for remote components
     fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(14, 13), sharex=True)
     plt.subplots_adjust(hspace=0.3)
 
     # --- PLOT 1: WORKLOAD ---
-    ax1.set_title('Workload durante o teste', fontsize=15, fontweight='bold')
+    ax1.set_title('Workload during the test', fontsize=15, fontweight='bold')
     if 'User Count' in df.columns:
         ax1.plot(df['Elapsed'], df['User Count'], label='User Count', color='tab:blue', linewidth=2)
-    ax1.set_ylabel('Usuários ativos', color='tab:blue', fontsize=12)
+    ax1.set_ylabel('Active Users', color='tab:blue', fontsize=12)
     ax1.tick_params(axis='y', labelcolor='tab:blue')
     ax1.grid(True, linestyle='--', alpha=0.4)
 
@@ -136,14 +136,14 @@ def plot_analysis(df, adaptation_events, output_dir, csv_path):
     handles_b, labels_b = ax1b.get_legend_handles_labels()
     ax1.legend(handles + handles_b, labels + labels_b, loc='upper left', fontsize=10)
 
-    # --- PLOT 2: COMPONENTES REMOTOS (Novo!) ---
-    ax2.set_title('Uso de Componentes Remotos', fontsize=15, fontweight='bold')
+    # --- PLOT 2: REMOTE COMPONENTS (New!) ---
+    ax2.set_title('Remote Components Usage', fontsize=15, fontweight='bold')
     
     has_components = any(e['components'] is not None for e in adaptation_events)
     if has_components:
-        # Monta a linha do tempo em degraus do estado dos componentes
+        # Builds the timeline in steps of the components state
         step_x = [0.0]
-        step_y = [0] # Assume 0 no início do teste
+        step_y = [0] # Assumes 0 at the beginning of the test
         
         for e in sorted(adaptation_events, key=lambda x: x['elapsed']):
             if e['components'] is not None:
@@ -153,44 +153,44 @@ def plot_analysis(df, adaptation_events, output_dir, csv_path):
         step_x.append(df['Elapsed'].max())
         step_y.append(step_y[-1])
         
-        ax2.step(step_x, step_y, where='post', color='tab:orange', linewidth=2.5, label='Componentes Ativos')
+        ax2.step(step_x, step_y, where='post', color='tab:orange', linewidth=2.5, label='Active Components')
         ax2.set_yticks(range(0, int(max(step_y)) + 2))
     else:
-        ax2.text(0.5, 0.5, "Nenhum dado de componente fornecido\nUse o formato tempo:componentes", 
+        ax2.text(0.5, 0.5, "No component data provided\nUse the format time:components", 
                  ha='center', va='center', transform=ax2.transAxes, color='gray')
         
-    ax2.set_ylabel('Qtd. Componentes', fontsize=12)
+    ax2.set_ylabel('Number of Components', fontsize=12)
     ax2.grid(True, linestyle='--', alpha=0.4)
     ax2.legend(loc='upper left', fontsize=10)
 
-    # --- PLOT 3: LATÊNCIA ---
-    ax3.set_title('Latência do teste (percentis)', fontsize=15, fontweight='bold')
+    # --- PLOT 3: LATENCY ---
+    ax3.set_title('Test latency (percentiles)', fontsize=15, fontweight='bold')
     percentile_columns = [col for col in ['50%', '90%', '95%', '99%'] if col in df.columns]
     
     if not percentile_columns:
-        raise ValueError('Nenhuma coluna de percentil encontrada para plotagem de latência.')
+        raise ValueError('No percentile columns found for latency plotting.')
 
     colors = {'50%': 'tab:green', '90%': 'tab:purple', '95%': 'tab:orange', '99%': 'tab:red'}
     for col in percentile_columns:
         ax3.plot(df['Elapsed'], df[col], label=col, color=colors.get(col, 'black'), linewidth=1.8)
     
-    ax3.set_ylabel('Tempo de resposta (ms)', fontsize=12)
-    ax3.set_xlabel('Tempo decorrido (segundos)', fontsize=12)
+    ax3.set_ylabel('Response time (ms)', fontsize=12)
+    ax3.set_xlabel('Elapsed time (seconds)', fontsize=12)
     ax3.grid(True, linestyle='--', alpha=0.4)
     ax3.legend(loc='upper left', fontsize=10)
 
-    # --- LINHAS VERTICAIS E LABELS DE EVENTOS ---
+    # --- VERTICAL LINES AND EVENT LABELS ---
     for event in adaptation_events:
         for ax in (ax1, ax2, ax3):
             ax.axvline(event['elapsed'], color='magenta', linestyle='--', linewidth=1.5, alpha=0.7)
         
-        # Constrói o texto da label (inclui os componentes se existirem)
+        # Builds the label text (includes components if they exist)
         label_text = f"{event['name']}"
         if event['components'] is not None:
             label_text += f" ({event['components']} comp.)"
         label_text += f"\n{event['timestamp'].strftime('%H:%M:%S')}"
 
-        # Plota o texto ancorado no topo do gráfico inferior (ax3)
+        # Plots the text anchored at the top of the lower graph (ax3)
         ax3.text(
             event['elapsed'],
             0.95,  
@@ -205,7 +205,7 @@ def plot_analysis(df, adaptation_events, output_dir, csv_path):
         )
 
     fig.suptitle(
-        f'Análise de workload, Componentes e Adaptação - {os.path.basename(csv_path)}',
+        f'Workload, Components and Adaptation Analysis - {os.path.basename(csv_path)}',
         fontsize=18,
         fontweight='bold',
         y=0.98,
@@ -216,8 +216,8 @@ def plot_analysis(df, adaptation_events, output_dir, csv_path):
     output_pdf = os.path.join(output_dir, 'analysis_adaptation.pdf')
     fig.savefig(output_png, dpi=300)
     fig.savefig(output_pdf, dpi=300)
-    print(f'Gráfico salvo em: {output_png}')
-    print(f'Gráfico salvo em: {output_pdf}')
+    print(f'Graph saved at: {output_png}')
+    print(f'Graph saved at: {output_pdf}')
 
 
 def main():
