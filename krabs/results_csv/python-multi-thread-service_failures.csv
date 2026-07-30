@@ -1,0 +1,6 @@
+Method,Name,Error,Occurrences,First Seen,Last Seen
+GET,/feed/[id],"RetriesExceeded('http://127.0.0.1:30080/feed/814', 0, original=timed out)",1,2026-07-30T17:33:04Z,2026-07-30T17:33:04Z
+GET,/feed/[id],"ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)",13,2026-07-30T17:27:38Z,2026-07-30T17:36:31Z
+GET,/post/[zipf_id],LocustBadStatusCode(code=404),115,2026-07-30T17:28:36Z,2026-07-30T17:36:18Z
+GET,/feed/[id],"RetriesExceeded('http://127.0.0.1:30080/feed/859', 0, original=timed out)",1,2026-07-30T17:33:04Z,2026-07-30T17:33:04Z
+GET,/post/[zipf_id],"ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)",3,2026-07-30T17:30:16Z,2026-07-30T17:36:04Z
