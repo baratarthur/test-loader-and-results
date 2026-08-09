@@ -11,7 +11,7 @@ echo "[SHELL] Sinalizando início do teste para a API..."
 curl -s -X GET "${API_URL}/" | echo
 
 echo "[SHELL] Iniciando o Locust em modo headless..."
-locust -f profiles/jet-test.py --headless -H "$API_URL" --csv="results_csv/${FILENAME}"
+locust -f profiles/.py --headless -H "$API_URL" --csv="results_csv/${FILENAME}"
 
 echo "[SHELL] Locust finalizado. Sinalizando término do teste para a API..."
 curl -s -X GET "${API_URL}/end" | echo

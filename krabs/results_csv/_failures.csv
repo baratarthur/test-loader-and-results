@@ -1,0 +1,2 @@
+Method,Name,Error,Occurrences,First Seen,Last Seen
+POST,/posts,LocustBadStatusCode(code=404),42,2026-08-06T22:52:26Z,2026-08-06T22:53:06Z

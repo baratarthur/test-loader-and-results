@@ -7,17 +7,10 @@ CURRENT_ZIPF_PROBABILITY = 0.0
 
 class DynamicBehaviorShape(LoadTestShape):
     stages = [
-        # Cenário 1: Apenas tráfego normal (0% Zipfian) (0:00 a 0:30)
-        {"duration": 30, "total_users": 10, "spawn_rate": 2, "zipf_ratio": 0.0},
-        
-        # Cenário 2: Tráfego normal cresce, um pouco de Zipfian aparece (9% Zipfian) (0:30 a 2:00)
-        {"duration": 2*60, "total_users": 20, "spawn_rate": 1, "zipf_ratio": 0.09},
-
-        # Cenário 3: Tráfego normal cresce, um pouco de Zipfian aparece (9% Zipfian) (2:00 a 10:00)
-        {"duration": 10*60, "total_users": 40, "spawn_rate": 1, "zipf_ratio": 0.5},
-        
-        # Cenário 4: O pico passa, tráfego Zipfian reduz drasticamente (25% Zipfian) (10:00 a 11:00)
-        {"duration": 11*60, "total_users": 20, "spawn_rate": 5, "zipf_ratio": 0.2},
+        {"duration": 10, "total_users": 10, "spawn_rate": 2, "zipf_ratio": 0.0},
+        {"duration": 20, "total_users": 20, "spawn_rate": 1, "zipf_ratio": 0.1},
+        {"duration": 50, "total_users": 40, "spawn_rate": 1, "zipf_ratio": 0.8},
+        {"duration": 60, "total_users": 20, "spawn_rate": 5, "zipf_ratio": 0.1},
     ]
 
     def tick(self):
