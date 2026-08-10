@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 # -------------------------------------------------
 # Configuration
 # -------------------------------------------------
-LOCUST_CSV = "results_csv/dana_stats_history.csv"
-RESOURCE_CSV = "results_csv/dana_metrics_cpu.csv"
-OUTPUT_CSV = "results_csv/correlated_dana_metrics.csv"
+LOCUST_CSV = "results_csv/python_stats_history.csv"
+RESOURCE_CSV = "results_csv/python_metrics.csv"
+OUTPUT_CSV = "results_csv/correlated_python_metrics.csv"
 
 # -------------------------------------------------
 # Load CSVs

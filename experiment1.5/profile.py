@@ -19,7 +19,6 @@ class DynamicBehaviorShape(LoadTestShape):
         
         for stage in self.stages:
             if run_time < stage["duration"]:
-                # Atualiza a probabilidade global que os usuários usam para decidir a tarefa
                 CURRENT_ZIPF_PROBABILITY = stage["zipf_ratio"]
                 return (stage["total_users"], stage["spawn_rate"])
                 

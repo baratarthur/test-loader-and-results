@@ -1,1 +1,2 @@
 Method,Name,Error,Occurrences,First Seen,Last Seen
+GET,/post/[zipf_id],LocustBadStatusCode(code=404),23,2026-08-10T12:40:43Z,2026-08-10T12:41:16Z
