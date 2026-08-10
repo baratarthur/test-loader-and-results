@@ -1,0 +1,1 @@
+This first experiment measures the CPU and memory comsumption in systems that present high latency to connect in database
