@@ -1,5 +1,5 @@
-export POD_NAME=$(kubectl get pod -l app=dana-unmanaged-microservice -o jsonpath="{.items[0].metadata.name}")
-echo "Timestamp,CPU,Memory" > metrics.csv
+export POD_NAME=$(kubectl get pod -l app=social-network-python -o jsonpath="{.items[0].metadata.name}")
+echo "timestamp,CPU,Memory" > metrics.csv
 for i in {1..60}; do
     echo "$(date +%s),$(kubectl top pod $POD_NAME --no-headers | awk '{print $2","$3}')" >> metrics.csv
     echo "Measuring second $i"
