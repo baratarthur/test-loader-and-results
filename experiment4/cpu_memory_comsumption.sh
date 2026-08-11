@@ -7,7 +7,7 @@ echo "timestamp,dana_cpu,dana_mem,remote_cpu,remote_mem" > "$OUTPUT"
 MAIN_NAMESPACE="default"
 REMOTE_NAMESPACE="dana-remote-social-media-app-components"
 
-for i in {1..60}; do
+for i in {1..140}; do
 
     timestamp=$(date +%s)
 
