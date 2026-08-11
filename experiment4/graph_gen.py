@@ -7,25 +7,18 @@ import matplotlib.pyplot as plt
 LOCUST_CSV = "results_csv/dana_stats_history.csv"
 RESOURCE_CSV = "results_csv/dana_metrics.csv"
 OUTPUT_CSV = "results_csv/correlated_dana_metrics.csv"
-CACHE_CSV = "results_csv/cache_metrics.csv"
 
 # -------------------------------------------------
 # Load CSVs
 # -------------------------------------------------
 locust = pd.read_csv(LOCUST_CSV)
 resources = pd.read_csv(RESOURCE_CSV)
-cache = pd.read_csv(CACHE_CSV)
 
 # -------------------------
 # Timestamp
 # -------------------------
 resources["timestamp"] = pd.to_datetime(
     resources["timestamp"],
-    unit="s"
-)
-
-cache["timestamp"] = pd.to_datetime(
-    cache["timestamp"],
     unit="s"
 )
 
@@ -73,13 +66,10 @@ print(resources.head())
 # -------------------------------------------------
 # Keep only the smallest dataset length
 # -------------------------------------------------
-n = min(len(locust),
-        len(resources),
-        len(cache))
+n = min(len(locust), len(resources))
 
 locust = locust.iloc[:n].reset_index(drop=True)
 resources = resources.iloc[:n].reset_index(drop=True)
-cache = cache.iloc[:n].reset_index(drop=True)
 
 print(f"Using {n} samples.")
 
@@ -91,9 +81,6 @@ merged = locust.copy()
 merged["Captured Timestamp"] = resources["timestamp"]
 merged["CPU"] = pd.to_numeric(resources["CPU"], errors="coerce")
 merged["Memory"] = pd.to_numeric(resources["Memory"], errors="coerce")
-merged["Cache Hits/s"] = cache["hits_per_sec"]
-merged["Cache Misses/s"] = cache["misses_per_sec"]
-merged["Cache Hit Ratio"] = cache["cache_hit_ratio"]
 
 # Create an explicit sample index
 merged.insert(0, "Sample", range(n))
@@ -124,10 +111,7 @@ numeric_columns = [
     "Total Max Response Time",
     "Total Average Content Size",
     "CPU",
-    "Memory",
-    "Cache Hits/s",
-    "Cache Misses/s",
-    "Cache Hit Ratio",
+    "Memory"
 ]
 
 for col in numeric_columns:
@@ -227,20 +211,23 @@ ax2.plot(
 # =====================================================
 ax3 = ax1.twinx()
 
+# Move third axis outward
 ax3.spines["right"].set_position(("outward", 70))
 
-ax3.set_ylabel("Cache Hit Ratio")
+ax3.set_ylabel("Failures/s", color="black")
 
 ax3.plot(
     merged["Sample"],
-    merged["Cache Hit Ratio"],
-    color="purple",
+    merged["Failures/s"],
+    color="black",
     linewidth=2,
-    linestyle="-",
-    label="Cache Hit Ratio"
+    linestyle=":",
+    marker="x",
+    markersize=4,
+    label="Failures/s"
 )
 
-ax3.set_ylim(0, 1)
+ax3.tick_params(axis='y', labelcolor='black')
 
 # =====================================================
 # Legend
