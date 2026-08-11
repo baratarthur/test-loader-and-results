@@ -5,33 +5,60 @@ import pandas as pd
 LOG_FILE = "dana.txt"
 OUTPUT_CSV = "cache_metrics.csv"
 
-pattern = re.compile(
+metrics_pattern = re.compile(
     r"\[(\d+)\].*?\[@MetricsStore\]\s*-\s*(\{.*\})"
 )
+server_pattern = re.compile(
+    r"\[(\d+)\].*?\[Server\]\s*-\s*(\{.*\})"
+)
 
-records = []
+rows = {}
 
 with open(LOG_FILE, "r") as f:
     for line in f:
-        m = pattern.search(line)
-        if not m:
+        metrics_match = metrics_pattern.search(line)
+        if metrics_match:
+            timestamp = int(metrics_match.group(1))
+            data = json.loads(metrics_match.group(2))
+            row = rows.setdefault(timestamp, {"timestamp": timestamp})
+            row.update({
+                "cacheHits": int(data["cacheHits"]),
+                "cacheMiss": int(data["cacheMiss"]),
+                "total_latency": float(data["total_latency"]),
+            })
             continue
 
-        timestamp = int(m.group(1))
+        server_match = server_pattern.search(line)
+        if server_match:
+            timestamp = int(server_match.group(1))
+            data = json.loads(server_match.group(2))
+            row = rows.setdefault(timestamp, {"timestamp": timestamp})
+            row["cacheSize"] = int(data.get("cacheSize", 0))
 
-        data = json.loads(m.group(2))
+if not rows:
+    raise SystemExit("No matching log entries found")
 
-        records.append({
-            "timestamp": timestamp,
-            "cacheHits": int(data["cacheHits"]),
-            "cacheMiss": int(data["cacheMiss"]),
-            "total_latency": float(data["total_latency"])
-        })
+df = pd.DataFrame(rows.values())
 
-df = pd.DataFrame(records)
+df = df.sort_values("timestamp").reset_index(drop=True)
 
-# Remove duplicate timestamps (keep latest sample each second)
-df = df.groupby("timestamp").last().reset_index()
+# Ensure every second in the observed range is represented, even if no
+# cache metrics were logged for that second.
+for col in ["cacheHits", "cacheMiss", "total_latency", "cacheSize"]:
+    if col not in df.columns:
+        df[col] = pd.NA
+    df[col] = pd.to_numeric(df[col], errors="coerce")
+
+if not df.empty:
+    df = df.set_index("timestamp")
+    start_ts = int(df.index.min())
+    end_ts = int(df.index.max())
+    df = df.reindex(range(start_ts, end_ts + 1)).ffill().fillna(0)
+    df = df.reset_index().rename(columns={"index": "timestamp"})
+
+# Fill missing values with zeros for consistency
+for col in ["cacheHits", "cacheMiss", "total_latency", "cacheSize"]:
+    df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
 
 # Per-second increments
 df["hits_per_sec"] = df["cacheHits"].diff().fillna(df["cacheHits"])

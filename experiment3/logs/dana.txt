@@ -1,337 +1,886 @@
-[1786563007][STORE][INFO] -  [START] ======================
+[1786627065][STORE][INFO] -  [START] ======================
 
-[1786563007][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "0","total_latency": "0"}
-[1786563007][STORE][INFO] -  0 posts saved sucessfully!
-[1786563007][STORE][INFO] -  [@PostsRepository]{"threadId": "2",  "connectionTime": "93", "executionTime": "112"}
-[1786563008][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "1","total_latency": "93"}
-[1786563008][STORE][INFO] -  [@PostsRepository]{"threadId": "5",  "connectionTime": "86", "executionTime": "113"}
-[1786563009][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "5","total_latency": "126"}
-[1786563009][STORE][INFO] -  [@PostsRepository]{"threadId": "4",  "connectionTime": "780", "executionTime": "114"}
-[1786563009][STORE][INFO] -  [@PostsRepository]{"threadId": "7",  "connectionTime": "282", "executionTime": "704"}
-[1786563009][STORE][INFO] -  [@PostsRepository]{"threadId": "6",  "connectionTime": "483", "executionTime": "509"}
-[1786563009][STORE][INFO] -  [@PostsRepository]{"threadId": "11",  "connectionTime": "88", "executionTime": "108"}
-[1786563009][STORE][INFO] -  [@PostsRepository]{"threadId": "9",  "connectionTime": "278", "executionTime": "113"}
-[1786563010][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "11","total_latency": "460"}
-[1786563010][STORE][INFO] -  [@PostsRepository]{"threadId": "13",  "connectionTime": "806", "executionTime": "112"}
-[1786563010][STORE][INFO] -  [@PostsRepository]{"threadId": "10",  "connectionTime": "685", "executionTime": "357"}
-[1786563010][STORE][INFO] -  [@PostsRepository]{"threadId": "12",  "connectionTime": "443", "executionTime": "632"}
-[1786563010][STORE][INFO] -  [@PostsRepository]{"threadId": "14",  "connectionTime": "207", "executionTime": "113"}
-[1786563010][STORE][INFO] -  [@PostsRepository]{"threadId": "17",  "connectionTime": "406", "executionTime": "110"}
-[1786563010][STORE][INFO] -  [@PostsRepository]{"threadId": "8",  "connectionTime": "762", "executionTime": "950"}
-[1786563011][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "18","total_latency": "660"}
-[1786563011][STORE][INFO] -  [@PostsRepository]{"threadId": "18",  "connectionTime": "557", "executionTime": "442"}
-[1786563011][STORE][INFO] -  [@PostsRepository]{"threadId": "21",  "connectionTime": "372", "executionTime": "113"}
-[1786563011][STORE][INFO] -  [@PostsRepository]{"threadId": "22",  "connectionTime": "503", "executionTime": "111"}
-[1786563011][STORE][INFO] -  [@PostsRepository]{"threadId": "15",  "connectionTime": "973", "executionTime": "719"}
-[1786563012][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "24","total_latency": "692"}
-[1786563012][STORE][INFO] -  [@PostsRepository]{"threadId": "20",  "connectionTime": "647", "executionTime": "1087"}
-[1786563012][STORE][INFO] -  [@PostsRepository]{"threadId": "16",  "connectionTime": "892", "executionTime": "1007"}
-[1786563012][STORE][INFO] -  [@PostsRepository]{"threadId": "19",  "connectionTime": "1323", "executionTime": "562"}
-[1786563012][STORE][INFO] -  [@PostsRepository]{"threadId": "25",  "connectionTime": "697", "executionTime": "475"}
-[1786563012][STORE][INFO] -  [@PostsRepository]{"threadId": "27",  "connectionTime": "521", "executionTime": "110"}
-[1786563012][STORE][INFO] -  [@PostsRepository]{"threadId": "28",  "connectionTime": "697", "executionTime": "113"}
-[1786563013][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "31","total_latency": "852"}
-[1786563013][STORE][INFO] -  [@PostsRepository]{"threadId": "29",  "connectionTime": "717", "executionTime": "110"}
-[1786563013][STORE][INFO] -  [@PostsRepository]{"threadId": "32",  "connectionTime": "867", "executionTime": "113"}
-[1786563013][STORE][INFO] -  [@PostsRepository]{"threadId": "23",  "connectionTime": "1062", "executionTime": "999"}
-[1786563013][STORE][INFO] -  [@PostsRepository]{"threadId": "31",  "connectionTime": "1441", "executionTime": "113"}
-[1786563014][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "36","total_latency": "922"}
-[1786563014][STORE][INFO] -  [@PostsRepository]{"threadId": "33",  "connectionTime": "1700", "executionTime": "112"}
-[1786563014][STORE][INFO] -  [@PostsRepository]{"threadId": "38",  "connectionTime": "898", "executionTime": "105"}
-[1786563014][STORE][INFO] -  [@PostsRepository]{"threadId": "34",  "connectionTime": "931", "executionTime": "952"}
-[1786563014][STORE][INFO] -  2 posts saved sucessfully!
-[1786563014][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "1479", "executionTime": "949"}
-[1786563014][STORE][INFO] -  [@PostsRepository]{"threadId": "26",  "connectionTime": "688", "executionTime": "2405"}
-[1786563014][STORE][INFO] -  [@PostsRepository]{"threadId": "35",  "connectionTime": "1533", "executionTime": "129"}
-[1786563015][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "42","total_latency": "1098"}
-[1786563015][STORE][INFO] -  [@PostsRepository]{"threadId": "39",  "connectionTime": "1651", "executionTime": "111"}
-[1786563015][STORE][INFO] -  [@PostsRepository]{"threadId": "40",  "connectionTime": "1615", "executionTime": "113"}
-[1786563015][STORE][INFO] -  [@PostsRepository]{"threadId": "36",  "connectionTime": "871", "executionTime": "1689"}
-[1786563016][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "43","total_latency": "1115"}
-[1786563016][STORE][INFO] -  [@PostsRepository]{"threadId": "45",  "connectionTime": "1462", "executionTime": "113"}
-[1786563016][STORE][INFO] -  [@PostsRepository]{"threadId": "41",  "connectionTime": "1538", "executionTime": "635"}
-[1786563016][STORE][INFO] -  [@PostsRepository]{"threadId": "37",  "connectionTime": "1619", "executionTime": "1481"}
-[1786563016][STORE][INFO] -  [@PostsRepository]{"threadId": "43",  "connectionTime": "811", "executionTime": "1199"}
-[1786563016][STORE][INFO] -  [@PostsRepository]{"threadId": "50",  "connectionTime": "390", "executionTime": "111"}
-[1786563016][STORE][INFO] -  [@PostsRepository]{"threadId": "46",  "connectionTime": "1520", "executionTime": "561"}
-[1786563016][STORE][INFO] -  [@PostsRepository]{"threadId": "42",  "connectionTime": "1542", "executionTime": "1090"}
-[1786563017][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "51","total_latency": "1249"}
-[1786563017][STORE][INFO] -  [@PostsRepository]{"threadId": "44",  "connectionTime": "887", "executionTime": "1665"}
-[1786563017][STORE][INFO] -  [@PostsRepository]{"threadId": "49",  "connectionTime": "1163", "executionTime": "570"}
-[1786563017][STORE][INFO] -  [@PostsRepository]{"threadId": "52",  "connectionTime": "606", "executionTime": "712"}
-[1786563017][STORE][INFO] -  [@PostsRepository]{"threadId": "54",  "connectionTime": "592", "executionTime": "828"}
-[1786563018][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "57","total_latency": "1267"}
-[1786563018][STORE][INFO] -  [@PostsRepository]{"threadId": "55",  "connectionTime": "505", "executionTime": "1040"}
-[1786563018][STORE][INFO] -  [@PostsRepository]{"threadId": "60",  "connectionTime": "995", "executionTime": "114"}
-[1786563018][STORE][INFO] -  [@PostsRepository]{"threadId": "53",  "connectionTime": "520", "executionTime": "1699"}
-[1786563018][STORE][INFO] -  [@PostsRepository]{"threadId": "56",  "connectionTime": "614", "executionTime": "1130"}
-[1786563018][STORE][INFO] -  [@PostsRepository]{"threadId": "51",  "connectionTime": "531", "executionTime": "2273"}
-[1786563019][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "63","total_latency": "1279"}
-[1786563019][STORE][INFO] -  [@PostsRepository]{"threadId": "61",  "connectionTime": "1897", "executionTime": "16"}
-[1786563019][STORE][INFO] -  [@PostsRepository]{"threadId": "62",  "connectionTime": "1059", "executionTime": "821"}
-[1786563019][STORE][INFO] -  [@PostsRepository]{"threadId": "63",  "connectionTime": "946", "executionTime": "818"}
-[1786563019][STORE][INFO] -  [@PostsRepository]{"threadId": "57",  "connectionTime": "759", "executionTime": "1717"}
-[1786563019][STORE][INFO] -  [@PostsRepository]{"threadId": "58",  "connectionTime": "874", "executionTime": "1522"}
-[1786563019][STORE][INFO] -  [@PostsRepository]{"threadId": "59",  "connectionTime": "1752", "executionTime": "716"}
-[1786563020][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "71","total_latency": "1361"}
-[1786563020][STORE][INFO] -  [@PostsRepository]{"threadId": "68",  "connectionTime": "1526", "executionTime": "110"}
-[1786563020][STORE][INFO] -  [@PostsRepository]{"threadId": "76",  "connectionTime": "887", "executionTime": "110"}
-[1786563020][STORE][INFO] -  [@PostsRepository]{"threadId": "84",  "connectionTime": "85", "executionTime": "111"}
-[1786563020][STORE][INFO] -  [@PostsRepository]{"threadId": "70",  "connectionTime": "734", "executionTime": "1159"}
-[1786563020][STORE][INFO] -  6 posts saved sucessfully!
-[1786563020][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "1174", "executionTime": "75"}
-[1786563021][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "78","total_latency": "1347"}
-[1786563021][STORE][INFO] -  [@PostsRepository]{"threadId": "65",  "connectionTime": "846", "executionTime": "2034"}
-[1786563021][STORE][INFO] -  [@PostsRepository]{"threadId": "67",  "connectionTime": "1490", "executionTime": "1352"}
-[1786563021][STORE][INFO] -  [@PostsRepository]{"threadId": "78",  "connectionTime": "2162", "executionTime": "113"}
-[1786563022][STORE][INFO] -  [@PostsRepository]{"threadId": "80",  "connectionTime": "1237", "executionTime": "1224"}
-[1786563022][STORE][INFO] -  [@PostsRepository]{"threadId": "71",  "connectionTime": "660", "executionTime": "2425"}
-[1786563022][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "84","total_latency": "1437"}
-[1786563022][STORE][INFO] -  [@PostsRepository]{"threadId": "81",  "connectionTime": "1359", "executionTime": "1099"}
-[1786563022][STORE][INFO] -  [@PostsRepository]{"threadId": "83",  "connectionTime": "2242", "executionTime": "16"}
-[1786563022][STORE][INFO] -  [@PostsRepository]{"threadId": "94",  "connectionTime": "1186", "executionTime": "16"}
-[1786563023][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "89","total_latency": "1458"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "89",  "connectionTime": "2266", "executionTime": "86"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "88",  "connectionTime": "1148", "executionTime": "1302"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "72",  "connectionTime": "644", "executionTime": "3707"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "98",  "connectionTime": "1328", "executionTime": "112"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "73",  "connectionTime": "1961", "executionTime": "2401"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "93",  "connectionTime": "2500", "executionTime": "112"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "75",  "connectionTime": "2029", "executionTime": "2693"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "85",  "connectionTime": "2376", "executionTime": "1349"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "74",  "connectionTime": "2128", "executionTime": "2599"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "86",  "connectionTime": "2433", "executionTime": "1257"}
-[1786563024][STORE][INFO] -  [@PostsRepository]{"threadId": "77",  "connectionTime": "2261", "executionTime": "2410"}
-[1786563023][STORE][INFO] -  [@PostsRepository]{"threadId": "92",  "connectionTime": "1286", "executionTime": "1441"}
-[1786563024][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3","cacheMiss": "91","total_latency": "1544"}
-[1786563024][STORE][INFO] -  [@PostsRepository]{"threadId": "87",  "connectionTime": "2264", "executionTime": "1167"}
-[1786563024][STORE][INFO] -  [@PostsRepository]{"threadId": "95",  "connectionTime": "2262", "executionTime": "16"}
-[1786563024][STORE][INFO] -  [@PostsRepository]{"threadId": "97",  "connectionTime": "1314", "executionTime": "986"}
-[1786563024][STORE][INFO] -  [@PostsRepository]{"threadId": "90",  "connectionTime": "1106", "executionTime": "2303"}
-[1786563024][STORE][INFO] -  [@PostsRepository]{"threadId": "99",  "connectionTime": "1272", "executionTime": "961"}
-[1786563024][STORE][INFO] -  [@PostsRepository]{"threadId": "102",  "connectionTime": "1683", "executionTime": "17"}
-[1786563024][STORE][INFO] -  [@PostsRepository]{"threadId": "96",  "connectionTime": "1227", "executionTime": "1658"}
-[1786563025][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "18","cacheMiss": "93","total_latency": "1510"}
-[1786563025][STORE][INFO] -  [@PostsRepository]{"threadId": "91",  "connectionTime": "1023", "executionTime": "2875"}
-[1786563025][STORE][INFO] -  [@PostsRepository]{"threadId": "103",  "connectionTime": "1031", "executionTime": "795"}
-[1786563025][STORE][INFO] -  [@PostsRepository]{"threadId": "100",  "connectionTime": "2220", "executionTime": "602"}
-[1786563025][STORE][INFO] -  [@PostsRepository]{"threadId": "108",  "connectionTime": "1072", "executionTime": "192"}
-[1786563025][STORE][INFO] -  [@PostsRepository]{"threadId": "114",  "connectionTime": "1106", "executionTime": "123"}
-[1786563025][STORE][INFO] -  [@PostsRepository]{"threadId": "128",  "connectionTime": "262", "executionTime": "35"}
-[1786563025][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "84", "executionTime": "85"}
-[1786563025][STORE][INFO] -  3 posts saved sucessfully!
-[1786563026][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "37","cacheMiss": "94","total_latency": "1331"}
-[1786563026][STORE][INFO] -  [@PostsRepository]{"threadId": "145",  "connectionTime": "85", "executionTime": "19"}
-[1786563026][STORE][INFO] -  [@PostsRepository]{"threadId": "152",  "connectionTime": "84", "executionTime": "19"}
-[1786563027][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "54","cacheMiss": "96","total_latency": "1173"}
-[1786563028][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "74","cacheMiss": "97","total_latency": "1044"}
-[1786563028][STORE][INFO] -  [@PostsRepository]{"threadId": "185",  "connectionTime": "98", "executionTime": "22"}
-[1786563028][STORE][INFO] -  [@PostsRepository]{"threadId": "190",  "connectionTime": "126", "executionTime": "16"}
-[1786563028][STORE][INFO] -  [@PostsRepository]{"threadId": "197",  "connectionTime": "84", "executionTime": "16"}
-[1786563028][STORE][INFO] -  [@PostsRepository]{"threadId": "202",  "connectionTime": "85", "executionTime": "16"}
-[1786563029][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "93","cacheMiss": "100","total_latency": "925"}
-[1786563029][STORE][INFO] -  [@PostsRepository]{"threadId": "211",  "connectionTime": "87", "executionTime": "16"}
-[1786563029][STORE][INFO] -  [@PostsRepository]{"threadId": "222",  "connectionTime": "86", "executionTime": "17"}
-[1786563029][STORE][INFO] -  [@PostsRepository]{"threadId": "225",  "connectionTime": "89", "executionTime": "118"}
-[1786563029][STORE][INFO] -  [@PostsRepository]{"threadId": "226",  "connectionTime": "163", "executionTime": "36"}
-[1786563029][STORE][INFO] -  [@PostsRepository]{"threadId": "231",  "connectionTime": "85", "executionTime": "16"}
-[1786563030][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "114","cacheMiss": "105","total_latency": "831"}
-[1786563030][STORE][INFO] -  [@PostsRepository]{"threadId": "249",  "connectionTime": "90", "executionTime": "17"}
-[1786563030][STORE][INFO] -  [@PostsRepository]{"threadId": "254",  "connectionTime": "109", "executionTime": "16"}
-[1786563030][STORE][INFO] -  [@PostsRepository]{"threadId": "260",  "connectionTime": "86", "executionTime": "17"}
-[1786563031][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "137","cacheMiss": "109","total_latency": "751"}
-[1786563031][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "84", "executionTime": "179"}
-[1786563031][STORE][INFO] -  [@PostsRepository]{"threadId": "261",  "connectionTime": "202", "executionTime": "20"}
-[1786563031][STORE][INFO] -  5 posts saved sucessfully!
-[1786563031][STORE][INFO] -  [@PostsRepository]{"threadId": "274",  "connectionTime": "94", "executionTime": "17"}
-[1786563031][STORE][INFO] -  [@PostsRepository]{"threadId": "278",  "connectionTime": "158", "executionTime": "119"}
-[1786563031][STORE][INFO] -  [@PostsRepository]{"threadId": "283",  "connectionTime": "196", "executionTime": "21"}
-[1786563032][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "163","cacheMiss": "112","total_latency": "680"}
-[1786563032][STORE][INFO] -  [@PostsRepository]{"threadId": "309",  "connectionTime": "100", "executionTime": "17"}
-[1786563032][STORE][INFO] -  [@PostsRepository]{"threadId": "316",  "connectionTime": "202", "executionTime": "20"}
-[1786563032][STORE][INFO] -  [@PostsRepository]{"threadId": "315",  "connectionTime": "101", "executionTime": "125"}
-[1786563033][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "191","cacheMiss": "115","total_latency": "622"}
-[1786563033][STORE][INFO] -  [@PostsRepository]{"threadId": "327",  "connectionTime": "91", "executionTime": "166"}
-[1786563033][STORE][INFO] -  [@PostsRepository]{"threadId": "330",  "connectionTime": "167", "executionTime": "52"}
-[1786563033][STORE][INFO] -  [@PostsRepository]{"threadId": "334",  "connectionTime": "271", "executionTime": "16"}
-[1786563033][STORE][INFO] -  [@PostsRepository]{"threadId": "344",  "connectionTime": "167", "executionTime": "204"}
-[1786563033][STORE][INFO] -  [@PostsRepository]{"threadId": "352",  "connectionTime": "336", "executionTime": "17"}
-[1786563033][STORE][INFO] -  [@PostsRepository]{"threadId": "336",  "connectionTime": "214", "executionTime": "331"}
-[1786563033][STORE][INFO] -  [@PostsRepository]{"threadId": "356",  "connectionTime": "186", "executionTime": "16"}
-[1786563034][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "217","cacheMiss": "122","total_latency": "576"}
-[1786563034][STORE][INFO] -  [@PostsRepository]{"threadId": "363",  "connectionTime": "84", "executionTime": "145"}
-[1786563034][STORE][INFO] -  [@PostsRepository]{"threadId": "382",  "connectionTime": "99", "executionTime": "19"}
-[1786563034][STORE][INFO] -  [@PostsRepository]{"threadId": "366",  "connectionTime": "165", "executionTime": "268"}
-[1786563034][STORE][INFO] -  [@PostsRepository]{"threadId": "371",  "connectionTime": "239", "executionTime": "19"}
-[1786563034][STORE][INFO] -  [@PostsRepository]{"threadId": "389",  "connectionTime": "86", "executionTime": "17"}
-[1786563035][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "246","cacheMiss": "127","total_latency": "534"}
-[1786563035][STORE][INFO] -  [@PostsRepository]{"threadId": "413",  "connectionTime": "108", "executionTime": "28"}
-[1786563035][STORE][INFO] -  [@PostsRepository]{"threadId": "415",  "connectionTime": "322", "executionTime": "16"}
-[1786563035][STORE][INFO] -  [@PostsRepository]{"threadId": "410",  "connectionTime": "205", "executionTime": "128"}
-[1786563035][STORE][INFO] -  [@PostsRepository]{"threadId": "429",  "connectionTime": "297", "executionTime": "17"}
-[1786563035][STORE][INFO] -  [@PostsRepository]{"threadId": "427",  "connectionTime": "138", "executionTime": "223"}
-[1786563035][STORE][INFO] -  [@PostsRepository]{"threadId": "420",  "connectionTime": "515", "executionTime": "123"}
-[1786563036][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "273","cacheMiss": "133","total_latency": "500"}
-[1786563036][STORE][INFO] -  [@PostsRepository]{"threadId": "434",  "connectionTime": "90", "executionTime": "17"}
-[1786563036][STORE][INFO] -  [@PostsRepository]{"threadId": "437",  "connectionTime": "313", "executionTime": "19"}
-[1786563036][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "110", "executionTime": "383"}
-[1786563036][STORE][INFO] -  11 posts saved sucessfully!
-[1786563036][STORE][INFO] -  [@PostsRepository]{"threadId": "445",  "connectionTime": "436", "executionTime": "16"}
-[1786563036][STORE][INFO] -  [@PostsRepository]{"threadId": "448",  "connectionTime": "209", "executionTime": "341"}
-[1786563036][STORE][INFO] -  [@PostsRepository]{"threadId": "465",  "connectionTime": "269", "executionTime": "123"}
-[1786563037][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "304","cacheMiss": "138","total_latency": "472"}
-[1786563037][STORE][INFO] -  [@PostsRepository]{"threadId": "497",  "connectionTime": "89", "executionTime": "30"}
-[1786563037][STORE][INFO] -  [@PostsRepository]{"threadId": "506",  "connectionTime": "196", "executionTime": "16"}
-[1786563037][STORE][INFO] -  [@PostsRepository]{"threadId": "502",  "connectionTime": "146", "executionTime": "120"}
-[1786563037][STORE][INFO] -  [@PostsRepository]{"threadId": "503",  "connectionTime": "100", "executionTime": "308"}
-[1786563037][STORE][INFO] -  [@PostsRepository]{"threadId": "509",  "connectionTime": "175", "executionTime": "33"}
-[1786563038][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "336","cacheMiss": "143","total_latency": "447"}
-[1786563038][STORE][INFO] -  [@PostsRepository]{"threadId": "519",  "connectionTime": "244", "executionTime": "23"}
-[1786563038][STORE][INFO] -  [@PostsRepository]{"threadId": "515",  "connectionTime": "88", "executionTime": "487"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "535",  "connectionTime": "718", "executionTime": "20"}
-[1786563039][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "364","cacheMiss": "155","total_latency": "429"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "533",  "connectionTime": "263", "executionTime": "489"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "524",  "connectionTime": "323", "executionTime": "426"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "542",  "connectionTime": "935", "executionTime": "66"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "539",  "connectionTime": "439", "executionTime": "580"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "544",  "connectionTime": "464", "executionTime": "520"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "530",  "connectionTime": "165", "executionTime": "1077"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "572",  "connectionTime": "540", "executionTime": "16"}
-[1786563039][STORE][INFO] -  [@PostsRepository]{"threadId": "522",  "connectionTime": "396", "executionTime": "1198"}
-[1786563040][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "394","cacheMiss": "161","total_latency": "419"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "550",  "connectionTime": "494", "executionTime": "878"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "564",  "connectionTime": "820", "executionTime": "19"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "553",  "connectionTime": "549", "executionTime": "629"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "559",  "connectionTime": "948", "executionTime": "145"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "555",  "connectionTime": "550", "executionTime": "562"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "560",  "connectionTime": "628", "executionTime": "467"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "595",  "connectionTime": "236", "executionTime": "24"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "600",  "connectionTime": "191", "executionTime": "24"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "617",  "connectionTime": "201", "executionTime": "17"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "621",  "connectionTime": "276", "executionTime": "17"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "569",  "connectionTime": "611", "executionTime": "840"}
-[1786563040][STORE][INFO] -  [@PostsRepository]{"threadId": "613",  "connectionTime": "229", "executionTime": "415"}
-[1786563041][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "426","cacheMiss": "169","total_latency": "411"}
-[1786563041][STORE][INFO] -  [@PostsRepository]{"threadId": "628",  "connectionTime": "229", "executionTime": "23"}
-[1786563041][STORE][INFO] -  [@PostsRepository]{"threadId": "627",  "connectionTime": "242", "executionTime": "253"}
-[1786563041][STORE][INFO] -  [@PostsRepository]{"threadId": "620",  "connectionTime": "499", "executionTime": "171"}
-[1786563041][STORE][INFO] -  [@PostsRepository]{"threadId": "645",  "connectionTime": "116", "executionTime": "28"}
-[1786563041][STORE][INFO] -  [@PostsRepository]{"threadId": "655",  "connectionTime": "318", "executionTime": "16"}
-[1786563041][STORE][INFO] -  [@PostsRepository]{"threadId": "648",  "connectionTime": "322", "executionTime": "120"}
-[1786563041][STORE][INFO] -  [@PostsRepository]{"threadId": "657",  "connectionTime": "169", "executionTime": "312"}
-[1786563041][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "204", "executionTime": "71"}
-[1786563041][STORE][INFO] -  8 posts saved sucessfully!
-[1786563042][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "462","cacheMiss": "173","total_latency": "394"}
-[1786563042][STORE][INFO] -  [@PostsRepository]{"threadId": "673",  "connectionTime": "88", "executionTime": "16"}
-[1786563043][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "501","cacheMiss": "174","total_latency": "377"}
-[1786563043][STORE][INFO] -  [@PostsRepository]{"threadId": "715",  "connectionTime": "87", "executionTime": "16"}
-[1786563043][STORE][INFO] -  [@PostsRepository]{"threadId": "730",  "connectionTime": "102", "executionTime": "18"}
-[1786563043][STORE][INFO] -  [@PostsRepository]{"threadId": "739",  "connectionTime": "294", "executionTime": "16"}
-[1786563043][STORE][INFO] -  [@PostsRepository]{"threadId": "735",  "connectionTime": "120", "executionTime": "222"}
-[1786563043][STORE][INFO] -  [@PostsRepository]{"threadId": "737",  "connectionTime": "256", "executionTime": "123"}
-[1786563044][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "535","cacheMiss": "179","total_latency": "362"}
-[1786563044][STORE][INFO] -  [@PostsRepository]{"threadId": "771",  "connectionTime": "96", "executionTime": "33"}
-[1786563044][STORE][INFO] -  [@PostsRepository]{"threadId": "761",  "connectionTime": "234", "executionTime": "306"}
-[1786563044][STORE][INFO] -  [@PostsRepository]{"threadId": "772",  "connectionTime": "392", "executionTime": "138"}
-[1786563044][STORE][INFO] -  [@PostsRepository]{"threadId": "764",  "connectionTime": "323", "executionTime": "241"}
-[1786563044][STORE][INFO] -  [@PostsRepository]{"threadId": "786",  "connectionTime": "192", "executionTime": "57"}
-[1786563045][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "569","cacheMiss": "185","total_latency": "351"}
-[1786563045][STORE][INFO] -  [@PostsRepository]{"threadId": "791",  "connectionTime": "90", "executionTime": "121"}
-[1786563045][STORE][INFO] -  [@PostsRepository]{"threadId": "793",  "connectionTime": "105", "executionTime": "19"}
-[1786563045][STORE][INFO] -  [@PostsRepository]{"threadId": "798",  "connectionTime": "115", "executionTime": "46"}
-[1786563045][STORE][INFO] -  [@PostsRepository]{"threadId": "801",  "connectionTime": "333", "executionTime": "18"}
-[1786563045][STORE][INFO] -  [@PostsRepository]{"threadId": "811",  "connectionTime": "375", "executionTime": "16"}
-[1786563045][STORE][INFO] -  [@PostsRepository]{"threadId": "808",  "connectionTime": "206", "executionTime": "401"}
-[1786563045][STORE][INFO] -  [@PostsRepository]{"threadId": "824",  "connectionTime": "229", "executionTime": "103"}
-[1786563045][STORE][INFO] -  [@PostsRepository]{"threadId": "817",  "connectionTime": "516", "executionTime": "34"}
-[1786563046][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "601","cacheMiss": "192","total_latency": "341"}
-[1786563046][STORE][INFO] -  [@PostsRepository]{"threadId": "843",  "connectionTime": "98", "executionTime": "21"}
-[1786563046][STORE][INFO] -  [@PostsRepository]{"threadId": "844",  "connectionTime": "223", "executionTime": "18"}
-[1786563046][STORE][INFO] -  [@PostsRepository]{"threadId": "866",  "connectionTime": "175", "executionTime": "17"}
-[1786563046][STORE][INFO] -  [@PostsRepository]{"threadId": "839",  "connectionTime": "348", "executionTime": "199"}
-[1786563046][STORE][INFO] -  [@PostsRepository]{"threadId": "842",  "connectionTime": "409", "executionTime": "139"}
-[1786563047][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "633","cacheMiss": "199","total_latency": "331"}
-[1786563047][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "181", "executionTime": "118"}
-[1786563047][STORE][INFO] -  4 posts saved sucessfully!
-[1786563047][STORE][INFO] -  [@PostsRepository]{"threadId": "872",  "connectionTime": "270", "executionTime": "34"}
-[1786563047][STORE][INFO] -  [@PostsRepository]{"threadId": "869",  "connectionTime": "91", "executionTime": "364"}
-[1786563047][STORE][INFO] -  [@PostsRepository]{"threadId": "885",  "connectionTime": "134", "executionTime": "36"}
-[1786563047][STORE][INFO] -  [@PostsRepository]{"threadId": "874",  "connectionTime": "717", "executionTime": "16"}
-[1786563047][STORE][INFO] -  [@PostsRepository]{"threadId": "879",  "connectionTime": "319", "executionTime": "207"}
-[1786563048][STORE][INFO] -  [@PostsRepository]{"threadId": "907",  "connectionTime": "269", "executionTime": "120"}
-[1786563048][STORE][INFO] -  [@PostsRepository]{"threadId": "902",  "connectionTime": "178", "executionTime": "332"}
-[1786563048][STORE][INFO] -  [@PostsRepository]{"threadId": "906",  "connectionTime": "394", "executionTime": "38"}
-[1786563048][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "665","cacheMiss": "205","total_latency": "324"}
-[1786563048][STORE][INFO] -  [@PostsRepository]{"threadId": "929",  "connectionTime": "140", "executionTime": "24"}
-[1786563048][STORE][INFO] -  [@PostsRepository]{"threadId": "945",  "connectionTime": "85", "executionTime": "118"}
-[1786563048][STORE][INFO] -  [@PostsRepository]{"threadId": "946",  "connectionTime": "179", "executionTime": "19"}
-[1786563049][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "702","cacheMiss": "208","total_latency": "314"}
-[1786563049][STORE][INFO] -  [@PostsRepository]{"threadId": "967",  "connectionTime": "124", "executionTime": "28"}
-[1786563049][STORE][INFO] -  [@PostsRepository]{"threadId": "976",  "connectionTime": "291", "executionTime": "16"}
-[1786563049][STORE][INFO] -  [@PostsRepository]{"threadId": "977",  "connectionTime": "142", "executionTime": "224"}
-[1786563049][STORE][INFO] -  [@PostsRepository]{"threadId": "969",  "connectionTime": "301", "executionTime": "139"}
-[1786563050][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "738","cacheMiss": "212","total_latency": "305"}
-[1786563050][STORE][INFO] -  [@PostsRepository]{"threadId": "1004",  "connectionTime": "136", "executionTime": "29"}
-[1786563050][STORE][INFO] -  [@PostsRepository]{"threadId": "1012",  "connectionTime": "204", "executionTime": "203"}
-[1786563050][STORE][INFO] -  [@PostsRepository]{"threadId": "1006",  "connectionTime": "342", "executionTime": "120"}
-[1786563050][STORE][INFO] -  [@PostsRepository]{"threadId": "1026",  "connectionTime": "136", "executionTime": "37"}
-[1786563051][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "774","cacheMiss": "217","total_latency": "297"}
-[1786563051][STORE][INFO] -  [@PostsRepository]{"threadId": "1032",  "connectionTime": "90", "executionTime": "18"}
-[1786563051][STORE][INFO] -  [@PostsRepository]{"threadId": "1041",  "connectionTime": "140", "executionTime": "29"}
-[1786563051][STORE][INFO] -  [@PostsRepository]{"threadId": "1046",  "connectionTime": "249", "executionTime": "16"}
-[1786563052][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "809","cacheMiss": "220","total_latency": "289"}
-[1786563052][STORE][INFO] -  [@PostsRepository]{"threadId": "1072",  "connectionTime": "89", "executionTime": "17"}
-[1786563052][STORE][INFO] -  [@PostsRepository]{"threadId": "1078",  "connectionTime": "138", "executionTime": "50"}
-[1786563052][STORE][INFO] -  [@PostsRepository]{"threadId": "1095",  "connectionTime": "177", "executionTime": "252"}
-[1786563052][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "391", "executionTime": "148"}
-[1786563052][STORE][INFO] -  6 posts saved sucessfully!
-[1786563053][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "846","cacheMiss": "222","total_latency": "283"}
-[1786563053][STORE][INFO] -  [@PostsRepository]{"threadId": "1125",  "connectionTime": "95", "executionTime": "19"}
-[1786563053][STORE][INFO] -  [@PostsRepository]{"threadId": "1140",  "connectionTime": "396", "executionTime": "16"}
-[1786563053][STORE][INFO] -  [@PostsRepository]{"threadId": "1136",  "connectionTime": "559", "executionTime": "17"}
-[1786563054][STORE][INFO] -  [@PostsRepository]{"threadId": "1135",  "connectionTime": "334", "executionTime": "241"}
-[1786563054][STORE][INFO] -  [@PostsRepository]{"threadId": "1128",  "connectionTime": "126", "executionTime": "529"}
-[1786563054][STORE][INFO] -  [@PostsRepository]{"threadId": "1122",  "connectionTime": "274", "executionTime": "450"}
-[1786563054][STORE][INFO] -  [@PostsRepository]{"threadId": "1129",  "connectionTime": "260", "executionTime": "371"}
-[1786563054][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "878","cacheMiss": "229","total_latency": "279"}
-[1786563054][STORE][INFO] -  [@PostsRepository]{"threadId": "1156",  "connectionTime": "85", "executionTime": "22"}
-[1786563054][STORE][INFO] -  [@PostsRepository]{"threadId": "1157",  "connectionTime": "212", "executionTime": "16"}
-[1786563054][STORE][INFO] -  [@PostsRepository]{"threadId": "1174",  "connectionTime": "88", "executionTime": "16"}
-[1786563054][STORE][INFO] -  [@PostsRepository]{"threadId": "1188",  "connectionTime": "87", "executionTime": "17"}
-[1786563055][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "912","cacheMiss": "234","total_latency": "274"}
-[1786563055][STORE][INFO] -  [@PostsRepository]{"threadId": "1195",  "connectionTime": "85", "executionTime": "16"}
-[1786563055][STORE][INFO] -  [@PostsRepository]{"threadId": "1198",  "connectionTime": "98", "executionTime": "32"}
-[1786563055][STORE][INFO] -  [@PostsRepository]{"threadId": "1216",  "connectionTime": "100", "executionTime": "26"}
-[1786563055][STORE][INFO] -  [@PostsRepository]{"threadId": "1218",  "connectionTime": "148", "executionTime": "17"}
-[1786563055][STORE][INFO] -  [@PostsRepository]{"threadId": "1222",  "connectionTime": "304", "executionTime": "32"}
-[1786563055][STORE][INFO] -  [@PostsRepository]{"threadId": "1226",  "connectionTime": "122", "executionTime": "120"}
-[1786563056][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "946","cacheMiss": "239","total_latency": "269"}
-[1786563056][STORE][INFO] -  [@PostsRepository]{"threadId": "1243",  "connectionTime": "91", "executionTime": "19"}
-[1786563056][STORE][INFO] -  [@PostsRepository]{"threadId": "1259",  "connectionTime": "127", "executionTime": "18"}
-[1786563057][STORE][INFO] -  [@PostsRepository]{"threadId": "1270",  "connectionTime": "92", "executionTime": "17"}
-[1786563057][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "981","cacheMiss": "243","total_latency": "264"}
-[1786563057][STORE][INFO] -  [@PostsRepository]{"threadId": "1273",  "connectionTime": "105", "executionTime": "16"}
-[1786563057][STORE][INFO] -  [@PostsRepository]{"threadId": "1278",  "connectionTime": "174", "executionTime": "20"}
-[1786563057][STORE][INFO] -  [@PostsRepository]{"threadId": "1285",  "connectionTime": "235", "executionTime": "17"}
-[1786563057][STORE][INFO] -  [@PostsRepository]{"threadId": "1282",  "connectionTime": "141", "executionTime": "124"}
-[1786563058][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "84", "executionTime": "224"}
-[1786563058][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1006","cacheMiss": "246","total_latency": "260"}
-[1786563058][STORE][INFO] -  11 posts saved sucessfully!
-[1786563058][STORE][INFO] -  [@PostsRepository]{"threadId": "1327",  "connectionTime": "98", "executionTime": "16"}
-[1786563059][STORE][INFO] -  [@PostsRepository]{"threadId": "1341",  "connectionTime": "91", "executionTime": "16"}
-[1786563059][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1012","cacheMiss": "248","total_latency": "255"}
-[1786563060][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1020","cacheMiss": "248","total_latency": "251"}
-[1786563061][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1023","cacheMiss": "248","total_latency": "248"}
-[1786563061][STORE][INFO] -  [@PostsRepository]{"threadId": "1411",  "connectionTime": "86", "executionTime": "17"}
-[1786563062][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1032","cacheMiss": "249","total_latency": "245"}
-[1786563063][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1038","cacheMiss": "249","total_latency": "242"}
-[1786563063][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "85", "executionTime": "141"}
-[1786563063][STORE][INFO] -  94 posts saved sucessfully!
-[1786563064][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1046","cacheMiss": "249","total_latency": "240"}
-[1786563064][STORE][INFO] -  [@PostsRepository]{"threadId": "1461",  "connectionTime": "85", "executionTime": "119"}
-[1786563064][STORE][INFO] -  [@PostsRepository]{"threadId": "1467",  "connectionTime": "165", "executionTime": "20"}
-[1786563065][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1053","cacheMiss": "251","total_latency": "237"}
-[1786563065][STORE][INFO] -  [@PostsRepository]{"threadId": "1493",  "connectionTime": "86", "executionTime": "17"}
-[1786563066][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1060","cacheMiss": "252","total_latency": "235"}
-[1786563067][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1062","cacheMiss": "252","total_latency": "232"}
-[1786563067][STORE][INFO] -  [END] =======================
+[1786627065][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "0","total_latency": "0"}
+[1786627065][STORE][INFO] -  0 posts saved sucessfully!
+[1786627065][STORE][INFO] -  [Server] - {"cacheSize": "0"}
+[1786627065][STORE][INFO] -  [@PostsRepository]{"threadId": "2",  "connectionTime": "290", "executionTime": "118"}
+[1786627065][STORE][INFO] -  [@PostsRepository]{"threadId": "3",  "connectionTime": "92", "executionTime": "315"}
+[1786627066][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "2","total_latency": "302"}
+[1786627066][STORE][INFO] -  [Server] - {"cacheSize": "0"}
+[1786627066][STORE][INFO] -  [@PostsRepository]{"threadId": "6",  "connectionTime": "85", "executionTime": "112"}
+[1786627067][STORE][INFO] -  [@PostsRepository]{"threadId": "4",  "connectionTime": "561", "executionTime": "112"}
+[1786627067][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "6","total_latency": "367"}
+[1786627067][STORE][INFO] -  [Server] - {"cacheSize": "0"}
+[1786627067][STORE][INFO] -  [@PostsRepository]{"threadId": "5",  "connectionTime": "482", "executionTime": "276"}
+[1786627067][STORE][INFO] -  [@PostsRepository]{"threadId": "7",  "connectionTime": "280", "executionTime": "473"}
+[1786627067][STORE][INFO] -  [@PostsRepository]{"threadId": "13",  "connectionTime": "83", "executionTime": "114"}
+[1786627067][STORE][INFO] -  [@PostsRepository]{"threadId": "10",  "connectionTime": "278", "executionTime": "110"}
+[1786627068][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "12","total_latency": "450"}
+[1786627068][STORE][INFO] -  [Server] - {"cacheSize": "0"}
+[1786627068][STORE][INFO] -  [@PostsRepository]{"threadId": "11",  "connectionTime": "726", "executionTime": "114"}
+[1786627068][STORE][INFO] -  [@PostsRepository]{"threadId": "8",  "connectionTime": "557", "executionTime": "398"}
+[1786627068][STORE][INFO] -  [@PostsRepository]{"threadId": "9",  "connectionTime": "474", "executionTime": "651"}
+[1786627068][STORE][INFO] -  [@PostsRepository]{"threadId": "15",  "connectionTime": "222", "executionTime": "103"}
+[1786627069][STORE][INFO] -  [@PostsRepository]{"threadId": "16",  "connectionTime": "408", "executionTime": "114"}
+[1786627069][STORE][INFO] -  [@PostsRepository]{"threadId": "12",  "connectionTime": "649", "executionTime": "1083"}
+[1786627069][STORE][INFO] -  [@PostsRepository]{"threadId": "14",  "connectionTime": "606", "executionTime": "115"}
+[1786627069][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "19","total_latency": "657"}
+[1786627069][STORE][INFO] -  [Server] - {"cacheSize": "0"}
+[1786627069][STORE][INFO] -  [@PostsRepository]{"threadId": "19",  "connectionTime": "1060", "executionTime": "116"}
+[1786627069][STORE][INFO] -  [@PostsRepository]{"threadId": "20",  "connectionTime": "643", "executionTime": "441"}
+[1786627069][STORE][INFO] -  [@PostsRepository]{"threadId": "17",  "connectionTime": "903", "executionTime": "477"}
+[1786627070][STORE][INFO] -  [@PostsRepository]{"threadId": "18",  "connectionTime": "979", "executionTime": "469"}
+[1786627070][STORE][INFO] -  [@PostsRepository]{"threadId": "23",  "connectionTime": "543", "executionTime": "108"}
+[1786627070][STORE][INFO] -  0 posts saved sucessfully!
+[1786627070][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "29","total_latency": "781"}
+[1786627070][STORE][INFO] -  [Server] - {"cacheSize": "0"}
+[1786627070][STORE][INFO] -  [@PostsRepository]{"threadId": "25",  "connectionTime": "735", "executionTime": "111"}
+[1786627070][STORE][INFO] -  [@PostsRepository]{"threadId": "21",  "connectionTime": "1247", "executionTime": "113"}
+[1786627070][STORE][INFO] -  [@PostsRepository]{"threadId": "28",  "connectionTime": "924", "executionTime": "114"}
+[1786627071][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "33","total_latency": "822"}
+[1786627071][STORE][INFO] -  [Server] - {"cacheSize": "0"}
+[1786627071][STORE][INFO] -  [@PostsRepository]{"threadId": "29",  "connectionTime": "1755", "executionTime": "110"}
+[1786627071][STORE][INFO] -  [@PostsRepository]{"threadId": "30",  "connectionTime": "934", "executionTime": "933"}
+[1786627072][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "35","total_latency": "904"}
+[1786627072][STORE][INFO] -  [Server] - {"cacheSize": "0"}
+[1786627072][STORE][INFO] -  [@PostsRepository]{"threadId": "34",  "connectionTime": "1691", "executionTime": "110"}
+[1786627072][STORE][INFO] -  [@PostsRepository]{"threadId": "22",  "connectionTime": "933", "executionTime": "2449"}
+[1786627072][STORE][INFO] -  [@PostsRepository]{"threadId": "36",  "connectionTime": "868", "executionTime": "115"}
+[1786627072][STORE][INFO] -  [@PostsRepository]{"threadId": "26",  "connectionTime": "1593", "executionTime": "1797"}
+[1786627072][STORE][INFO] -  [@PostsRepository]{"threadId": "31",  "connectionTime": "803", "executionTime": "1601"}
+[1786627072][STORE][INFO] -  [@PostsRepository]{"threadId": "33",  "connectionTime": "1694", "executionTime": "546"}
+[1786627072][STORE][INFO] -  [@PostsRepository]{"threadId": "32",  "connectionTime": "1683", "executionTime": "732"}
+[1786627072][STORE][INFO] -  [@PostsRepository]{"threadId": "27",  "connectionTime": "1768", "executionTime": "1418"}
+[1786627073][STORE][INFO] -  [@PostsRepository]{"threadId": "24",  "connectionTime": "1512", "executionTime": "2114"}
+[1786627073][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "42","total_latency": "1281"}
+[1786627073][STORE][INFO] -  [Server] - {"cacheSize": "2"}
+[1786627073][STORE][INFO] -  [@PostsRepository]{"threadId": "38",  "connectionTime": "263", "executionTime": "113"}
+[1786627073][STORE][INFO] -  [@PostsRepository]{"threadId": "41",  "connectionTime": "442", "executionTime": "111"}
+[1786627073][STORE][INFO] -  [@PostsRepository]{"threadId": "35",  "connectionTime": "1182", "executionTime": "685"}
+[1786627074][STORE][INFO] -  [@PostsRepository]{"threadId": "43",  "connectionTime": "972", "executionTime": "112"}
+[1786627074][STORE][INFO] -  [@PostsRepository]{"threadId": "37",  "connectionTime": "972", "executionTime": "479"}
+[1786627074][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "49","total_latency": "1259"}
+[1786627074][STORE][INFO] -  [Server] - {"cacheSize": "2"}
+[1786627074][STORE][INFO] -  [@PostsRepository]{"threadId": "46",  "connectionTime": "527", "executionTime": "112"}
+[1786627074][STORE][INFO] -  [@PostsRepository]{"threadId": "39",  "connectionTime": "900", "executionTime": "633"}
+[1786627074][STORE][INFO] -  [@PostsRepository]{"threadId": "44",  "connectionTime": "630", "executionTime": "1090"}
+[1786627075][STORE][INFO] -  [@PostsRepository]{"threadId": "48",  "connectionTime": "1018", "executionTime": "111"}
+[1786627075][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "52","total_latency": "1234"}
+[1786627075][STORE][INFO] -  [Server] - {"cacheSize": "3"}
+[1786627075][STORE][INFO] -  [@PostsRepository]{"threadId": "45",  "connectionTime": "615", "executionTime": "1513"}
+[1786627075][STORE][INFO] -  [@PostsRepository]{"threadId": "53",  "connectionTime": "840", "executionTime": "109"}
+[1786627076][STORE][INFO] -  [@PostsRepository]{"threadId": "51",  "connectionTime": "1758", "executionTime": "114"}
+[1786627076][STORE][INFO] -  [@PostsRepository]{"threadId": "52",  "connectionTime": "963", "executionTime": "870"}
+[1786627076][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "59","total_latency": "1273"}
+[1786627076][STORE][INFO] -  [Server] - {"cacheSize": "3"}
+[1786627076][STORE][INFO] -  [@PostsRepository]{"threadId": "47",  "connectionTime": "644", "executionTime": "1772"}
+[1786627076][STORE][INFO] -  [@PostsRepository]{"threadId": "59",  "connectionTime": "945", "executionTime": "111"}
+[1786627076][STORE][INFO] -  [@PostsRepository]{"threadId": "49",  "connectionTime": "828", "executionTime": "1972"}
+[1786627077][STORE][INFO] -  [@PostsRepository]{"threadId": "56",  "connectionTime": "1814", "executionTime": "114"}
+[1786627077][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "65","total_latency": "1331"}
+[1786627077][STORE][INFO] -  [Server] - {"cacheSize": "3"}
+[1786627077][STORE][INFO] -  [@PostsRepository]{"threadId": "57",  "connectionTime": "1902", "executionTime": "113"}
+[1786627078][STORE][INFO] -  [@PostsRepository]{"threadId": "60",  "connectionTime": "1108", "executionTime": "1305"}
+[1786627078][STORE][INFO] -  [@PostsRepository]{"threadId": "61",  "connectionTime": "1097", "executionTime": "1194"}
+[1786627078][STORE][INFO] -  [@PostsRepository]{"threadId": "50",  "connectionTime": "1697", "executionTime": "2377"}
+[1786627078][STORE][INFO] -  [@PostsRepository]{"threadId": "68",  "connectionTime": "1242", "executionTime": "16"}
+[1786627078][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "72","total_latency": "1423"}
+[1786627078][STORE][INFO] -  [Server] - {"cacheSize": "5"}
+[1786627078][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "908", "executionTime": "2125"}
+[1786627078][STORE][INFO] -  3 posts saved sucessfully!
+[1786627078][STORE][INFO] -  [@PostsRepository]{"threadId": "70",  "connectionTime": "957", "executionTime": "114"}
+[1786627079][STORE][INFO] -  [@PostsRepository]{"threadId": "54",  "connectionTime": "840", "executionTime": "3394"}
+[1786627079][STORE][INFO] -  [@PostsRepository]{"threadId": "62",  "connectionTime": "3121", "executionTime": "86"}
+[1786627079][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "76","total_latency": "1492"}
+[1786627079][STORE][INFO] -  [Server] - {"cacheSize": "2"}
+[1786627079][STORE][INFO] -  [@PostsRepository]{"threadId": "69",  "connectionTime": "1041", "executionTime": "1369"}
+[1786627079][STORE][INFO] -  [@PostsRepository]{"threadId": "64",  "connectionTime": "1036", "executionTime": "2154"}
+[1786627079][STORE][INFO] -  [@PostsRepository]{"threadId": "78",  "connectionTime": "1177", "executionTime": "114"}
+[1786627080][STORE][INFO] -  [@PostsRepository]{"threadId": "66",  "connectionTime": "2154", "executionTime": "1426"}
+[1786627080][STORE][INFO] -  [@PostsRepository]{"threadId": "58",  "connectionTime": "2018", "executionTime": "2558"}
+[1786627080][STORE][INFO] -  [@PostsRepository]{"threadId": "65",  "connectionTime": "1215", "executionTime": "2365"}
+[1786627080][STORE][INFO] -  [@PostsRepository]{"threadId": "67",  "connectionTime": "2254", "executionTime": "1239"}
+[1786627080][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "83","total_latency": "1595"}
+[1786627080][STORE][INFO] -  [Server] - {"cacheSize": "5"}
+[1786627080][STORE][INFO] -  [@PostsRepository]{"threadId": "76",  "connectionTime": "2478", "executionTime": "116"}
+[1786627080][STORE][INFO] -  [@PostsRepository]{"threadId": "63",  "connectionTime": "1057", "executionTime": "3754"}
+[1786627081][STORE][INFO] -  [@PostsRepository]{"threadId": "72",  "connectionTime": "1052", "executionTime": "2551"}
+[1786627081][STORE][INFO] -  [@PostsRepository]{"threadId": "71",  "connectionTime": "2463", "executionTime": "1140"}
+[1786627081][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "90","total_latency": "1703"}
+[1786627081][STORE][INFO] -  [Server] - {"cacheSize": "6"}
+[1786627081][STORE][INFO] -  [@PostsRepository]{"threadId": "87",  "connectionTime": "1067", "executionTime": "114"}
+[1786627081][STORE][INFO] -  [@PostsRepository]{"threadId": "80",  "connectionTime": "1173", "executionTime": "1444"}
+[1786627081][STORE][INFO] -  [@PostsRepository]{"threadId": "73",  "connectionTime": "1061", "executionTime": "2571"}
+[1786627081][STORE][INFO] -  [@PostsRepository]{"threadId": "81",  "connectionTime": "2449", "executionTime": "113"}
+[1786627082][STORE][INFO] -  [@PostsRepository]{"threadId": "75",  "connectionTime": "1220", "executionTime": "2611"}
+[1786627082][STORE][INFO] -  [@PostsRepository]{"threadId": "83",  "connectionTime": "1287", "executionTime": "1432"}
+[1786627082][STORE][INFO] -  [Server] - {"cacheSize": "6"}
+[1786627082][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "95","total_latency": "1781"}
+[1786627082][STORE][INFO] -  [@PostsRepository]{"threadId": "77",  "connectionTime": "2486", "executionTime": "1332"}
+[1786627082][STORE][INFO] -  [@PostsRepository]{"threadId": "89",  "connectionTime": "2633", "executionTime": "16"}
+[1786627083][STORE][INFO] -  [@PostsRepository]{"threadId": "74",  "connectionTime": "2301", "executionTime": "2614"}
+[1786627083][STORE][INFO] -  [@PostsRepository]{"threadId": "101",  "connectionTime": "1211", "executionTime": "16"}
+[1786627083][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1","cacheMiss": "99","total_latency": "1825"}
+[1786627083][STORE][INFO] -  [Server] - {"cacheSize": "8"}
+[1786627083][STORE][INFO] -  [@PostsRepository]{"threadId": "82",  "connectionTime": "2701", "executionTime": "1237"}
+[1786627083][STORE][INFO] -  [@PostsRepository]{"threadId": "79",  "connectionTime": "1372", "executionTime": "3764"}
+[1786627083][STORE][INFO] -  [@PostsRepository]{"threadId": "104",  "connectionTime": "1367", "executionTime": "114"}
+[1786627084][STORE][INFO] -  [@PostsRepository]{"threadId": "90",  "connectionTime": "1253", "executionTime": "2669"}
+[1786627084][STORE][INFO] -  [@PostsRepository]{"threadId": "100",  "connectionTime": "1209", "executionTime": "1350"}
+[1786627084][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4","cacheMiss": "101","total_latency": "1845"}
+[1786627084][STORE][INFO] -  [Server] - {"cacheSize": "10"}
+[1786627084][STORE][INFO] -  [@PostsRepository]{"threadId": "91",  "connectionTime": "1362", "executionTime": "2515"}
+[1786627084][STORE][INFO] -  [@PostsRepository]{"threadId": "102",  "connectionTime": "1228", "executionTime": "1350"}
+[1786627084][STORE][INFO] -  [@PostsRepository]{"threadId": "92",  "connectionTime": "1371", "executionTime": "2625"}
+[1786627084][STORE][INFO] -  [@PostsRepository]{"threadId": "93",  "connectionTime": "2531", "executionTime": "1360"}
+[1786627084][STORE][INFO] -  [@PostsRepository]{"threadId": "97",  "connectionTime": "1256", "executionTime": "2436"}
+[1786627084][STORE][INFO] -  [@PostsRepository]{"threadId": "96",  "connectionTime": "1340", "executionTime": "2355"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "98",  "connectionTime": "2599", "executionTime": "990"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "88",  "connectionTime": "2442", "executionTime": "2360"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "110",  "connectionTime": "1053", "executionTime": "16"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "99",  "connectionTime": "2560", "executionTime": "925"}
+[1786627085][STORE][INFO] -  [Server] - {"cacheSize": "13"}
+[1786627085][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "16","cacheMiss": "101","total_latency": "1806"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "94",  "connectionTime": "2608", "executionTime": "1903"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "1375", "executionTime": "714"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "103",  "connectionTime": "1268", "executionTime": "1824"}
+[1786627085][STORE][INFO] -  3 posts saved sucessfully!
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "95",  "connectionTime": "1361", "executionTime": "3054"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "111",  "connectionTime": "1346", "executionTime": "16"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "106",  "connectionTime": "1282", "executionTime": "1152"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "105",  "connectionTime": "1310", "executionTime": "1327"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "137",  "connectionTime": "83", "executionTime": "122"}
+[1786627085][STORE][INFO] -  [@PostsRepository]{"threadId": "138",  "connectionTime": "152", "executionTime": "20"}
+[1786627086][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "35","cacheMiss": "104","total_latency": "1596"}
+[1786627086][STORE][INFO] -  [Server] - {"cacheSize": "15"}
+[1786627086][STORE][INFO] -  [@PostsRepository]{"threadId": "147",  "connectionTime": "84", "executionTime": "16"}
+[1786627086][STORE][INFO] -  [@PostsRepository]{"threadId": "149",  "connectionTime": "83", "executionTime": "16"}
+[1786627086][STORE][INFO] -  [@PostsRepository]{"threadId": "151",  "connectionTime": "84", "executionTime": "25"}
+[1786627086][STORE][INFO] -  [@PostsRepository]{"threadId": "161",  "connectionTime": "84", "executionTime": "17"}
+[1786627087][STORE][INFO] -  [Server] - {"cacheSize": "22"}
+[1786627087][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "53","cacheMiss": "107","total_latency": "1372"}
+[1786627087][STORE][INFO] -  [@PostsRepository]{"threadId": "173",  "connectionTime": "85", "executionTime": "17"}
+[1786627087][STORE][INFO] -  [@PostsRepository]{"threadId": "183",  "connectionTime": "86", "executionTime": "16"}
+[1786627087][STORE][INFO] -  [@PostsRepository]{"threadId": "187",  "connectionTime": "162", "executionTime": "116"}
+[1786627087][STORE][INFO] -  [@PostsRepository]{"threadId": "185",  "connectionTime": "254", "executionTime": "35"}
+[1786627088][STORE][INFO] -  [@PostsRepository]{"threadId": "194",  "connectionTime": "86", "executionTime": "16"}
+[1786627088][STORE][INFO] -  [Server] - {"cacheSize": "29"}
+[1786627088][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "72","cacheMiss": "112","total_latency": "1201"}
+[1786627088][STORE][INFO] -  [@PostsRepository]{"threadId": "199",  "connectionTime": "86", "executionTime": "16"}
+[1786627088][STORE][INFO] -  [@PostsRepository]{"threadId": "206",  "connectionTime": "88", "executionTime": "17"}
+[1786627089][STORE][INFO] -  [Server] - {"cacheSize": "33"}
+[1786627089][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "95","cacheMiss": "115","total_latency": "1064"}
+[1786627089][STORE][INFO] -  [@PostsRepository]{"threadId": "225",  "connectionTime": "85", "executionTime": "16"}
+[1786627089][STORE][INFO] -  [@PostsRepository]{"threadId": "227",  "connectionTime": "85", "executionTime": "17"}
+[1786627089][STORE][INFO] -  [@PostsRepository]{"threadId": "239",  "connectionTime": "90", "executionTime": "16"}
+[1786627090][STORE][INFO] -  [Server] - {"cacheSize": "37"}
+[1786627090][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "122","cacheMiss": "117","total_latency": "943"}
+[1786627090][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "86", "executionTime": "118"}
+Exception::array index out of bounds on line 55 of ./repositories/cache/CacheRepository.o
+ -- called from line 168 of ./connection/Server.o
+ -- called from line 104 of ./connection/Server.o
+ -- called from line 89 of ./connection/Server.o
+ -- called from line 78 of ./connection/Server.o
+[1786627090][STORE][INFO] -  10 posts saved sucessfully!
+[1786627090][STORE][INFO] -  [@PostsRepository]{"threadId": "259",  "connectionTime": "266", "executionTime": "16"}
+[1786627091][STORE][INFO] -  [@PostsRepository]{"threadId": "270",  "connectionTime": "592", "executionTime": "18"}
+[1786627091][STORE][INFO] -  [@PostsRepository]{"threadId": "268",  "connectionTime": "240", "executionTime": "377"}
+[1786627091][STORE][INFO] -  [Server] - {"cacheSize": "32"}
+[1786627091][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "144","cacheMiss": "125","total_latency": "864"}
+[1786627091][STORE][INFO] -  [@PostsRepository]{"threadId": "282",  "connectionTime": "369", "executionTime": "16"}
+[1786627091][STORE][INFO] -  [@PostsRepository]{"threadId": "272",  "connectionTime": "364", "executionTime": "467"}
+[1786627091][STORE][INFO] -  [@PostsRepository]{"threadId": "279",  "connectionTime": "367", "executionTime": "385"}
+[1786627091][STORE][INFO] -  [@PostsRepository]{"threadId": "277",  "connectionTime": "280", "executionTime": "556"}
+[1786627091][STORE][INFO] -  [@PostsRepository]{"threadId": "281",  "connectionTime": "700", "executionTime": "39"}
+[1786627091][STORE][INFO] -  [@PostsRepository]{"threadId": "300",  "connectionTime": "106", "executionTime": "16"}
+[1786627092][STORE][INFO] -  [@PostsRepository]{"threadId": "306",  "connectionTime": "479", "executionTime": "16"}
+[1786627092][STORE][INFO] -  [@PostsRepository]{"threadId": "310",  "connectionTime": "266", "executionTime": "212"}
+[1786627092][STORE][INFO] -  [@PostsRepository]{"threadId": "305",  "connectionTime": "203", "executionTime": "334"}
+[1786627092][STORE][INFO] -  [@PostsRepository]{"threadId": "297",  "connectionTime": "396", "executionTime": "147"}
+[1786627092][STORE][INFO] -  [Server] - {"cacheSize": "45"}
+[1786627092][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "170","cacheMiss": "130","total_latency": "785"}
+[1786627092][STORE][INFO] -  [@PostsRepository]{"threadId": "325",  "connectionTime": "91", "executionTime": "51"}
+[1786627092][STORE][INFO] -  [@PostsRepository]{"threadId": "331",  "connectionTime": "175", "executionTime": "19"}
+[1786627093][STORE][INFO] -  [@PostsRepository]{"threadId": "333",  "connectionTime": "442", "executionTime": "20"}
+[1786627093][STORE][INFO] -  [@PostsRepository]{"threadId": "334",  "connectionTime": "314", "executionTime": "126"}
+[1786627093][STORE][INFO] -  [@PostsRepository]{"threadId": "337",  "connectionTime": "255", "executionTime": "231"}
+[1786627093][STORE][INFO] -  [Server] - {"cacheSize": "54"}
+[1786627093][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "197","cacheMiss": "135","total_latency": "720"}
+[1786627093][STORE][INFO] -  [@PostsRepository]{"threadId": "360",  "connectionTime": "89", "executionTime": "20"}
+[1786627093][STORE][INFO] -  [@PostsRepository]{"threadId": "383",  "connectionTime": "99", "executionTime": "47"}
+[1786627093][STORE][INFO] -  [@PostsRepository]{"threadId": "381",  "connectionTime": "222", "executionTime": "17"}
+[1786627094][STORE][INFO] -  [Server] - {"cacheSize": "60"}
+[1786627094][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "229","cacheMiss": "138","total_latency": "662"}
+[1786627094][STORE][INFO] -  [@PostsRepository]{"threadId": "416",  "connectionTime": "105", "executionTime": "36"}
+[1786627094][STORE][INFO] -  [@PostsRepository]{"threadId": "428",  "connectionTime": "86", "executionTime": "16"}
+[1786627095][STORE][INFO] -  [@PostsRepository]{"threadId": "431",  "connectionTime": "89", "executionTime": "16"}
+[1786627095][STORE][INFO] -  [Server] - {"cacheSize": "66"}
+[1786627095][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "263","cacheMiss": "141","total_latency": "613"}
+[1786627095][STORE][INFO] -  [@PostsRepository]{"threadId": "438",  "connectionTime": "85", "executionTime": "35"}
+[1786627095][STORE][INFO] -  [@PostsRepository]{"threadId": "451",  "connectionTime": "112", "executionTime": "70"}
+[1786627096][STORE][INFO] -  [@PostsRepository]{"threadId": "450",  "connectionTime": "342", "executionTime": "16"}
+[1786627096][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "201", "executionTime": "197"}
+[1786627096][STORE][INFO] -  17 posts saved sucessfully!
+[1786627096][STORE][INFO] -  [@PostsRepository]{"threadId": "465",  "connectionTime": "389", "executionTime": "16"}
+[1786627096][STORE][INFO] -  [Server] - {"cacheSize": "56"}
+[1786627096][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "297","cacheMiss": "145","total_latency": "571"}
+[1786627096][STORE][INFO] -  [@PostsRepository]{"threadId": "495",  "connectionTime": "150", "executionTime": "20"}
+[1786627097][STORE][INFO] -  [@PostsRepository]{"threadId": "510",  "connectionTime": "253", "executionTime": "17"}
+[1786627097][STORE][INFO] -  [@PostsRepository]{"threadId": "511",  "connectionTime": "174", "executionTime": "120"}
+[1786627097][STORE][INFO] -  [@PostsRepository]{"threadId": "509",  "connectionTime": "86", "executionTime": "312"}
+[1786627097][STORE][INFO] -  [@PostsRepository]{"threadId": "515",  "connectionTime": "173", "executionTime": "33"}
+[1786627097][STORE][INFO] -  [Server] - {"cacheSize": "62"}
+[1786627097][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "333","cacheMiss": "150","total_latency": "535"}
+[1786627097][STORE][INFO] -  [@PostsRepository]{"threadId": "521",  "connectionTime": "85", "executionTime": "18"}
+[1786627097][STORE][INFO] -  [@PostsRepository]{"threadId": "524",  "connectionTime": "267", "executionTime": "24"}
+[1786627098][STORE][INFO] -  [Server] - {"cacheSize": "66"}
+[1786627098][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "363","cacheMiss": "161","total_latency": "509"}
+[1786627098][STORE][INFO] -  [@PostsRepository]{"threadId": "555",  "connectionTime": "525", "executionTime": "16"}
+[1786627098][STORE][INFO] -  [@PostsRepository]{"threadId": "525",  "connectionTime": "142", "executionTime": "701"}
+[1786627098][STORE][INFO] -  [@PostsRepository]{"threadId": "558",  "connectionTime": "447", "executionTime": "16"}
+[1786627098][STORE][INFO] -  [@PostsRepository]{"threadId": "550",  "connectionTime": "394", "executionTime": "330"}
+[1786627098][STORE][INFO] -  [@PostsRepository]{"threadId": "528",  "connectionTime": "671", "executionTime": "362"}
+[1786627098][STORE][INFO] -  [@PostsRepository]{"threadId": "529",  "connectionTime": "247", "executionTime": "738"}
+[1786627098][STORE][INFO] -  [@PostsRepository]{"threadId": "571",  "connectionTime": "93", "executionTime": "23"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "562",  "connectionTime": "360", "executionTime": "433"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "543",  "connectionTime": "315", "executionTime": "1255"}
+[1786627099][STORE][INFO] -  [Server] - {"cacheSize": "76"}
+[1786627099][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "393","cacheMiss": "173","total_latency": "492"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "597",  "connectionTime": "807", "executionTime": "25"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "566",  "connectionTime": "394", "executionTime": "813"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "547",  "connectionTime": "368", "executionTime": "1587"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "568",  "connectionTime": "427", "executionTime": "807"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "583",  "connectionTime": "462", "executionTime": "741"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "569",  "connectionTime": "1242", "executionTime": "16"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "584",  "connectionTime": "644", "executionTime": "663"}
+[1786627099][STORE][INFO] -  [@PostsRepository]{"threadId": "588",  "connectionTime": "603", "executionTime": "594"}
+[1786627100][STORE][INFO] -  [@PostsRepository]{"threadId": "564",  "connectionTime": "977", "executionTime": "534"}
+[1786627100][STORE][INFO] -  [@PostsRepository]{"threadId": "594",  "connectionTime": "709", "executionTime": "467"}
+[1786627100][STORE][INFO] -  [Server] - {"cacheSize": "89"}
+[1786627100][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "425","cacheMiss": "181","total_latency": "483"}
+[1786627100][STORE][INFO] -  [@PostsRepository]{"threadId": "578",  "connectionTime": "514", "executionTime": "1274"}
+[1786627100][STORE][INFO] -  [@PostsRepository]{"threadId": "638",  "connectionTime": "679", "executionTime": "19"}
+[1786627100][STORE][INFO] -  [@PostsRepository]{"threadId": "613",  "connectionTime": "533", "executionTime": "529"}
+[1786627100][STORE][INFO] -  [@PostsRepository]{"threadId": "616",  "connectionTime": "1232", "executionTime": "16"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "632",  "connectionTime": "632", "executionTime": "569"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "637",  "connectionTime": "559", "executionTime": "504"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "646",  "connectionTime": "1020", "executionTime": "16"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "663",  "connectionTime": "89", "executionTime": "469"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "596",  "connectionTime": "1414", "executionTime": "1010"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "628",  "connectionTime": "578", "executionTime": "929"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "649",  "connectionTime": "644", "executionTime": "314"}
+[1786627101][STORE][INFO] -  [Server] - {"cacheSize": "100"}
+[1786627101][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "461","cacheMiss": "188","total_latency": "474"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "395", "executionTime": "163"}
+[1786627101][STORE][INFO] -  8 posts saved sucessfully!
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "654",  "connectionTime": "485", "executionTime": "573"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "617",  "connectionTime": "469", "executionTime": "1630"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "671",  "connectionTime": "1057", "executionTime": "16"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "684",  "connectionTime": "320", "executionTime": "464"}
+[1786627101][STORE][INFO] -  [@PostsRepository]{"threadId": "688",  "connectionTime": "837", "executionTime": "16"}
+[1786627102][STORE][INFO] -  [@PostsRepository]{"threadId": "699",  "connectionTime": "470", "executionTime": "20"}
+[1786627102][STORE][INFO] -  [Server] - {"cacheSize": "99"}
+[1786627102][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "499","cacheMiss": "196","total_latency": "459"}
+[1786627102][STORE][INFO] -  [@PostsRepository]{"threadId": "691",  "connectionTime": "834", "executionTime": "427"}
+[1786627102][STORE][INFO] -  [@PostsRepository]{"threadId": "718",  "connectionTime": "749", "executionTime": "30"}
+[1786627102][STORE][INFO] -  [@PostsRepository]{"threadId": "725",  "connectionTime": "765", "executionTime": "24"}
+[1786627102][STORE][INFO] -  [@PostsRepository]{"threadId": "727",  "connectionTime": "855", "executionTime": "17"}
+[1786627102][STORE][INFO] -  [@PostsRepository]{"threadId": "730",  "connectionTime": "419", "executionTime": "404"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "722",  "connectionTime": "1092", "executionTime": "17"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "696",  "connectionTime": "776", "executionTime": "830"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "726",  "connectionTime": "405", "executionTime": "815"}
+[1786627103][STORE][INFO] -  [Server] - {"cacheSize": "107"}
+[1786627103][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "540","cacheMiss": "203","total_latency": "445"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "747",  "connectionTime": "430", "executionTime": "381"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "762",  "connectionTime": "424", "executionTime": "291"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "769",  "connectionTime": "393", "executionTime": "224"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "785",  "connectionTime": "316", "executionTime": "20"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "778",  "connectionTime": "658", "executionTime": "21"}
+[1786627103][STORE][INFO] -  [@PostsRepository]{"threadId": "787",  "connectionTime": "497", "executionTime": "20"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "804",  "connectionTime": "362", "executionTime": "22"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "809",  "connectionTime": "409", "executionTime": "16"}
+[1786627104][STORE][INFO] -  [Server] - {"cacheSize": "117"}
+[1786627104][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "576","cacheMiss": "212","total_latency": "429"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "795",  "connectionTime": "745", "executionTime": "16"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "754",  "connectionTime": "723", "executionTime": "1118"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "756",  "connectionTime": "783", "executionTime": "1101"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "810",  "connectionTime": "496", "executionTime": "376"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "797",  "connectionTime": "332", "executionTime": "835"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "819",  "connectionTime": "498", "executionTime": "342"}
+[1786627104][STORE][INFO] -  [@PostsRepository]{"threadId": "829",  "connectionTime": "428", "executionTime": "272"}
+[1786627105][STORE][INFO] -  [@PostsRepository]{"threadId": "850",  "connectionTime": "360", "executionTime": "26"}
+[1786627105][STORE][INFO] -  [Server] - {"cacheSize": "125"}
+[1786627105][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "615","cacheMiss": "222","total_latency": "420"}
+[1786627105][STORE][INFO] -  [@PostsRepository]{"threadId": "843",  "connectionTime": "742", "executionTime": "16"}
+[1786627105][STORE][INFO] -  [@PostsRepository]{"threadId": "839",  "connectionTime": "331", "executionTime": "456"}
+[1786627105][STORE][INFO] -  [@PostsRepository]{"threadId": "832",  "connectionTime": "472", "executionTime": "811"}
+[1786627105][STORE][INFO] -  [@PostsRepository]{"threadId": "835",  "connectionTime": "814", "executionTime": "408"}
+[1786627105][STORE][INFO] -  [@PostsRepository]{"threadId": "865",  "connectionTime": "801", "executionTime": "31"}
+[1786627105][STORE][INFO] -  [@PostsRepository]{"threadId": "882",  "connectionTime": "520", "executionTime": "24"}
+[1786627105][STORE][INFO] -  [@PostsRepository]{"threadId": "869",  "connectionTime": "504", "executionTime": "399"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "898",  "connectionTime": "430", "executionTime": "18"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "862",  "connectionTime": "455", "executionTime": "821"}
+[1786627106][STORE][INFO] -  [Server] - {"cacheSize": "134"}
+[1786627106][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "658","cacheMiss": "228","total_latency": "410"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "926",  "connectionTime": "442", "executionTime": "84"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "868",  "connectionTime": "1314", "executionTime": "461"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "914",  "connectionTime": "466", "executionTime": "415"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "897",  "connectionTime": "350", "executionTime": "777"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "857",  "connectionTime": "825", "executionTime": "1125"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "933",  "connectionTime": "442", "executionTime": "16"}
+[1786627106][STORE][INFO] -  [@PostsRepository]{"threadId": "907",  "connectionTime": "345", "executionTime": "771"}
+[1786627107][STORE][INFO] -  [@PostsRepository]{"threadId": "925",  "connectionTime": "381", "executionTime": "762"}
+[1786627107][STORE][INFO] -  [Server] - {"cacheSize": "143"}
+[1786627107][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "702","cacheMiss": "234","total_latency": "402"}
+[1786627107][STORE][INFO] -  [@PostsRepository]{"threadId": "973",  "connectionTime": "266", "executionTime": "16"}
+[1786627107][STORE][INFO] -  [@PostsRepository]{"threadId": "975",  "connectionTime": "367", "executionTime": "16"}
+[1786627107][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "440", "executionTime": "386"}
+[1786627107][STORE][INFO] -  4 posts saved sucessfully!
+[1786627107][STORE][INFO] -  [@PostsRepository]{"threadId": "946",  "connectionTime": "472", "executionTime": "321"}
+[1786627107][STORE][INFO] -  [@PostsRepository]{"threadId": "940",  "connectionTime": "443", "executionTime": "498"}
+[1786627107][STORE][INFO] -  [@PostsRepository]{"threadId": "974",  "connectionTime": "620", "executionTime": "37"}
+[1786627107][STORE][INFO] -  [@PostsRepository]{"threadId": "995",  "connectionTime": "178", "executionTime": "25"}
+[1786627108][STORE][INFO] -  [@PostsRepository]{"threadId": "1006",  "connectionTime": "298", "executionTime": "29"}
+[1786627108][STORE][INFO] -  [@PostsRepository]{"threadId": "1003",  "connectionTime": "236", "executionTime": "336"}
+[1786627108][STORE][INFO] -  [@PostsRepository]{"threadId": "992",  "connectionTime": "665", "executionTime": "16"}
+[1786627108][STORE][INFO] -  [@PostsRepository]{"threadId": "1014",  "connectionTime": "314", "executionTime": "142"}
+[1786627108][STORE][INFO] -  [Server] - {"cacheSize": "153"}
+[1786627108][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "747","cacheMiss": "239","total_latency": "388"}
+[1786627108][STORE][INFO] -  [@PostsRepository]{"threadId": "1052",  "connectionTime": "94", "executionTime": "23"}
+[1786627108][STORE][INFO] -  [@PostsRepository]{"threadId": "1061",  "connectionTime": "122", "executionTime": "21"}
+[1786627109][STORE][INFO] -  [@PostsRepository]{"threadId": "1053",  "connectionTime": "483", "executionTime": "16"}
+[1786627109][STORE][INFO] -  [Server] - {"cacheSize": "156"}
+[1786627109][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "794","cacheMiss": "246","total_latency": "374"}
+[1786627109][STORE][INFO] -  [@PostsRepository]{"threadId": "1057",  "connectionTime": "232", "executionTime": "402"}
+[1786627109][STORE][INFO] -  [@PostsRepository]{"threadId": "1058",  "connectionTime": "311", "executionTime": "330"}
+[1786627109][STORE][INFO] -  [@PostsRepository]{"threadId": "1080",  "connectionTime": "228", "executionTime": "123"}
+[1786627109][STORE][INFO] -  [@PostsRepository]{"threadId": "1063",  "connectionTime": "562", "executionTime": "56"}
+[1786627109][STORE][INFO] -  [@PostsRepository]{"threadId": "1093",  "connectionTime": "96", "executionTime": "51"}
+[1786627109][STORE][INFO] -  [@PostsRepository]{"threadId": "1105",  "connectionTime": "177", "executionTime": "24"}
+[1786627110][STORE][INFO] -  [@PostsRepository]{"threadId": "1102",  "connectionTime": "399", "executionTime": "32"}
+[1786627110][STORE][INFO] -  [@PostsRepository]{"threadId": "1109",  "connectionTime": "462", "executionTime": "16"}
+[1786627110][STORE][INFO] -  [Server] - {"cacheSize": "164"}
+[1786627110][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "839","cacheMiss": "256","total_latency": "364"}
+[1786627110][STORE][INFO] -  [@PostsRepository]{"threadId": "1121",  "connectionTime": "508", "executionTime": "16"}
+[1786627110][STORE][INFO] -  [@PostsRepository]{"threadId": "1099",  "connectionTime": "267", "executionTime": "528"}
+[1786627110][STORE][INFO] -  [@PostsRepository]{"threadId": "1132",  "connectionTime": "239", "executionTime": "210"}
+[1786627110][STORE][INFO] -  [@PostsRepository]{"threadId": "1145",  "connectionTime": "248", "executionTime": "35"}
+[1786627110][STORE][INFO] -  [@PostsRepository]{"threadId": "1139",  "connectionTime": "361", "executionTime": "167"}
+[1786627110][STORE][INFO] -  [@PostsRepository]{"threadId": "1157",  "connectionTime": "112", "executionTime": "60"}
+[1786627111][STORE][INFO] -  [@PostsRepository]{"threadId": "1148",  "connectionTime": "415", "executionTime": "33"}
+[1786627111][STORE][INFO] -  [@PostsRepository]{"threadId": "1171",  "connectionTime": "262", "executionTime": "20"}
+[1786627111][STORE][INFO] -  [Server] - {"cacheSize": "173"}
+[1786627111][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "885","cacheMiss": "264","total_latency": "354"}
+[1786627111][STORE][INFO] -  [@PostsRepository]{"threadId": "1176",  "connectionTime": "284", "executionTime": "355"}
+[1786627111][STORE][INFO] -  [@PostsRepository]{"threadId": "1138",  "connectionTime": "1194", "executionTime": "289"}
+[1786627111][STORE][INFO] -  [@PostsRepository]{"threadId": "1199",  "connectionTime": "378", "executionTime": "43"}
+[1786627111][STORE][INFO] -  [@PostsRepository]{"threadId": "1189",  "connectionTime": "388", "executionTime": "323"}
+[1786627111][STORE][INFO] -  [@PostsRepository]{"threadId": "1169",  "connectionTime": "645", "executionTime": "260"}
+[1786627111][STORE][INFO] -  [@PostsRepository]{"threadId": "1207",  "connectionTime": "301", "executionTime": "21"}
+[1786627112][STORE][INFO] -  [@PostsRepository]{"threadId": "1185",  "connectionTime": "373", "executionTime": "635"}
+[1786627112][STORE][INFO] -  [@PostsRepository]{"threadId": "1246",  "connectionTime": "90", "executionTime": "117"}
+[1786627112][STORE][INFO] -  [@PostsRepository]{"threadId": "1251",  "connectionTime": "133", "executionTime": "33"}
+[1786627112][STORE][INFO] -  [Server] - {"cacheSize": "182"}
+[1786627112][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "939","cacheMiss": "267","total_latency": "348"}
+[1786627112][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "115", "executionTime": "161"}
+[1786627112][STORE][INFO] -  5 posts saved sucessfully!
+[1786627112][STORE][INFO] -  [@PostsRepository]{"threadId": "1265",  "connectionTime": "287", "executionTime": "19"}
+[1786627113][STORE][INFO] -  [@PostsRepository]{"threadId": "1274",  "connectionTime": "364", "executionTime": "23"}
+[1786627113][STORE][INFO] -  [Server] - {"cacheSize": "183"}
+[1786627113][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "987","cacheMiss": "274","total_latency": "338"}
+[1786627113][STORE][INFO] -  [@PostsRepository]{"threadId": "1266",  "connectionTime": "618", "executionTime": "282"}
+[1786627113][STORE][INFO] -  [@PostsRepository]{"threadId": "1297",  "connectionTime": "385", "executionTime": "218"}
+[1786627113][STORE][INFO] -  [@PostsRepository]{"threadId": "1301",  "connectionTime": "360", "executionTime": "153"}
+[1786627113][STORE][INFO] -  [@PostsRepository]{"threadId": "1281",  "connectionTime": "744", "executionTime": "88"}
+[1786627113][STORE][INFO] -  [@PostsRepository]{"threadId": "1287",  "connectionTime": "335", "executionTime": "437"}
+[1786627113][STORE][INFO] -  [@PostsRepository]{"threadId": "1318",  "connectionTime": "184", "executionTime": "29"}
+[1786627113][STORE][INFO] -  [@PostsRepository]{"threadId": "1320",  "connectionTime": "152", "executionTime": "44"}
+[1786627114][STORE][INFO] -  [@PostsRepository]{"threadId": "1342",  "connectionTime": "97", "executionTime": "48"}
+[1786627114][STORE][INFO] -  [@PostsRepository]{"threadId": "1343",  "connectionTime": "188", "executionTime": "33"}
+[1786627114][STORE][INFO] -  [@PostsRepository]{"threadId": "1370",  "connectionTime": "85", "executionTime": "16"}
+[1786627114][STORE][INFO] -  [Server] - {"cacheSize": "193"}
+[1786627114][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1039","cacheMiss": "281","total_latency": "331"}
+[1786627114][STORE][INFO] -  [@PostsRepository]{"threadId": "1372",  "connectionTime": "147", "executionTime": "117"}
+[1786627114][STORE][INFO] -  [@PostsRepository]{"threadId": "1368",  "connectionTime": "269", "executionTime": "32"}
+[1786627115][STORE][INFO] -  [Server] - {"cacheSize": "195"}
+[1786627115][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1094","cacheMiss": "286","total_latency": "323"}
+[1786627115][STORE][INFO] -  [@PostsRepository]{"threadId": "1429",  "connectionTime": "221", "executionTime": "16"}
+[1786627115][STORE][INFO] -  [@PostsRepository]{"threadId": "1433",  "connectionTime": "211", "executionTime": "16"}
+[1786627115][STORE][INFO] -  [@PostsRepository]{"threadId": "1417",  "connectionTime": "94", "executionTime": "390"}
+[1786627115][STORE][INFO] -  [@PostsRepository]{"threadId": "1421",  "connectionTime": "97", "executionTime": "334"}
+[1786627115][STORE][INFO] -  [@PostsRepository]{"threadId": "1424",  "connectionTime": "197", "executionTime": "273"}
+[1786627115][STORE][INFO] -  [@PostsRepository]{"threadId": "1449",  "connectionTime": "103", "executionTime": "30"}
+[1786627115][STORE][INFO] -  [@PostsRepository]{"threadId": "1447",  "connectionTime": "211", "executionTime": "35"}
+[1786627116][STORE][INFO] -  [@PostsRepository]{"threadId": "1462",  "connectionTime": "170", "executionTime": "67"}
+[1786627116][STORE][INFO] -  [@PostsRepository]{"threadId": "1473",  "connectionTime": "197", "executionTime": "23"}
+[1786627116][STORE][INFO] -  [Server] - {"cacheSize": "204"}
+[1786627116][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1148","cacheMiss": "292","total_latency": "315"}
+[1786627116][STORE][INFO] -  [@PostsRepository]{"threadId": "1487",  "connectionTime": "109", "executionTime": "119"}
+[1786627116][STORE][INFO] -  [@PostsRepository]{"threadId": "1493",  "connectionTime": "127", "executionTime": "20"}
+[1786627116][STORE][INFO] -  [@PostsRepository]{"threadId": "1496",  "connectionTime": "88", "executionTime": "26"}
+[1786627117][STORE][INFO] -  [@PostsRepository]{"threadId": "1532",  "connectionTime": "101", "executionTime": "41"}
+[1786627117][STORE][INFO] -  [Server] - {"cacheSize": "211"}
+[1786627117][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1198","cacheMiss": "299","total_latency": "309"}
+[1786627117][STORE][INFO] -  [@PostsRepository]{"threadId": "1546",  "connectionTime": "204", "executionTime": "17"}
+[1786627117][STORE][INFO] -  [@PostsRepository]{"threadId": "1548",  "connectionTime": "452", "executionTime": "44"}
+[1786627117][STORE][INFO] -  [@PostsRepository]{"threadId": "1539",  "connectionTime": "168", "executionTime": "462"}
+[1786627117][STORE][INFO] -  [@PostsRepository]{"threadId": "1552",  "connectionTime": "269", "executionTime": "195"}
+[1786627117][STORE][INFO] -  [@PostsRepository]{"threadId": "1537",  "connectionTime": "316", "executionTime": "407"}
+[1786627118][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "97", "executionTime": "211"}
+[1786627118][STORE][INFO] -  8 posts saved sucessfully!
+[1786627118][STORE][INFO] -  [Server] - {"cacheSize": "210"}
+[1786627118][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1253","cacheMiss": "302","total_latency": "303"}
+[1786627118][STORE][INFO] -  [@PostsRepository]{"threadId": "1599",  "connectionTime": "219", "executionTime": "100"}
+[1786627118][STORE][INFO] -  [@PostsRepository]{"threadId": "1615",  "connectionTime": "157", "executionTime": "16"}
+[1786627118][STORE][INFO] -  [@PostsRepository]{"threadId": "1616",  "connectionTime": "147", "executionTime": "41"}
+[1786627118][STORE][INFO] -  [@PostsRepository]{"threadId": "1594",  "connectionTime": "302", "executionTime": "401"}
+[1786627118][STORE][INFO] -  [@PostsRepository]{"threadId": "1619",  "connectionTime": "167", "executionTime": "26"}
+[1786627119][STORE][INFO] -  [@PostsRepository]{"threadId": "1658",  "connectionTime": "102", "executionTime": "31"}
+[1786627119][STORE][INFO] -  [Server] - {"cacheSize": "217"}
+[1786627119][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1307","cacheMiss": "307","total_latency": "298"}
+[1786627119][STORE][INFO] -  [@PostsRepository]{"threadId": "1657",  "connectionTime": "204", "executionTime": "119"}
+[1786627119][STORE][INFO] -  [@PostsRepository]{"threadId": "1671",  "connectionTime": "127", "executionTime": "20"}
+[1786627119][STORE][INFO] -  [@PostsRepository]{"threadId": "1679",  "connectionTime": "103", "executionTime": "24"}
+[1786627119][STORE][INFO] -  [@PostsRepository]{"threadId": "1681",  "connectionTime": "278", "executionTime": "17"}
+[1786627120][STORE][INFO] -  [@PostsRepository]{"threadId": "1699",  "connectionTime": "232", "executionTime": "50"}
+[1786627120][STORE][INFO] -  [@PostsRepository]{"threadId": "1713",  "connectionTime": "178", "executionTime": "33"}
+[1786627120][STORE][INFO] -  [Server] - {"cacheSize": "225"}
+[1786627120][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1358","cacheMiss": "314","total_latency": "293"}
+[1786627120][STORE][INFO] -  [@PostsRepository]{"threadId": "1720",  "connectionTime": "227", "executionTime": "101"}
+[1786627120][STORE][INFO] -  [@PostsRepository]{"threadId": "1733",  "connectionTime": "119", "executionTime": "99"}
+[1786627120][STORE][INFO] -  [@PostsRepository]{"threadId": "1735",  "connectionTime": "139", "executionTime": "34"}
+[1786627121][STORE][INFO] -  [@PostsRepository]{"threadId": "1761",  "connectionTime": "118", "executionTime": "17"}
+[1786627121][STORE][INFO] -  [@PostsRepository]{"threadId": "1783",  "connectionTime": "112", "executionTime": "21"}
+[1786627121][STORE][INFO] -  [Server] - {"cacheSize": "231"}
+[1786627121][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1412","cacheMiss": "319","total_latency": "288"}
+[1786627121][STORE][INFO] -  [@PostsRepository]{"threadId": "1790",  "connectionTime": "133", "executionTime": "16"}
+[1786627121][STORE][INFO] -  [@PostsRepository]{"threadId": "1786",  "connectionTime": "377", "executionTime": "44"}
+[1786627121][STORE][INFO] -  [@PostsRepository]{"threadId": "1794",  "connectionTime": "169", "executionTime": "158"}
+[1786627121][STORE][INFO] -  [@PostsRepository]{"threadId": "1806",  "connectionTime": "242", "executionTime": "44"}
+[1786627122][STORE][INFO] -  [@PostsRepository]{"threadId": "1831",  "connectionTime": "110", "executionTime": "83"}
+[1786627122][STORE][INFO] -  [@PostsRepository]{"threadId": "1835",  "connectionTime": "216", "executionTime": "22"}
+[1786627122][STORE][INFO] -  [Server] - {"cacheSize": "237"}
+[1786627122][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1467","cacheMiss": "323","total_latency": "284"}
+[1786627122][STORE][INFO] -  [@PostsRepository]{"threadId": "1845",  "connectionTime": "246", "executionTime": "16"}
+[1786627122][STORE][INFO] -  [@PostsRepository]{"threadId": "1863",  "connectionTime": "100", "executionTime": "62"}
+[1786627122][STORE][INFO] -  [@PostsRepository]{"threadId": "1877",  "connectionTime": "141", "executionTime": "28"}
+[1786627123][STORE][INFO] -  [@PostsRepository]{"threadId": "1884",  "connectionTime": "233", "executionTime": "59"}
+[1786627123][STORE][INFO] -  [Server] - {"cacheSize": "242"}
+[1786627123][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1520","cacheMiss": "329","total_latency": "279"}
+[1786627123][STORE][INFO] -  [@PostsRepository]{"threadId": "1888",  "connectionTime": "637", "executionTime": "19"}
+[1786627123][STORE][INFO] -  [@PostsRepository]{"threadId": "1878",  "connectionTime": "611", "executionTime": "226"}
+[1786627123][STORE][INFO] -  [@PostsRepository]{"threadId": "1886",  "connectionTime": "367", "executionTime": "464"}
+[1786627123][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "201", "executionTime": "265"}
+[1786627123][STORE][INFO] -  6 posts saved sucessfully!
+[1786627123][STORE][INFO] -  [@PostsRepository]{"threadId": "1929",  "connectionTime": "178", "executionTime": "31"}
+[1786627124][STORE][INFO] -  [@PostsRepository]{"threadId": "1946",  "connectionTime": "123", "executionTime": "16"}
+[1786627124][STORE][INFO] -  [@PostsRepository]{"threadId": "1947",  "connectionTime": "242", "executionTime": "44"}
+[1786627124][STORE][INFO] -  [Server] - {"cacheSize": "245"}
+[1786627124][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1572","cacheMiss": "334","total_latency": "277"}
+[1786627124][STORE][INFO] -  [@PostsRepository]{"threadId": "1966",  "connectionTime": "184", "executionTime": "34"}
+[1786627124][STORE][INFO] -  [@PostsRepository]{"threadId": "1949",  "connectionTime": "263", "executionTime": "108"}
+[1786627124][STORE][INFO] -  [@PostsRepository]{"threadId": "1991",  "connectionTime": "117", "executionTime": "92"}
+[1786627125][STORE][INFO] -  [@PostsRepository]{"threadId": "2021",  "connectionTime": "139", "executionTime": "18"}
+[1786627125][STORE][INFO] -  [@PostsRepository]{"threadId": "2014",  "connectionTime": "90", "executionTime": "139"}
+[1786627125][STORE][INFO] -  [@PostsRepository]{"threadId": "2017",  "connectionTime": "265", "executionTime": "16"}
+[1786627125][STORE][INFO] -  [Server] - {"cacheSize": "251"}
+[1786627125][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1629","cacheMiss": "338","total_latency": "273"}
+[1786627125][STORE][INFO] -  [@PostsRepository]{"threadId": "2041",  "connectionTime": "98", "executionTime": "42"}
+[1786627125][STORE][INFO] -  [@PostsRepository]{"threadId": "2050",  "connectionTime": "106", "executionTime": "43"}
+[1786627126][STORE][INFO] -  [@PostsRepository]{"threadId": "2055",  "connectionTime": "210", "executionTime": "26"}
+[1786627126][STORE][INFO] -  [@PostsRepository]{"threadId": "2071",  "connectionTime": "114", "executionTime": "47"}
+[1786627126][STORE][INFO] -  [@PostsRepository]{"threadId": "2072",  "connectionTime": "203", "executionTime": "51"}
+[1786627126][STORE][INFO] -  [Server] - {"cacheSize": "257"}
+[1786627126][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1681","cacheMiss": "345","total_latency": "269"}
+[1786627126][STORE][INFO] -  [@PostsRepository]{"threadId": "2091",  "connectionTime": "164", "executionTime": "16"}
+[1786627126][STORE][INFO] -  [@PostsRepository]{"threadId": "2086",  "connectionTime": "150", "executionTime": "123"}
+[1786627126][STORE][INFO] -  [@PostsRepository]{"threadId": "2098",  "connectionTime": "136", "executionTime": "26"}
+[1786627126][STORE][INFO] -  [@PostsRepository]{"threadId": "2099",  "connectionTime": "189", "executionTime": "35"}
+[1786627126][STORE][INFO] -  [@PostsRepository]{"threadId": "2113",  "connectionTime": "114", "executionTime": "16"}
+[1786627127][STORE][INFO] -  [@PostsRepository]{"threadId": "2117",  "connectionTime": "203", "executionTime": "19"}
+[1786627127][STORE][INFO] -  [@PostsRepository]{"threadId": "2138",  "connectionTime": "96", "executionTime": "37"}
+[1786627127][STORE][INFO] -  [Server] - {"cacheSize": "265"}
+[1786627127][STORE][INFO] -  [@PostsRepository]{"threadId": "2144",  "connectionTime": "173", "executionTime": "19"}
+[1786627127][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1730","cacheMiss": "355","total_latency": "267"}
+[1786627127][STORE][INFO] -  [@PostsRepository]{"threadId": "2142",  "connectionTime": "415", "executionTime": "54"}
+[1786627127][STORE][INFO] -  [@PostsRepository]{"threadId": "2143",  "connectionTime": "532", "executionTime": "28"}
+[1786627127][STORE][INFO] -  [@PostsRepository]{"threadId": "2141",  "connectionTime": "266", "executionTime": "305"}
+[1786627128][STORE][INFO] -  [@PostsRepository]{"threadId": "2152",  "connectionTime": "581", "executionTime": "40"}
+[1786627128][STORE][INFO] -  [@PostsRepository]{"threadId": "2173",  "connectionTime": "353", "executionTime": "23"}
+[1786627128][STORE][INFO] -  [@PostsRepository]{"threadId": "2167",  "connectionTime": "654", "executionTime": "49"}
+[1786627128][STORE][INFO] -  [Server] - {"cacheSize": "273"}
+[1786627128][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1779","cacheMiss": "365","total_latency": "266"}
+[1786627128][STORE][INFO] -  [@PostsRepository]{"threadId": "2192",  "connectionTime": "414", "executionTime": "20"}
+[1786627128][STORE][INFO] -  [@PostsRepository]{"threadId": "2199",  "connectionTime": "481", "executionTime": "28"}
+[1786627128][STORE][INFO] -  [@PostsRepository]{"threadId": "2211",  "connectionTime": "493", "executionTime": "19"}
+[1786627129][STORE][INFO] -  [@PostsRepository]{"threadId": "2194",  "connectionTime": "855", "executionTime": "46"}
+[1786627129][STORE][INFO] -  [@PostsRepository]{"threadId": "2197",  "connectionTime": "979", "executionTime": "59"}
+[1786627129][STORE][INFO] -  [@PostsRepository]{"threadId": "2230",  "connectionTime": "645", "executionTime": "19"}
+[1786627129][STORE][INFO] -  [Server] - {"cacheSize": "280"}
+[1786627129][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1830","cacheMiss": "370","total_latency": "266"}
+[1786627129][STORE][INFO] -  [@PostsRepository]{"threadId": "2208",  "connectionTime": "1231", "executionTime": "34"}
+[1786627129][STORE][INFO] -  [@PostsRepository]{"threadId": "2156",  "connectionTime": "971", "executionTime": "1172"}
+[1786627129][STORE][INFO] -  [@PostsRepository]{"threadId": "2187",  "connectionTime": "1710", "executionTime": "19"}
+[1786627129][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "1024", "executionTime": "107"}
+[1786627130][STORE][INFO] -  [@PostsRepository]{"threadId": "2234",  "connectionTime": "686", "executionTime": "548"}
+[1786627130][STORE][INFO] -  7 posts saved sucessfully!
+[1786627130][STORE][INFO] -  [@PostsRepository]{"threadId": "2240",  "connectionTime": "1227", "executionTime": "40"}
+[1786627130][STORE][INFO] -  [@PostsRepository]{"threadId": "2269",  "connectionTime": "894", "executionTime": "28"}
+[1786627130][STORE][INFO] -  [@PostsRepository]{"threadId": "2305",  "connectionTime": "296", "executionTime": "30"}
+[1786627130][STORE][INFO] -  [Server] - {"cacheSize": "281"}
+[1786627130][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1884","cacheMiss": "373","total_latency": "267"}
+[1786627130][STORE][INFO] -  [@PostsRepository]{"threadId": "2260",  "connectionTime": "1473", "executionTime": "36"}
+[1786627130][STORE][INFO] -  [@PostsRepository]{"threadId": "2314",  "connectionTime": "327", "executionTime": "312"}
+[1786627131][STORE][INFO] -  [@PostsRepository]{"threadId": "2335",  "connectionTime": "330", "executionTime": "44"}
+[1786627131][STORE][INFO] -  [@PostsRepository]{"threadId": "2333",  "connectionTime": "287", "executionTime": "189"}
+[1786627131][STORE][INFO] -  [@PostsRepository]{"threadId": "2303",  "connectionTime": "1056", "executionTime": "57"}
+[1786627131][STORE][INFO] -  [@PostsRepository]{"threadId": "2369",  "connectionTime": "105", "executionTime": "35"}
+[1786627131][STORE][INFO] -  [Server] - {"cacheSize": "289"}
+[1786627131][STORE][INFO] -  [@PostsRepository]{"threadId": "2383",  "connectionTime": "92", "executionTime": "16"}
+[1786627131][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1939","cacheMiss": "377","total_latency": "265"}
+[1786627131][STORE][INFO] -  [@PostsRepository]{"threadId": "2395",  "connectionTime": "97", "executionTime": "27"}
+[1786627131][STORE][INFO] -  [@PostsRepository]{"threadId": "2413",  "connectionTime": "98", "executionTime": "49"}
+[1786627132][STORE][INFO] -  [@PostsRepository]{"threadId": "2434",  "connectionTime": "120", "executionTime": "61"}
+[1786627132][STORE][INFO] -  [@PostsRepository]{"threadId": "2443",  "connectionTime": "88", "executionTime": "32"}
+[1786627132][STORE][INFO] -  [Server] - {"cacheSize": "296"}
+[1786627132][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1993","cacheMiss": "381","total_latency": "263"}
+[1786627132][STORE][INFO] -  [@PostsRepository]{"threadId": "2466",  "connectionTime": "123", "executionTime": "35"}
+[1786627133][STORE][INFO] -  [@PostsRepository]{"threadId": "2492",  "connectionTime": "111", "executionTime": "70"}
+[1786627133][STORE][INFO] -  [Server] - {"cacheSize": "298"}
+[1786627133][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2051","cacheMiss": "383","total_latency": "260"}
+[1786627134][STORE][INFO] -  [@PostsRepository]{"threadId": "2543",  "connectionTime": "106", "executionTime": "17"}
+[1786627134][STORE][INFO] -  [@PostsRepository]{"threadId": "2552",  "connectionTime": "100", "executionTime": "43"}
+[1786627134][STORE][INFO] -  [Server] - {"cacheSize": "302"}
+[1786627134][STORE][INFO] -  [@PostsRepository]{"threadId": "2565",  "connectionTime": "100", "executionTime": "16"}
+[1786627134][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2106","cacheMiss": "386","total_latency": "258"}
+[1786627134][STORE][INFO] -  [@PostsRepository]{"threadId": "2574",  "connectionTime": "97", "executionTime": "57"}
+[1786627134][STORE][INFO] -  [@PostsRepository]{"threadId": "2593",  "connectionTime": "95", "executionTime": "39"}
+[1786627135][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "114", "executionTime": "105"}
+[1786627135][STORE][INFO] -  7 posts saved sucessfully!
+[1786627135][STORE][INFO] -  [Server] - {"cacheSize": "299"}
+[1786627135][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2161","cacheMiss": "388","total_latency": "257"}
+[1786627136][STORE][INFO] -  [@PostsRepository]{"threadId": "2656",  "connectionTime": "114", "executionTime": "51"}
+[1786627136][STORE][INFO] -  [@PostsRepository]{"threadId": "2664",  "connectionTime": "101", "executionTime": "47"}
+[1786627136][STORE][INFO] -  [Server] - {"cacheSize": "302"}
+[1786627136][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2217","cacheMiss": "391","total_latency": "255"}
+[1786627136][STORE][INFO] -  [@PostsRepository]{"threadId": "2691",  "connectionTime": "92", "executionTime": "49"}
+[1786627136][STORE][INFO] -  [@PostsRepository]{"threadId": "2699",  "connectionTime": "93", "executionTime": "67"}
+[1786627137][STORE][INFO] -  [@PostsRepository]{"threadId": "2709",  "connectionTime": "136", "executionTime": "17"}
+[1786627137][STORE][INFO] -  [@PostsRepository]{"threadId": "2712",  "connectionTime": "196", "executionTime": "31"}
+[1786627137][STORE][INFO] -  [@PostsRepository]{"threadId": "2736",  "connectionTime": "92", "executionTime": "35"}
+[1786627137][STORE][INFO] -  [Server] - {"cacheSize": "308"}
+[1786627137][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2274","cacheMiss": "396","total_latency": "254"}
+[1786627137][STORE][INFO] -  [@PostsRepository]{"threadId": "2748",  "connectionTime": "91", "executionTime": "50"}
+[1786627137][STORE][INFO] -  [@PostsRepository]{"threadId": "2764",  "connectionTime": "120", "executionTime": "37"}
+[1786627138][STORE][INFO] -  [@PostsRepository]{"threadId": "2765",  "connectionTime": "198", "executionTime": "58"}
+[1786627138][STORE][INFO] -  [@PostsRepository]{"threadId": "2778",  "connectionTime": "193", "executionTime": "46"}
+[1786627138][STORE][INFO] -  [@PostsRepository]{"threadId": "2777",  "connectionTime": "299", "executionTime": "29"}
+[1786627138][STORE][INFO] -  [Server] - {"cacheSize": "315"}
+[1786627138][STORE][INFO] -  [@PostsRepository]{"threadId": "2796",  "connectionTime": "308", "executionTime": "19"}
+[1786627138][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2333","cacheMiss": "401","total_latency": "252"}
+[1786627138][STORE][INFO] -  [@PostsRepository]{"threadId": "2828",  "connectionTime": "117", "executionTime": "37"}
+[1786627139][STORE][INFO] -  [@PostsRepository]{"threadId": "2834",  "connectionTime": "173", "executionTime": "67"}
+[1786627139][STORE][INFO] -  [Server] - {"cacheSize": "319"}
+[1786627139][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2393","cacheMiss": "404","total_latency": "251"}
+[1786627139][STORE][INFO] -  [@PostsRepository]{"threadId": "2876",  "connectionTime": "119", "executionTime": "43"}
+[1786627140][STORE][INFO] -  [@PostsRepository]{"threadId": "2899",  "connectionTime": "105", "executionTime": "39"}
+[1786627140][STORE][INFO] -  [@PostsRepository]{"threadId": "2907",  "connectionTime": "110", "executionTime": "20"}
+[1786627140][STORE][INFO] -  [@PostsRepository]{"threadId": "2922",  "connectionTime": "101", "executionTime": "34"}
+[1786627140][STORE][INFO] -  [Server] - {"cacheSize": "324"}
+[1786627140][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "129", "executionTime": "116"}
+[1786627140][STORE][INFO] -  7 posts saved sucessfully!
+[1786627140][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2452","cacheMiss": "407","total_latency": "249"}
+[1786627141][STORE][INFO] -  [@PostsRepository]{"threadId": "2951",  "connectionTime": "137", "executionTime": "19"}
+[1786627141][STORE][INFO] -  [@PostsRepository]{"threadId": "2970",  "connectionTime": "116", "executionTime": "63"}
+[1786627141][STORE][INFO] -  [@PostsRepository]{"threadId": "2985",  "connectionTime": "99", "executionTime": "20"}
+[1786627141][STORE][INFO] -  [Server] - {"cacheSize": "321"}
+[1786627141][STORE][INFO] -  [@PostsRepository]{"threadId": "2994",  "connectionTime": "144", "executionTime": "64"}
+[1786627141][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2506","cacheMiss": "414","total_latency": "247"}
+[1786627142][STORE][INFO] -  [@PostsRepository]{"threadId": "2997",  "connectionTime": "370", "executionTime": "42"}
+[1786627142][STORE][INFO] -  [@PostsRepository]{"threadId": "3011",  "connectionTime": "307", "executionTime": "39"}
+[1786627142][STORE][INFO] -  [@PostsRepository]{"threadId": "2996",  "connectionTime": "659", "executionTime": "48"}
+[1786627142][STORE][INFO] -  [@PostsRepository]{"threadId": "3012",  "connectionTime": "552", "executionTime": "17"}
+[1786627142][STORE][INFO] -  [Server] - {"cacheSize": "328"}
+[1786627142][STORE][INFO] -  [@PostsRepository]{"threadId": "3045",  "connectionTime": "165", "executionTime": "26"}
+[1786627142][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2565","cacheMiss": "416","total_latency": "246"}
+[1786627143][STORE][INFO] -  [@PostsRepository]{"threadId": "3086",  "connectionTime": "120", "executionTime": "25"}
+[1786627143][STORE][INFO] -  [Server] - {"cacheSize": "330"}
+[1786627143][STORE][INFO] -  [@PostsRepository]{"threadId": "3118",  "connectionTime": "142", "executionTime": "19"}
+[1786627144][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2624","cacheMiss": "420","total_latency": "245"}
+[1786627144][STORE][INFO] -  [@PostsRepository]{"threadId": "3119",  "connectionTime": "277", "executionTime": "16"}
+[1786627144][STORE][INFO] -  [@PostsRepository]{"threadId": "3138",  "connectionTime": "121", "executionTime": "58"}
+[1786627144][STORE][INFO] -  [@PostsRepository]{"threadId": "3151",  "connectionTime": "115", "executionTime": "21"}
+[1786627144][STORE][INFO] -  [@PostsRepository]{"threadId": "3145",  "connectionTime": "352", "executionTime": "61"}
+[1786627144][STORE][INFO] -  [@PostsRepository]{"threadId": "3133",  "connectionTime": "152", "executionTime": "520"}
+[1786627144][STORE][INFO] -  [Server] - {"cacheSize": "335"}
+[1786627144][STORE][INFO] -  [@PostsRepository]{"threadId": "3155",  "connectionTime": "427", "executionTime": "72"}
+[1786627144][STORE][INFO] -  [@PostsRepository]{"threadId": "3174",  "connectionTime": "183", "executionTime": "39"}
+[1786627145][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2677","cacheMiss": "427","total_latency": "245"}
+[1786627145][STORE][INFO] -  [@PostsRepository]{"threadId": "3195",  "connectionTime": "134", "executionTime": "35"}
+[1786627145][STORE][INFO] -  [@PostsRepository]{"threadId": "3184",  "connectionTime": "147", "executionTime": "166"}
+[1786627145][STORE][INFO] -  [Server] - {"cacheSize": "341"}
+[1786627145][STORE][INFO] -  [@PostsRepository]{"threadId": "3233",  "connectionTime": "101", "executionTime": "40"}
+[1786627146][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2735","cacheMiss": "428","total_latency": "244"}
+[1786627146][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "185", "executionTime": "213"}
+[1786627146][STORE][INFO] -  4 posts saved sucessfully!
+[1786627146][STORE][INFO] -  [@PostsRepository]{"threadId": "3259",  "connectionTime": "281", "executionTime": "28"}
+[1786627146][STORE][INFO] -  [Server] - {"cacheSize": "339"}
+[1786627147][STORE][INFO] -  [@PostsRepository]{"threadId": "3307",  "connectionTime": "110", "executionTime": "42"}
+[1786627147][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2793","cacheMiss": "430","total_latency": "243"}
+[1786627147][STORE][INFO] -  [@PostsRepository]{"threadId": "3319",  "connectionTime": "121", "executionTime": "75"}
+[1786627147][STORE][INFO] -  [@PostsRepository]{"threadId": "3318",  "connectionTime": "281", "executionTime": "55"}
+[1786627147][STORE][INFO] -  [Server] - {"cacheSize": "342"}
+[1786627147][STORE][INFO] -  [@PostsRepository]{"threadId": "3342",  "connectionTime": "115", "executionTime": "31"}
+[1786627147][STORE][INFO] -  [@PostsRepository]{"threadId": "3344",  "connectionTime": "231", "executionTime": "57"}
+[1786627148][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2841","cacheMiss": "438","total_latency": "243"}
+[1786627148][STORE][INFO] -  [@PostsRepository]{"threadId": "3368",  "connectionTime": "113", "executionTime": "33"}
+[1786627148][STORE][INFO] -  [@PostsRepository]{"threadId": "3370",  "connectionTime": "228", "executionTime": "26"}
+[1786627148][STORE][INFO] -  [@PostsRepository]{"threadId": "3372",  "connectionTime": "408", "executionTime": "60"}
+[1786627148][STORE][INFO] -  [Server] - {"cacheSize": "351"}
+[1786627148][STORE][INFO] -  [@PostsRepository]{"threadId": "3369",  "connectionTime": "499", "executionTime": "41"}
+[1786627148][STORE][INFO] -  [@PostsRepository]{"threadId": "3398",  "connectionTime": "220", "executionTime": "43"}
+[1786627149][STORE][INFO] -  [@PostsRepository]{"threadId": "3407",  "connectionTime": "204", "executionTime": "22"}
+[1786627149][STORE][INFO] -  [@PostsRepository]{"threadId": "3415",  "connectionTime": "309", "executionTime": "36"}
+[1786627149][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2892","cacheMiss": "443","total_latency": "243"}
+[1786627149][STORE][INFO] -  [@PostsRepository]{"threadId": "3414",  "connectionTime": "483", "executionTime": "64"}
+[1786627149][STORE][INFO] -  [@PostsRepository]{"threadId": "3411",  "connectionTime": "696", "executionTime": "44"}
+[1786627149][STORE][INFO] -  [Server] - {"cacheSize": "359"}
+[1786627149][STORE][INFO] -  [@PostsRepository]{"threadId": "3438",  "connectionTime": "436", "executionTime": "43"}
+[1786627150][STORE][INFO] -  [@PostsRepository]{"threadId": "3462",  "connectionTime": "187", "executionTime": "39"}
+[1786627150][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2943","cacheMiss": "446","total_latency": "244"}
+[1786627150][STORE][INFO] -  [@PostsRepository]{"threadId": "3488",  "connectionTime": "160", "executionTime": "35"}
+[1786627150][STORE][INFO] -  [Server] - {"cacheSize": "366"}
+[1786627150][STORE][INFO] -  [@PostsRepository]{"threadId": "3509",  "connectionTime": "104", "executionTime": "51"}
+[1786627151][STORE][INFO] -  [@PostsRepository]{"threadId": "3510",  "connectionTime": "251", "executionTime": "73"}
+[1786627151][STORE][INFO] -  [@PostsRepository]{"threadId": "3518",  "connectionTime": "317", "executionTime": "27"}
+[1786627151][STORE][INFO] -  [@PostsRepository]{"threadId": "3537",  "connectionTime": "110", "executionTime": "26"}
+[1786627151][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2991","cacheMiss": "450","total_latency": "243"}
+[1786627151][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "199", "executionTime": "81"}
+[1786627151][STORE][INFO] -  10 posts saved sucessfully!
+[1786627151][STORE][INFO] -  [Server] - {"cacheSize": "360"}
+[1786627151][STORE][INFO] -  [@PostsRepository]{"threadId": "3556",  "connectionTime": "113", "executionTime": "37"}
+[1786627151][STORE][INFO] -  [@PostsRepository]{"threadId": "3558",  "connectionTime": "151", "executionTime": "21"}
+[1786627152][STORE][INFO] -  [@PostsRepository]{"threadId": "3573",  "connectionTime": "135", "executionTime": "27"}
+[1786627152][STORE][INFO] -  [@PostsRepository]{"threadId": "3591",  "connectionTime": "95", "executionTime": "57"}
+[1786627152][STORE][INFO] -  [@PostsRepository]{"threadId": "3587",  "connectionTime": "264", "executionTime": "37"}
+[1786627152][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3047","cacheMiss": "455","total_latency": "243"}
+[1786627152][STORE][INFO] -  [Server] - {"cacheSize": "367"}
+[1786627152][STORE][INFO] -  [@PostsRepository]{"threadId": "3615",  "connectionTime": "94", "executionTime": "58"}
+[1786627153][STORE][INFO] -  [@PostsRepository]{"threadId": "3647",  "connectionTime": "107", "executionTime": "45"}
+[1786627153][STORE][INFO] -  [@PostsRepository]{"threadId": "3654",  "connectionTime": "177", "executionTime": "17"}
+[1786627153][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3107","cacheMiss": "460","total_latency": "242"}
+[1786627153][STORE][INFO] -  [Server] - {"cacheSize": "371"}
+[1786627153][STORE][INFO] -  [@PostsRepository]{"threadId": "3670",  "connectionTime": "98", "executionTime": "98"}
+[1786627154][STORE][INFO] -  [@PostsRepository]{"threadId": "3671",  "connectionTime": "340", "executionTime": "75"}
+[1786627154][STORE][INFO] -  [@PostsRepository]{"threadId": "3690",  "connectionTime": "150", "executionTime": "67"}
+[1786627154][STORE][INFO] -  [@PostsRepository]{"threadId": "3696",  "connectionTime": "207", "executionTime": "18"}
+[1786627154][STORE][INFO] -  [@PostsRepository]{"threadId": "3713",  "connectionTime": "121", "executionTime": "45"}
+[1786627154][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3156","cacheMiss": "464","total_latency": "242"}
+[1786627154][STORE][INFO] -  [@PostsRepository]{"threadId": "3709",  "connectionTime": "294", "executionTime": "27"}
+[1786627154][STORE][INFO] -  [Server] - {"cacheSize": "377"}
+[1786627155][STORE][INFO] -  [@PostsRepository]{"threadId": "3748",  "connectionTime": "130", "executionTime": "28"}
+[1786627155][STORE][INFO] -  [@PostsRepository]{"threadId": "3766",  "connectionTime": "117", "executionTime": "52"}
+[1786627155][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3210","cacheMiss": "467","total_latency": "241"}
+[1786627155][STORE][INFO] -  [Server] - {"cacheSize": "380"}
+[1786627155][STORE][INFO] -  [@PostsRepository]{"threadId": "3772",  "connectionTime": "179", "executionTime": "76"}
+[1786627156][STORE][INFO] -  [@PostsRepository]{"threadId": "3788",  "connectionTime": "97", "executionTime": "20"}
+[1786627156][STORE][INFO] -  [@PostsRepository]{"threadId": "3810",  "connectionTime": "137", "executionTime": "19"}
+[1786627156][STORE][INFO] -  [@PostsRepository]{"threadId": "3814",  "connectionTime": "164", "executionTime": "44"}
+[1786627156][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3260","cacheMiss": "470","total_latency": "240"}
+[1786627156][STORE][INFO] -  [Server] - {"cacheSize": "384"}
+[1786627157][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "97", "executionTime": "155"}
+[1786627157][STORE][INFO] -  4 posts saved sucessfully!
+[1786627157][STORE][INFO] -  [@PostsRepository]{"threadId": "3870",  "connectionTime": "90", "executionTime": "57"}
+[1786627157][STORE][INFO] -  [Server] - {"cacheSize": "381"}
+[1786627157][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3312","cacheMiss": "471","total_latency": "240"}
+[1786627158][STORE][INFO] -  [@PostsRepository]{"threadId": "3918",  "connectionTime": "107", "executionTime": "29"}
+[1786627158][STORE][INFO] -  [@PostsRepository]{"threadId": "3924",  "connectionTime": "163", "executionTime": "105"}
+[1786627158][STORE][INFO] -  [Server] - {"cacheSize": "384"}
+[1786627158][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3363","cacheMiss": "473","total_latency": "240"}
+[1786627159][STORE][INFO] -  [@PostsRepository]{"threadId": "3950",  "connectionTime": "115", "executionTime": "27"}
+[1786627159][STORE][INFO] -  [@PostsRepository]{"threadId": "3946",  "connectionTime": "172", "executionTime": "42"}
+[1786627159][STORE][INFO] -  [@PostsRepository]{"threadId": "3970",  "connectionTime": "98", "executionTime": "21"}
+[1786627159][STORE][INFO] -  [@PostsRepository]{"threadId": "3980",  "connectionTime": "100", "executionTime": "20"}
+[1786627159][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3408","cacheMiss": "477","total_latency": "239"}
+[1786627159][STORE][INFO] -  [Server] - {"cacheSize": "389"}
+[1786627160][STORE][INFO] -  [Server] - {"cacheSize": "391"}
+[1786627161][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3459","cacheMiss": "477","total_latency": "240"}
+[1786627161][STORE][INFO] -  [@PostsRepository]{"threadId": "4047",  "connectionTime": "112", "executionTime": "55"}
+[1786627161][STORE][INFO] -  [@PostsRepository]{"threadId": "4071",  "connectionTime": "114", "executionTime": "47"}
+[1786627161][STORE][INFO] -  [@PostsRepository]{"threadId": "4084",  "connectionTime": "113", "executionTime": "50"}
+[1786627162][STORE][INFO] -  [Server] - {"cacheSize": "394"}
+[1786627162][STORE][INFO] -  [@PostsRepository]{"threadId": "4092",  "connectionTime": "238", "executionTime": "36"}
+[1786627162][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3511","cacheMiss": "481","total_latency": "239"}
+[1786627162][STORE][INFO] -  [@PostsRepository]{"threadId": "4107",  "connectionTime": "112", "executionTime": "23"}
+[1786627162][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "225", "executionTime": "130"}
+[1786627162][STORE][INFO] -  [@PostsRepository]{"threadId": "4130",  "connectionTime": "167", "executionTime": "27"}
+[1786627162][STORE][INFO] -  4 posts saved sucessfully!
+[1786627163][STORE][INFO] -  [Server] - {"cacheSize": "396"}
+[1786627163][STORE][INFO] -  [@PostsRepository]{"threadId": "4140",  "connectionTime": "114", "executionTime": "42"}
+[1786627163][STORE][INFO] -  [@PostsRepository]{"threadId": "4144",  "connectionTime": "161", "executionTime": "42"}
+[1786627163][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3554","cacheMiss": "486","total_latency": "240"}
+[1786627163][STORE][INFO] -  [@PostsRepository]{"threadId": "4143",  "connectionTime": "421", "executionTime": "43"}
+[1786627163][STORE][INFO] -  [@PostsRepository]{"threadId": "4167",  "connectionTime": "98", "executionTime": "26"}
+[1786627164][STORE][INFO] -  [Server] - {"cacheSize": "403"}
+[1786627164][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3601","cacheMiss": "488","total_latency": "240"}
+[1786627164][STORE][INFO] -  [@PostsRepository]{"threadId": "4205",  "connectionTime": "94", "executionTime": "50"}
+[1786627164][STORE][INFO] -  [@PostsRepository]{"threadId": "4223",  "connectionTime": "129", "executionTime": "39"}
+[1786627165][STORE][INFO] -  [Server] - {"cacheSize": "406"}
+[1786627165][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3648","cacheMiss": "489","total_latency": "240"}
+[1786627165][STORE][INFO] -  [@PostsRepository]{"threadId": "4278",  "connectionTime": "112", "executionTime": "61"}
+[1786627166][STORE][INFO] -  [Server] - {"cacheSize": "408"}
+[1786627166][STORE][INFO] -  [@PostsRepository]{"threadId": "4290",  "connectionTime": "92", "executionTime": "24"}
+[1786627166][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3703","cacheMiss": "491","total_latency": "239"}
+[1786627167][STORE][INFO] -  [@PostsRepository]{"threadId": "4341",  "connectionTime": "98", "executionTime": "20"}
+[1786627167][STORE][INFO] -  [Server] - {"cacheSize": "411"}
+[1786627167][STORE][INFO] -  [@PostsRepository]{"threadId": "4353",  "connectionTime": "137", "executionTime": "18"}
+[1786627167][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3752","cacheMiss": "493","total_latency": "238"}
+[1786627167][STORE][INFO] -  [@PostsRepository]{"threadId": "4370",  "connectionTime": "106", "executionTime": "21"}
+[1786627167][STORE][INFO] -  [@PostsRepository]{"threadId": "4372",  "connectionTime": "185", "executionTime": "56"}
+[1786627167][STORE][INFO] -  [@PostsRepository]{"threadId": "4382",  "connectionTime": "149", "executionTime": "28"}
+[1786627168][STORE][INFO] -  [Server] - {"cacheSize": "416"}
+[1786627168][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "118", "executionTime": "111"}
+[1786627168][STORE][INFO] -  10 posts saved sucessfully!
+[1786627168][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3799","cacheMiss": "496","total_latency": "238"}
+[1786627168][STORE][INFO] -  [@PostsRepository]{"threadId": "4427",  "connectionTime": "135", "executionTime": "40"}
+[1786627169][STORE][INFO] -  [@PostsRepository]{"threadId": "4436",  "connectionTime": "145", "executionTime": "53"}
+[1786627169][STORE][INFO] -  [Server] - {"cacheSize": "409"}
+[1786627169][STORE][INFO] -  [@PostsRepository]{"threadId": "4440",  "connectionTime": "209", "executionTime": "16"}
+[1786627169][STORE][INFO] -  [@PostsRepository]{"threadId": "4460",  "connectionTime": "108", "executionTime": "35"}
+[1786627169][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3849","cacheMiss": "501","total_latency": "238"}
+[1786627169][STORE][INFO] -  [@PostsRepository]{"threadId": "4471",  "connectionTime": "112", "executionTime": "66"}
+[1786627169][STORE][INFO] -  [@PostsRepository]{"threadId": "4475",  "connectionTime": "187", "executionTime": "50"}
+[1786627170][STORE][INFO] -  [@PostsRepository]{"threadId": "4483",  "connectionTime": "224", "executionTime": "80"}
+[1786627170][STORE][INFO] -  [Server] - {"cacheSize": "414"}
+[1786627170][STORE][INFO] -  [@PostsRepository]{"threadId": "4509",  "connectionTime": "94", "executionTime": "23"}
+[1786627170][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3890","cacheMiss": "504","total_latency": "238"}
+[1786627171][STORE][INFO] -  [@PostsRepository]{"threadId": "4530",  "connectionTime": "93", "executionTime": "97"}
+[1786627171][STORE][INFO] -  [Server] - {"cacheSize": "416"}
+[1786627171][STORE][INFO] -  [@PostsRepository]{"threadId": "4542",  "connectionTime": "115", "executionTime": "43"}
+[1786627171][STORE][INFO] -  [@PostsRepository]{"threadId": "4556",  "connectionTime": "111", "executionTime": "42"}
+[1786627171][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3935","cacheMiss": "507","total_latency": "239"}
+[1786627172][STORE][INFO] -  [@PostsRepository]{"threadId": "4581",  "connectionTime": "92", "executionTime": "19"}
+[1786627172][STORE][INFO] -  [Server] - {"cacheSize": "419"}
+[1786627172][STORE][INFO] -  [@PostsRepository]{"threadId": "4584",  "connectionTime": "209", "executionTime": "34"}
+[1786627172][STORE][INFO] -  [@PostsRepository]{"threadId": "4587",  "connectionTime": "222", "executionTime": "58"}
+[1786627172][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3982","cacheMiss": "510","total_latency": "238"}
+[1786627172][STORE][INFO] -  [@PostsRepository]{"threadId": "4621",  "connectionTime": "92", "executionTime": "32"}
+[1786627173][STORE][INFO] -  [@PostsRepository]{"threadId": "4622",  "connectionTime": "213", "executionTime": "17"}
+[1786627173][STORE][INFO] -  [Server] - {"cacheSize": "423"}
+[1786627173][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "87", "executionTime": "166"}
+[1786627173][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4030","cacheMiss": "512","total_latency": "238"}
+[1786627173][STORE][INFO] -  2 posts saved sucessfully!
+[1786627174][STORE][INFO] -  [@PostsRepository]{"threadId": "4670",  "connectionTime": "119", "executionTime": "40"}
+[1786627174][STORE][INFO] -  [Server] - {"cacheSize": "423"}
+[1786627174][STORE][INFO] -  [@PostsRepository]{"threadId": "4697",  "connectionTime": "106", "executionTime": "46"}
+[1786627174][STORE][INFO] -  [@PostsRepository]{"threadId": "4700",  "connectionTime": "191", "executionTime": "45"}
+[1786627174][STORE][INFO] -  [@PostsRepository]{"threadId": "4709",  "connectionTime": "189", "executionTime": "45"}
+[1786627174][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4081","cacheMiss": "518","total_latency": "238"}
+[1786627175][STORE][INFO] -  [@PostsRepository]{"threadId": "4715",  "connectionTime": "296", "executionTime": "21"}
+[1786627175][STORE][INFO] -  [Server] - {"cacheSize": "427"}
+[1786627175][STORE][INFO] -  [@PostsRepository]{"threadId": "4711",  "connectionTime": "486", "executionTime": "52"}
+[1786627175][STORE][INFO] -  [@PostsRepository]{"threadId": "4741",  "connectionTime": "97", "executionTime": "89"}
+[1786627175][STORE][INFO] -  [@PostsRepository]{"threadId": "4762",  "connectionTime": "96", "executionTime": "44"}
+[1786627176][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4133","cacheMiss": "520","total_latency": "238"}
+[1786627176][STORE][INFO] -  [Server] - {"cacheSize": "431"}
+[1786627176][STORE][INFO] -  [@PostsRepository]{"threadId": "4783",  "connectionTime": "118", "executionTime": "32"}
+[1786627177][STORE][INFO] -  [@PostsRepository]{"threadId": "4818",  "connectionTime": "164", "executionTime": "39"}
+[1786627177][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4181","cacheMiss": "522","total_latency": "238"}
+[1786627177][STORE][INFO] -  [Server] - {"cacheSize": "433"}
+[1786627177][STORE][INFO] -  [@PostsRepository]{"threadId": "4846",  "connectionTime": "93", "executionTime": "52"}
+[1786627178][STORE][INFO] -  [@PostsRepository]{"threadId": "4865",  "connectionTime": "111", "executionTime": "51"}
+[1786627178][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4224","cacheMiss": "524","total_latency": "238"}
+[1786627178][STORE][INFO] -  [Server] - {"cacheSize": "435"}
+[1786627178][STORE][INFO] -  [@PostsRepository]{"threadId": "4874",  "connectionTime": "123", "executionTime": "35"}
+[1786627178][STORE][INFO] -  [@PostsRepository]{"threadId": "4897",  "connectionTime": "111", "executionTime": "33"}
+[1786627178][STORE][INFO] -  [@PostsRepository]{"threadId": "4896",  "connectionTime": "242", "executionTime": "34"}
+[1786627179][STORE][INFO] -  [Server] - {"cacheSize": "439"}
+[1786627179][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4271","cacheMiss": "529","total_latency": "238"}
+[1786627179][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "203", "executionTime": "304"}
+[1786627179][STORE][INFO] -  2 posts saved sucessfully!
+[1786627179][STORE][INFO] -  [@PostsRepository]{"threadId": "4915",  "connectionTime": "509", "executionTime": "87"}
+[1786627179][STORE][INFO] -  [@PostsRepository]{"threadId": "4932",  "connectionTime": "238", "executionTime": "53"}
+[1786627179][STORE][INFO] -  [@PostsRepository]{"threadId": "4926",  "connectionTime": "568", "executionTime": "44"}
+[1786627180][STORE][INFO] -  [Server] - {"cacheSize": "440"}
+[1786627180][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4318","cacheMiss": "530","total_latency": "238"}
+[1786627180][STORE][INFO] -  [@PostsRepository]{"threadId": "4981",  "connectionTime": "96", "executionTime": "42"}
+[1786627180][STORE][INFO] -  [@PostsRepository]{"threadId": "4989",  "connectionTime": "118", "executionTime": "41"}
+[1786627181][STORE][INFO] -  [@PostsRepository]{"threadId": "5006",  "connectionTime": "125", "executionTime": "25"}
+[1786627181][STORE][INFO] -  [Server] - {"cacheSize": "443"}
+[1786627181][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4367","cacheMiss": "533","total_latency": "238"}
+[1786627181][STORE][INFO] -  [@PostsRepository]{"threadId": "5026",  "connectionTime": "99", "executionTime": "33"}
+[1786627181][STORE][INFO] -  [@PostsRepository]{"threadId": "5025",  "connectionTime": "233", "executionTime": "22"}
+[1786627182][STORE][INFO] -  [Server] - {"cacheSize": "446"}
+[1786627182][STORE][INFO] -  [@PostsRepository]{"threadId": "5057",  "connectionTime": "126", "executionTime": "41"}
+[1786627182][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4412","cacheMiss": "536","total_latency": "238"}
+[1786627182][STORE][INFO] -  [@PostsRepository]{"threadId": "5084",  "connectionTime": "119", "executionTime": "36"}
+[1786627183][STORE][INFO] -  [@PostsRepository]{"threadId": "5087",  "connectionTime": "194", "executionTime": "16"}
+[1786627183][STORE][INFO] -  [Server] - {"cacheSize": "449"}
+[1786627183][STORE][INFO] -  [@PostsRepository]{"threadId": "5112",  "connectionTime": "116", "executionTime": "40"}
+[1786627183][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4459","cacheMiss": "539","total_latency": "238"}
+[1786627183][STORE][INFO] -  [@PostsRepository]{"threadId": "5129",  "connectionTime": "117", "executionTime": "28"}
+[1786627184][STORE][INFO] -  [@PostsRepository]{"threadId": "5134",  "connectionTime": "328", "executionTime": "38"}
+[1786627184][STORE][INFO] -  [Server] - {"cacheSize": "453"}
+[1786627184][STORE][INFO] -  [@PostsRepository]{"threadId": "5151",  "connectionTime": "99", "executionTime": "36"}
+[1786627184][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4499","cacheMiss": "543","total_latency": "238"}
+[1786627185][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "108", "executionTime": "371"}
+[1786627185][STORE][INFO] -  [@PostsRepository]{"threadId": "5168",  "connectionTime": "510", "executionTime": "63"}
+[1786627185][STORE][INFO] -  2 posts saved sucessfully!
+[1786627185][STORE][INFO] -  [Server] - {"cacheSize": "453"}
+[1786627185][STORE][INFO] -  [@PostsRepository]{"threadId": "5171",  "connectionTime": "752", "executionTime": "85"}
+[1786627185][STORE][INFO] -  [@PostsRepository]{"threadId": "5172",  "connectionTime": "623", "executionTime": "206"}
+[1786627185][STORE][INFO] -  [@PostsRepository]{"threadId": "5210",  "connectionTime": "104", "executionTime": "31"}
+[1786627185][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4544","cacheMiss": "547","total_latency": "239"}
+[1786627186][STORE][INFO] -  [@PostsRepository]{"threadId": "5196",  "connectionTime": "634", "executionTime": "41"}
+[1786627186][STORE][INFO] -  [@PostsRepository]{"threadId": "5225",  "connectionTime": "126", "executionTime": "36"}
+[1786627186][STORE][INFO] -  [@PostsRepository]{"threadId": "5227",  "connectionTime": "242", "executionTime": "37"}
+[1786627186][STORE][INFO] -  [Server] - {"cacheSize": "458"}
+[1786627186][STORE][INFO] -  [@PostsRepository]{"threadId": "5242",  "connectionTime": "123", "executionTime": "66"}
+[1786627186][STORE][INFO] -  [@PostsRepository]{"threadId": "5252",  "connectionTime": "118", "executionTime": "59"}
+[1786627186][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4583","cacheMiss": "551","total_latency": "239"}
+[1786627187][STORE][INFO] -  [@PostsRepository]{"threadId": "5263",  "connectionTime": "93", "executionTime": "49"}
+[1786627187][STORE][INFO] -  [Server] - {"cacheSize": "471"}
+[1786627188][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4607","cacheMiss": "552","total_latency": "240"}
+[1786627188][STORE][INFO] -  [Server] - {"cacheSize": "501"}
+[1786627189][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4625","cacheMiss": "552","total_latency": "239"}
+[1786627189][STORE][INFO] -  [Server] - {"cacheSize": "539"}
+[1786627190][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4635","cacheMiss": "552","total_latency": "239"}
+[1786627190][STORE][INFO] -  [Server] - {"cacheSize": "567"}
+[1786627190][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "108", "executionTime": "178"}
+[1786627190][STORE][INFO] -  105 posts saved sucessfully!
+[1786627191][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4652","cacheMiss": "552","total_latency": "240"}
+[1786627191][STORE][INFO] -  [Server] - {"cacheSize": "491"}
+[1786627192][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4667","cacheMiss": "552","total_latency": "241"}
+[1786627192][STORE][INFO] -  [Server] - {"cacheSize": "519"}
+[1786627193][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4676","cacheMiss": "552","total_latency": "240"}
+[1786627193][STORE][INFO] -  [Server] - {"cacheSize": "529"}
+[1786627194][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4681","cacheMiss": "552","total_latency": "239"}
+[1786627194][STORE][INFO] -  [Server] - {"cacheSize": "543"}
+[1786627195][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4689","cacheMiss": "552","total_latency": "238"}
+[1786627195][STORE][INFO] -  [Server] - {"cacheSize": "558"}
+[1786627196][STORE][INFO] -  [@PostsRepository]{"threadId": "5573",  "connectionTime": "294", "executionTime": "18"}
+[1786627196][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "87", "executionTime": "244"}
+[1786627196][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4695","cacheMiss": "553","total_latency": "238"}
+[1786627196][STORE][INFO] -  99 posts saved sucessfully!
+[1786627196][STORE][INFO] -  [Server] - {"cacheSize": "470"}
+[1786627197][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4700","cacheMiss": "553","total_latency": "237"}
+[1786627197][STORE][INFO] -  [Server] - {"cacheSize": "486"}
+[1786627198][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4710","cacheMiss": "553","total_latency": "237"}
+[1786627198][STORE][INFO] -  [Server] - {"cacheSize": "498"}
+[1786627199][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4714","cacheMiss": "553","total_latency": "236"}
+[1786627199][STORE][INFO] -  [Server] - {"cacheSize": "513"}
+[1786627200][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4722","cacheMiss": "553","total_latency": "235"}
+[1786627200][STORE][INFO] -  [Server] - {"cacheSize": "527"}
+[1786627201][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4728","cacheMiss": "553","total_latency": "235"}
+[1786627201][STORE][INFO] -  [Server] - {"cacheSize": "537"}
+[1786627201][STORE][INFO] -  [@PostsRepository]{"threadId": "0",  "connectionTime": "88", "executionTime": "114"}
+[1786627201][STORE][INFO] -  74 posts saved sucessfully!
+[1786627202][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4736","cacheMiss": "553","total_latency": "234"}
+[1786627202][STORE][INFO] -  [Server] - {"cacheSize": "477"}
+[1786627203][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4741","cacheMiss": "553","total_latency": "233"}
+[1786627203][STORE][INFO] -  [Server] - {"cacheSize": "493"}
+[1786627204][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4745","cacheMiss": "553","total_latency": "233"}
+[1786627204][STORE][INFO] -  [Server] - {"cacheSize": "510"}
+[1786627205][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4753","cacheMiss": "553","total_latency": "232"}
+[1786627205][STORE][INFO] -  [Server] - {"cacheSize": "522"}
+[1786627206][STORE][INFO] -  [END] =======================

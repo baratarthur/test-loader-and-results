@@ -91,9 +91,17 @@ merged = locust.copy()
 merged["Captured Timestamp"] = resources["timestamp"]
 merged["CPU"] = pd.to_numeric(resources["CPU"], errors="coerce")
 merged["Memory"] = pd.to_numeric(resources["Memory"], errors="coerce")
-merged["Cache Hits/s"] = cache["hits_per_sec"]
-merged["Cache Misses/s"] = cache["misses_per_sec"]
-merged["Cache Hit Ratio"] = cache["cache_hit_ratio"]
+
+# Cache metrics
+merged["Cache Hits"] = pd.to_numeric(cache["cacheHits"], errors="coerce")
+merged["Cache Misses"] = pd.to_numeric(cache["cacheMiss"], errors="coerce")
+merged["Cache Size"] = pd.to_numeric(cache["cacheSize"], errors="coerce")
+
+merged["Cache Hits/s"] = pd.to_numeric(cache["hits_per_sec"], errors="coerce")
+merged["Cache Misses/s"] = pd.to_numeric(cache["misses_per_sec"], errors="coerce")
+merged["Cache Requests/s"] = pd.to_numeric(cache["requests_per_sec"], errors="coerce")
+merged["Cache Hit Ratio"] = pd.to_numeric(cache["cache_hit_ratio"], errors="coerce")
+merged["Cache Avg Latency"] = pd.to_numeric(cache["total_latency"], errors="coerce")
 
 # Create an explicit sample index
 merged.insert(0, "Sample", range(n))
@@ -125,9 +133,15 @@ numeric_columns = [
     "Total Average Content Size",
     "CPU",
     "Memory",
+    # Cache metrics
+    "Cache Hits",
+    "Cache Misses",
+    "Cache Size",
     "Cache Hits/s",
     "Cache Misses/s",
+    "Cache Requests/s",
     "Cache Hit Ratio",
+    "Cache Avg Latency",
 ]
 
 for col in numeric_columns:
@@ -158,6 +172,15 @@ print(corr["CPU"].sort_values(ascending=False))
 
 print("\nMemory correlations")
 print(corr["Memory"].sort_values(ascending=False))
+
+print("\nCache Hit Ratio correlations")
+print(corr["Cache Hit Ratio"].sort_values(ascending=False))
+
+print("\nCache Size correlations")
+print(corr["Cache Size"].sort_values(ascending=False))
+
+print("\nCache Requests/s correlations")
+print(corr["Cache Requests/s"].sort_values(ascending=False))
 
 # -------------------------------------------------
 # PLOT
@@ -226,22 +249,32 @@ ax2.plot(
 # Third axis - Failures per second
 # =====================================================
 ax3 = ax1.twinx()
-
 ax3.spines["right"].set_position(("outward", 70))
 
-ax3.set_ylabel("Cache Hit Ratio")
+ax3.set_ylabel("Cache Metrics")
 
 ax3.plot(
     merged["Sample"],
     merged["Cache Hit Ratio"],
     color="purple",
     linewidth=2,
-    linestyle="-",
     label="Cache Hit Ratio"
 )
 
-ax3.set_ylim(0, 1)
+merged["Normalized Cache Size"] = (
+    merged["Cache Size"] /
+    merged["Cache Size"].max()
+)
 
+ax3.plot(
+    merged["Sample"],
+    merged["Normalized Cache Size"],
+    linestyle="--",
+    color="brown",
+    label="Normalized Cache Size"
+)
+
+ax3.set_ylim(bottom=0)
 # =====================================================
 # Legend
 # =====================================================
