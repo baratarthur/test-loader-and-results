@@ -26,12 +26,15 @@ resources["timestamp"] = pd.to_datetime(
 # CPU (1m -> 1)
 # If you prefer cores, divide by 1000.
 # -------------------------
-resources["CPU"] = (
-    resources["CPU"]
-    .astype(str)
-    .str.replace("m", "", regex=False)
-    .astype(float)
-)
+cpu_columns = ["dana_cpu", "remote_cpu"]
+
+for col in cpu_columns:
+    resources[col] = (
+        resources[col]
+        .astype(str)
+        .str.replace("m", "", regex=False)
+        .astype(float)
+    )
 
 # Uncomment to convert to CPU cores instead of millicores
 # resources["CPU"] = resources["CPU"] / 1000
@@ -59,7 +62,10 @@ def convert_memory(value):
     else:
         return float(value)
 
-resources["Memory"] = resources["Memory"].apply(convert_memory)
+memory_columns = ["dana_mem", "remote_mem"]
+
+for col in memory_columns:
+    resources[col] = resources[col].apply(convert_memory)
 
 print(resources.head())
 
@@ -79,8 +85,12 @@ print(f"Using {n} samples.")
 merged = locust.copy()
 
 merged["Captured Timestamp"] = resources["timestamp"]
-merged["CPU"] = pd.to_numeric(resources["CPU"], errors="coerce")
-merged["Memory"] = pd.to_numeric(resources["Memory"], errors="coerce")
+
+merged["Dana CPU"] = pd.to_numeric(resources["dana_cpu"], errors="coerce")
+merged["Dana Memory"] = pd.to_numeric(resources["dana_mem"], errors="coerce")
+
+merged["Remote CPU"] = pd.to_numeric(resources["remote_cpu"], errors="coerce")
+merged["Remote Memory"] = pd.to_numeric(resources["remote_mem"], errors="coerce")
 
 # Create an explicit sample index
 merged.insert(0, "Sample", range(n))
@@ -110,8 +120,10 @@ numeric_columns = [
     "Total Min Response Time",
     "Total Max Response Time",
     "Total Average Content Size",
-    "CPU",
-    "Memory"
+    "Dana CPU",
+    "Dana Memory",
+    "Remote CPU",
+    "Remote Memory",
 ]
 
 for col in numeric_columns:
@@ -137,11 +149,17 @@ corr.to_csv("results_csv/correlation_matrix_dana.csv")
 # -------------------------------------------------
 # CPU and Memory correlations
 # -------------------------------------------------
-print("\nCPU correlations")
-print(corr["CPU"].sort_values(ascending=False))
+print("\nDana CPU correlations")
+print(corr["Dana CPU"].sort_values(ascending=False))
 
-print("\nMemory correlations")
-print(corr["Memory"].sort_values(ascending=False))
+print("\nDana Memory correlations")
+print(corr["Dana Memory"].sort_values(ascending=False))
+
+print("\nRemote CPU correlations")
+print(corr["Remote CPU"].sort_values(ascending=False))
+
+print("\nRemote Memory correlations")
+print(corr["Remote Memory"].sort_values(ascending=False))
 
 # -------------------------------------------------
 # PLOT
@@ -179,22 +197,40 @@ ax1.tick_params(axis='y', labelcolor='tab:red')
 # =====================================================
 ax2 = ax1.twinx()
 
-ax2.set_ylabel("CPU (mCPU) / Memory (MiB) / Users")
+ax2.set_ylabel("Resources")
 
 ax2.plot(
     merged["Sample"],
-    merged["CPU"],
+    merged["Dana CPU"],
     color="tab:blue",
     linewidth=2,
-    label="CPU"
+    label="Dana CPU"
 )
 
 ax2.plot(
     merged["Sample"],
-    merged["Memory"],
+    merged["Dana Memory"],
     color="tab:green",
     linewidth=2,
-    label="Memory"
+    label="Dana Memory"
+)
+
+ax2.plot(
+    merged["Sample"],
+    merged["Remote CPU"],
+    color="tab:cyan",
+    linewidth=2,
+    linestyle="--",
+    label="Remote CPU"
+)
+
+ax2.plot(
+    merged["Sample"],
+    merged["Remote Memory"],
+    color="limegreen",
+    linewidth=2,
+    linestyle="--",
+    label="Remote Memory"
 )
 
 ax2.plot(
@@ -209,33 +245,33 @@ ax2.plot(
 # =====================================================
 # Third axis - Failures per second
 # =====================================================
-ax3 = ax1.twinx()
+# ax3 = ax1.twinx()
 
-# Move third axis outward
-ax3.spines["right"].set_position(("outward", 70))
+# # Move third axis outward
+# ax3.spines["right"].set_position(("outward", 70))
 
-ax3.set_ylabel("Failures/s", color="black")
+# ax3.set_ylabel("Failures/s", color="black")
 
-ax3.plot(
-    merged["Sample"],
-    merged["Failures/s"],
-    color="black",
-    linewidth=2,
-    linestyle=":",
-    marker="x",
-    markersize=4,
-    label="Failures/s"
-)
+# ax3.plot(
+#     merged["Sample"],
+#     merged["Failures/s"],
+#     color="black",
+#     linewidth=2,
+#     linestyle=":",
+#     marker="x",
+#     markersize=4,
+#     label="Failures/s"
+# )
 
-ax3.tick_params(axis='y', labelcolor='black')
+# ax3.tick_params(axis='y', labelcolor='black')
 
 # =====================================================
 # Legend
 # =====================================================
 lines = (
     ax1.get_lines() +
-    ax2.get_lines() +
-    ax3.get_lines()
+    ax2.get_lines()
+    # ax3.get_lines()
 )
 
 labels = [line.get_label() for line in lines]
