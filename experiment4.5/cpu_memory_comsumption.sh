@@ -7,7 +7,7 @@ echo "timestamp,dana_cpu,dana_mem,remote_cpu,remote_mem" > "$OUTPUT"
 MAIN_NAMESPACE="default"
 REMOTE_NAMESPACE="dana-remote-social-media-app-components"
 
-for i in {1..160}; do
+for i in {1..270}; do
 
     timestamp=$(date +%s)
 
@@ -47,6 +47,10 @@ for i in {1..160}; do
     echo "${timestamp},${dana_cpu},${dana_mem},${remote_cpu}m,${remote_mem}Mi" >> "$OUTPUT"
 
     echo "Collected sample $i"
+
+    if [ $i -eq 150 ]; then
+        echo "Changing from app heavy to offload heavy..."
+    fi
 
     sleep 1
 
