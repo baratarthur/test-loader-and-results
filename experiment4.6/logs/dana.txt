@@ -1,0 +1,386 @@
+[1786890138][STORE][INFO] -  [START] ======================
+
+[1786890138][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "0","total_latency": "19"}
+[1786890138][STORE][INFO] -  It took 122 to save all new posts!
+[1786890139][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "2","total_latency": "262"}
+[1786890140][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "6","total_latency": "262"}
+[1786890141][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "11","total_latency": "401"}
+[1786890142][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "18","total_latency": "565"}
+[1786890143][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "25","total_latency": "692"}
+[1786890143][STORE][INFO] -  It took 172 to save all new posts!
+[1786890144][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "29","total_latency": "828"}
+[1786890145][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "32","total_latency": "950"}
+[1786890146][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "38","total_latency": "1277"}
+[1786890147][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "42","total_latency": "1363"}
+[1786890148][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "48","total_latency": "1383"}
+[1786890148][STORE][INFO] -  It took 194 to save all new posts!
+[1786890149][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "56","total_latency": "1435"}
+[1786890150][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "62","total_latency": "1475"}
+[1786890151][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "0","cacheMiss": "67","total_latency": "1579"}
+[1786890152][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1","cacheMiss": "74","total_latency": "1626"}
+[1786890153][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3","cacheMiss": "79","total_latency": "1621"}
+[1786890154][STORE][INFO] -  It took 246 to save all new posts!
+[1786890154][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4","cacheMiss": "86","total_latency": "1641"}
+[1786890155][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "6","cacheMiss": "96","total_latency": "1673"}
+[1786890156][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "12","cacheMiss": "98","total_latency": "1569"}
+[1786890157][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "21","cacheMiss": "100","total_latency": "1487"}
+[1786890158][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "32","cacheMiss": "100","total_latency": "1475"}
+[1786890159][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "53","cacheMiss": "104","total_latency": "1304"}
+[1786890159][STORE][INFO] -  It took 359 to save all new posts!
+[1786890160][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "72","cacheMiss": "109","total_latency": "1156"}
+[1786890161][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "89","cacheMiss": "114","total_latency": "1073"}
+[1786890162][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "106","cacheMiss": "120","total_latency": "992"}
+[1786890163][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "128","cacheMiss": "124","total_latency": "907"}
+[1786890164][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "149","cacheMiss": "129","total_latency": "840"}
+[1786890164][STORE][INFO] -  It took 434 to save all new posts!
+[1786890165][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "171","cacheMiss": "134","total_latency": "784"}
+[1786890166][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "187","cacheMiss": "136","total_latency": "751"}
+[1786890167][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "214","cacheMiss": "140","total_latency": "730"}
+[1786890168][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "243","cacheMiss": "144","total_latency": "707"}
+[1786890169][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "273","cacheMiss": "149","total_latency": "677"}
+[1786890170][STORE][INFO] -  It took 318 to save all new posts!
+[1786890170][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "297","cacheMiss": "155","total_latency": "648"}
+[1786890171][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "325","cacheMiss": "162","total_latency": "626"}
+[1786890172][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "358","cacheMiss": "169","total_latency": "597"}
+[1786890173][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "386","cacheMiss": "175","total_latency": "574"}
+[1786890174][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "412","cacheMiss": "183","total_latency": "559"}
+[1786890175][STORE][INFO] -  It took 398 to save all new posts!
+[1786890175][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "435","cacheMiss": "185","total_latency": "548"}
+[1786890176][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "468","cacheMiss": "191","total_latency": "547"}
+[1786890177][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "503","cacheMiss": "197","total_latency": "539"}
+[1786890178][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "529","cacheMiss": "205","total_latency": "540"}
+[1786890179][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "557","cacheMiss": "212","total_latency": "549"}
+[1786890181][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "584","cacheMiss": "216","total_latency": "550"}
+[1786890181][STORE][INFO] -  It took 538 to save all new posts!
+[1786890182][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "623","cacheMiss": "222","total_latency": "553"}
+[1786890183][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "660","cacheMiss": "231","total_latency": "544"}
+[1786890184][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "683","cacheMiss": "238","total_latency": "540"}
+[1786890185][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "717","cacheMiss": "240","total_latency": "550"}
+[1786890186][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "741","cacheMiss": "241","total_latency": "553"}
+[1786890187][STORE][INFO] -  It took 637 to save all new posts!
+[1786890187][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "772","cacheMiss": "242","total_latency": "554"}
+[1786890188][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "796","cacheMiss": "249","total_latency": "554"}
+[1786890189][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "814","cacheMiss": "249","total_latency": "557"}
+[1786890190][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "837","cacheMiss": "253","total_latency": "564"}
+[1786890191][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "868","cacheMiss": "256","total_latency": "571"}
+[1786890192][STORE][INFO] -  It took 431 to save all new posts!
+[1786890192][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "892","cacheMiss": "257","total_latency": "582"}
+[1786890193][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "923","cacheMiss": "261","total_latency": "585"}
+[1786890194][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "950","cacheMiss": "264","total_latency": "587"}
+[1786890195][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "982","cacheMiss": "268","total_latency": "586"}
+[1786890196][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1016","cacheMiss": "276","total_latency": "581"}
+[1786890198][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1051","cacheMiss": "280","total_latency": "578"}
+[1786890198][STORE][INFO] -  It took 323 to save all new posts!
+[1786890199][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1083","cacheMiss": "281","total_latency": "579"}
+[1786890200][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1108","cacheMiss": "283","total_latency": "581"}
+[1786890201][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1140","cacheMiss": "285","total_latency": "580"}
+[1786890202][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1157","cacheMiss": "290","total_latency": "581"}
+[1786890203][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1184","cacheMiss": "292","total_latency": "586"}
+[1786890203][STORE][INFO] -  It took 423 to save all new posts!
+[1786890204][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1215","cacheMiss": "294","total_latency": "587"}
+[1786890205][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1240","cacheMiss": "297","total_latency": "585"}
+[1786890206][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1264","cacheMiss": "299","total_latency": "587"}
+[1786890207][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1296","cacheMiss": "305","total_latency": "589"}
+[1786890208][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1318","cacheMiss": "308","total_latency": "588"}
+[1786890209][STORE][INFO] -  It took 463 to save all new posts!
+[1786890209][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1352","cacheMiss": "313","total_latency": "589"}
+[1786890210][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1382","cacheMiss": "317","total_latency": "590"}
+[1786890212][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1411","cacheMiss": "320","total_latency": "591"}
+[1786890213][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1442","cacheMiss": "324","total_latency": "591"}
+[1786890214][STORE][INFO] -  It took 502 to save all new posts!
+[1786890214][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1498","cacheMiss": "332","total_latency": "587"}
+[1786890215][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1530","cacheMiss": "337","total_latency": "584"}
+[1786890217][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1561","cacheMiss": "338","total_latency": "586"}
+[1786890218][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1595","cacheMiss": "341","total_latency": "594"}
+[1786890219][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1621","cacheMiss": "344","total_latency": "592"}
+[1786890220][STORE][INFO] -  It took 427 to save all new posts!
+[1786890220][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1644","cacheMiss": "347","total_latency": "591"}
+[1786890221][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1685","cacheMiss": "351","total_latency": "589"}
+[1786890222][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1702","cacheMiss": "355","total_latency": "589"}
+[1786890223][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1728","cacheMiss": "355","total_latency": "592"}
+[1786890225][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1763","cacheMiss": "357","total_latency": "590"}
+[1786890225][STORE][INFO] -  It took 287 to save all new posts!
+[1786890226][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1800","cacheMiss": "360","total_latency": "588"}
+[1786890227][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1841","cacheMiss": "365","total_latency": "582"}
+[1786890228][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1872","cacheMiss": "369","total_latency": "579"}
+[1786890229][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1891","cacheMiss": "372","total_latency": "579"}
+[1786890230][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1926","cacheMiss": "376","total_latency": "577"}
+[1786890230][STORE][INFO] -  It took 365 to save all new posts!
+[1786890231][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1956","cacheMiss": "379","total_latency": "575"}
+[1786890232][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "1979","cacheMiss": "382","total_latency": "575"}
+[1786890233][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2014","cacheMiss": "384","total_latency": "578"}
+[1786890234][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2044","cacheMiss": "388","total_latency": "577"}
+[1786890235][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2071","cacheMiss": "390","total_latency": "577"}
+[1786890236][STORE][INFO] -  It took 525 to save all new posts!
+[1786890237][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2103","cacheMiss": "392","total_latency": "579"}
+[1786890238][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2136","cacheMiss": "394","total_latency": "579"}
+[1786890239][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2170","cacheMiss": "400","total_latency": "576"}
+[1786890240][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2201","cacheMiss": "405","total_latency": "574"}
+[1786890241][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2237","cacheMiss": "407","total_latency": "572"}
+[1786890241][STORE][INFO] -  It took 352 to save all new posts!
+[1786890242][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2269","cacheMiss": "410","total_latency": "570"}
+[1786890243][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2292","cacheMiss": "413","total_latency": "570"}
+[1786890244][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2323","cacheMiss": "418","total_latency": "572"}
+[1786890245][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2349","cacheMiss": "420","total_latency": "572"}
+[1786890246][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2383","cacheMiss": "423","total_latency": "573"}
+[1786890247][STORE][INFO] -  It took 502 to save all new posts!
+[1786890247][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2406","cacheMiss": "425","total_latency": "573"}
+[1786890248][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2441","cacheMiss": "428","total_latency": "574"}
+[1786890250][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2469","cacheMiss": "432","total_latency": "574"}
+[1786890251][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2505","cacheMiss": "434","total_latency": "574"}
+[1786890252][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2527","cacheMiss": "435","total_latency": "573"}
+[1786890252][STORE][INFO] -  It took 405 to save all new posts!
+[1786890253][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2565","cacheMiss": "437","total_latency": "573"}
+[1786890254][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2597","cacheMiss": "439","total_latency": "571"}
+[1786890255][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2631","cacheMiss": "442","total_latency": "570"}
+[1786890256][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2670","cacheMiss": "444","total_latency": "567"}
+[1786890257][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2703","cacheMiss": "445","total_latency": "565"}
+[1786890258][STORE][INFO] -  It took 482 to save all new posts!
+[1786890258][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2729","cacheMiss": "447","total_latency": "563"}
+[1786890259][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2759","cacheMiss": "447","total_latency": "564"}
+[1786890261][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2799","cacheMiss": "450","total_latency": "562"}
+[1786890262][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2832","cacheMiss": "451","total_latency": "561"}
+[1786890263][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2858","cacheMiss": "453","total_latency": "561"}
+[1786890263][STORE][INFO] -  It took 401 to save all new posts!
+[1786890264][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2890","cacheMiss": "454","total_latency": "559"}
+[1786890265][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2923","cacheMiss": "455","total_latency": "559"}
+[1786890266][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2964","cacheMiss": "457","total_latency": "556"}
+[1786890267][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "2996","cacheMiss": "460","total_latency": "554"}
+[1786890268][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3033","cacheMiss": "463","total_latency": "552"}
+[1786890269][STORE][INFO] -  It took 488 to save all new posts!
+[1786890269][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3063","cacheMiss": "470","total_latency": "551"}
+[1786890270][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3083","cacheMiss": "475","total_latency": "551"}
+[1786890271][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3111","cacheMiss": "477","total_latency": "553"}
+[1786890272][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3138","cacheMiss": "479","total_latency": "555"}
+[1786890274][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3172","cacheMiss": "483","total_latency": "553"}
+[1786890274][STORE][INFO] -  It took 412 to save all new posts!
+[1786890275][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3203","cacheMiss": "484","total_latency": "552"}
+[1786890276][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3233","cacheMiss": "486","total_latency": "552"}
+[1786890277][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3277","cacheMiss": "487","total_latency": "550"}
+[1786890278][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3305","cacheMiss": "490","total_latency": "549"}
+[1786890279][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3331","cacheMiss": "491","total_latency": "547"}
+[1786890280][STORE][INFO] -  It took 439 to save all new posts!
+[1786890280][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3359","cacheMiss": "494","total_latency": "547"}
+[1786890281][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3398","cacheMiss": "498","total_latency": "545"}
+[1786890282][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3422","cacheMiss": "501","total_latency": "545"}
+[1786890284][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3460","cacheMiss": "503","total_latency": "545"}
+[1786890285][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3483","cacheMiss": "505","total_latency": "544"}
+[1786890285][STORE][INFO] -  It took 467 to save all new posts!
+[1786890286][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3503","cacheMiss": "506","total_latency": "546"}
+[1786890287][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3534","cacheMiss": "506","total_latency": "548"}
+[1786890288][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3570","cacheMiss": "508","total_latency": "547"}
+[1786890289][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3603","cacheMiss": "511","total_latency": "546"}
+[1786890290][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3641","cacheMiss": "511","total_latency": "545"}
+[1786890291][STORE][INFO] -  It took 673 to save all new posts!
+[1786890292][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3662","cacheMiss": "511","total_latency": "545"}
+[1786890293][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3692","cacheMiss": "513","total_latency": "546"}
+[1786890294][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3724","cacheMiss": "515","total_latency": "547"}
+[1786890295][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3754","cacheMiss": "515","total_latency": "546"}
+[1786890296][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3785","cacheMiss": "518","total_latency": "544"}
+[1786890297][STORE][INFO] -  It took 410 to save all new posts!
+[1786890297][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3812","cacheMiss": "520","total_latency": "544"}
+[1786890298][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3852","cacheMiss": "522","total_latency": "543"}
+[1786890300][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3888","cacheMiss": "523","total_latency": "541"}
+[1786890301][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3912","cacheMiss": "523","total_latency": "542"}
+[1786890302][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3939","cacheMiss": "524","total_latency": "541"}
+[1786890302][STORE][INFO] -  It took 522 to save all new posts!
+[1786890303][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3972","cacheMiss": "526","total_latency": "541"}
+[1786890304][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "3990","cacheMiss": "529","total_latency": "541"}
+[1786890305][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4014","cacheMiss": "531","total_latency": "542"}
+[1786890306][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4048","cacheMiss": "533","total_latency": "542"}
+[1786890307][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4074","cacheMiss": "534","total_latency": "542"}
+[1786890308][STORE][INFO] -  It took 409 to save all new posts!
+[1786890309][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4109","cacheMiss": "537","total_latency": "541"}
+[1786890310][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4141","cacheMiss": "538","total_latency": "539"}
+[1786890311][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4167","cacheMiss": "539","total_latency": "539"}
+[1786890312][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4205","cacheMiss": "540","total_latency": "539"}
+[1786890313][STORE][INFO] -  It took 472 to save all new posts!
+[1786890313][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4231","cacheMiss": "541","total_latency": "538"}
+[1786890314][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4267","cacheMiss": "542","total_latency": "537"}
+[1786890315][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4299","cacheMiss": "544","total_latency": "536"}
+[1786890317][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4325","cacheMiss": "546","total_latency": "536"}
+[1786890318][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4344","cacheMiss": "548","total_latency": "536"}
+[1786890319][STORE][INFO] -  It took 404 to save all new posts!
+[1786890319][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4375","cacheMiss": "551","total_latency": "536"}
+[1786890320][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4406","cacheMiss": "555","total_latency": "536"}
+[1786890321][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4438","cacheMiss": "557","total_latency": "535"}
+[1786890322][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4473","cacheMiss": "559","total_latency": "535"}
+[1786890323][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4517","cacheMiss": "561","total_latency": "532"}
+[1786890324][STORE][INFO] -  It took 577 to save all new posts!
+[1786890325][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4540","cacheMiss": "562","total_latency": "532"}
+[1786890326][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4573","cacheMiss": "564","total_latency": "532"}
+[1786890327][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4597","cacheMiss": "566","total_latency": "531"}
+[1786890328][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4625","cacheMiss": "567","total_latency": "532"}
+[1786890329][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4658","cacheMiss": "569","total_latency": "531"}
+[1786890330][STORE][INFO] -  It took 349 to save all new posts!
+[1786890330][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4685","cacheMiss": "569","total_latency": "531"}
+[1786890331][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4695","cacheMiss": "570","total_latency": "530"}
+[1786890332][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4703","cacheMiss": "570","total_latency": "532"}
+[1786890334][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4714","cacheMiss": "571","total_latency": "536"}
+[1786890335][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4722","cacheMiss": "571","total_latency": "542"}
+[1786890336][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4732","cacheMiss": "571","total_latency": "548"}
+[1786890337][STORE][INFO] -  It took 1961 to save all new posts!
+[1786890337][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4742","cacheMiss": "571","total_latency": "556"}
+[1786890338][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4752","cacheMiss": "571","total_latency": "560"}
+[1786890339][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4763","cacheMiss": "571","total_latency": "564"}
+[1786890340][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4771","cacheMiss": "571","total_latency": "570"}
+[1786890341][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4784","cacheMiss": "571","total_latency": "574"}
+[1786890343][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4795","cacheMiss": "571","total_latency": "584"}
+[1786890344][STORE][INFO] -  It took 2040 to save all new posts!
+[1786890344][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4803","cacheMiss": "571","total_latency": "588"}
+[1786890345][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4809","cacheMiss": "571","total_latency": "595"}
+[1786890346][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4818","cacheMiss": "571","total_latency": "600"}
+[1786890347][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4827","cacheMiss": "571","total_latency": "603"}
+[1786890348][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4839","cacheMiss": "572","total_latency": "609"}
+[1786890349][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4849","cacheMiss": "572","total_latency": "615"}
+[1786890350][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4857","cacheMiss": "572","total_latency": "619"}
+[1786890351][STORE][INFO] -  It took 2019 to save all new posts!
+[1786890351][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4862","cacheMiss": "573","total_latency": "624"}
+[1786890353][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4869","cacheMiss": "574","total_latency": "629"}
+[1786890354][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4881","cacheMiss": "574","total_latency": "632"}
+[1786890355][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4891","cacheMiss": "575","total_latency": "635"}
+[1786890356][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4899","cacheMiss": "575","total_latency": "638"}
+[1786890357][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4910","cacheMiss": "575","total_latency": "643"}
+[1786890358][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4920","cacheMiss": "575","total_latency": "649"}
+[1786890358][STORE][INFO] -  It took 2292 to save all new posts!
+[1786890359][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4928","cacheMiss": "575","total_latency": "654"}
+[1786890360][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4934","cacheMiss": "575","total_latency": "659"}
+[1786890361][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4943","cacheMiss": "575","total_latency": "662"}
+[1786890362][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4953","cacheMiss": "575","total_latency": "666"}
+[1786890363][STORE][INFO] -  It took 407 to save all new posts!
+[1786890364][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4959","cacheMiss": "575","total_latency": "671"}
+[1786890365][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4967","cacheMiss": "575","total_latency": "676"}
+[1786890366][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4974","cacheMiss": "575","total_latency": "682"}
+[1786890367][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4980","cacheMiss": "575","total_latency": "686"}
+[1786890368][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4988","cacheMiss": "575","total_latency": "689"}
+[1786890369][STORE][INFO] -  It took 327 to save all new posts!
+[1786890369][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "4997","cacheMiss": "575","total_latency": "693"}
+[1786890370][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5004","cacheMiss": "576","total_latency": "698"}
+[1786890371][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5013","cacheMiss": "576","total_latency": "701"}
+[1786890373][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5020","cacheMiss": "576","total_latency": "705"}
+[1786890374][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5028","cacheMiss": "576","total_latency": "709"}
+[1786890375][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5038","cacheMiss": "576","total_latency": "714"}
+[1786890376][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5047","cacheMiss": "576","total_latency": "718"}
+[1786890376][STORE][INFO] -  It took 2307 to save all new posts!
+[1786890377][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5050","cacheMiss": "577","total_latency": "723"}
+[1786890378][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5059","cacheMiss": "577","total_latency": "725"}
+[1786890379][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5069","cacheMiss": "577","total_latency": "731"}
+[1786890380][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5078","cacheMiss": "577","total_latency": "735"}
+[1786890382][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5083","cacheMiss": "577","total_latency": "738"}
+[1786890383][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5092","cacheMiss": "577","total_latency": "741"}
+[1786890384][STORE][INFO] -  It took 2359 to save all new posts!
+[1786890384][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5099","cacheMiss": "577","total_latency": "743"}
+[1786890385][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5110","cacheMiss": "577","total_latency": "748"}
+[1786890386][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5117","cacheMiss": "577","total_latency": "753"}
+[1786890387][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5125","cacheMiss": "577","total_latency": "758"}
+[1786890389][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5136","cacheMiss": "577","total_latency": "762"}
+[1786890390][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5145","cacheMiss": "577","total_latency": "766"}
+[1786890391][STORE][INFO] -  It took 1971 to save all new posts!
+[1786890391][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5155","cacheMiss": "577","total_latency": "771"}
+[1786890392][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5161","cacheMiss": "577","total_latency": "775"}
+[1786890393][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5169","cacheMiss": "577","total_latency": "779"}
+[1786890394][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5179","cacheMiss": "577","total_latency": "783"}
+[1786890396][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5190","cacheMiss": "577","total_latency": "787"}
+[1786890397][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5196","cacheMiss": "578","total_latency": "791"}
+[1786890398][STORE][INFO] -  It took 2106 to save all new posts!
+[1786890398][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5204","cacheMiss": "578","total_latency": "796"}
+[1786890399][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5208","cacheMiss": "578","total_latency": "800"}
+[1786890400][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5218","cacheMiss": "578","total_latency": "803"}
+[1786890401][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5224","cacheMiss": "578","total_latency": "806"}
+[1786890402][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5233","cacheMiss": "578","total_latency": "810"}
+[1786890403][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5240","cacheMiss": "578","total_latency": "813"}
+[1786890404][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5250","cacheMiss": "578","total_latency": "816"}
+[1786890405][STORE][INFO] -  It took 2471 to save all new posts!
+[1786890406][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5260","cacheMiss": "578","total_latency": "820"}
+[1786890407][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5266","cacheMiss": "578","total_latency": "823"}
+[1786890408][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5275","cacheMiss": "578","total_latency": "827"}
+[1786890409][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5282","cacheMiss": "578","total_latency": "829"}
+[1786890410][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5290","cacheMiss": "578","total_latency": "834"}
+[1786890412][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5300","cacheMiss": "578","total_latency": "838"}
+[1786890412][STORE][INFO] -  It took 2087 to save all new posts!
+[1786890413][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5310","cacheMiss": "578","total_latency": "841"}
+[1786890414][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5321","cacheMiss": "578","total_latency": "844"}
+[1786890415][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5330","cacheMiss": "579","total_latency": "847"}
+[1786890416][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5340","cacheMiss": "579","total_latency": "850"}
+[1786890417][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5346","cacheMiss": "579","total_latency": "853"}
+[1786890418][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5357","cacheMiss": "580","total_latency": "855"}
+[1786890419][STORE][INFO] -  It took 1807 to save all new posts!
+[1786890419][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5366","cacheMiss": "580","total_latency": "857"}
+[1786890420][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5371","cacheMiss": "580","total_latency": "861"}
+[1786890422][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5382","cacheMiss": "580","total_latency": "863"}
+[1786890423][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5389","cacheMiss": "580","total_latency": "867"}
+[1786890424][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5398","cacheMiss": "580","total_latency": "870"}
+[1786890425][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5405","cacheMiss": "580","total_latency": "874"}
+[1786890426][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5414","cacheMiss": "580","total_latency": "877"}
+[1786890427][STORE][INFO] -  It took 2567 to save all new posts!
+[1786890427][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5424","cacheMiss": "580","total_latency": "880"}
+[1786890429][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5433","cacheMiss": "580","total_latency": "884"}
+[1786890430][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5440","cacheMiss": "580","total_latency": "888"}
+[1786890431][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5452","cacheMiss": "580","total_latency": "891"}
+[1786890432][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5462","cacheMiss": "581","total_latency": "892"}
+[1786890433][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5468","cacheMiss": "581","total_latency": "895"}
+[1786890434][STORE][INFO] -  It took 2040 to save all new posts!
+[1786890434][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5476","cacheMiss": "581","total_latency": "897"}
+[1786890435][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5482","cacheMiss": "581","total_latency": "900"}
+[1786890437][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5490","cacheMiss": "581","total_latency": "903"}
+[1786890438][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5498","cacheMiss": "581","total_latency": "907"}
+[1786890439][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5505","cacheMiss": "581","total_latency": "909"}
+[1786890440][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5511","cacheMiss": "581","total_latency": "911"}
+[1786890441][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5520","cacheMiss": "581","total_latency": "914"}
+[1786890441][STORE][INFO] -  It took 2338 to save all new posts!
+[1786890442][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5524","cacheMiss": "581","total_latency": "917"}
+[1786890443][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5533","cacheMiss": "581","total_latency": "920"}
+[1786890445][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5540","cacheMiss": "581","total_latency": "923"}
+[1786890446][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5550","cacheMiss": "581","total_latency": "926"}
+[1786890447][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5558","cacheMiss": "581","total_latency": "928"}
+[1786890448][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5571","cacheMiss": "581","total_latency": "931"}
+[1786890449][STORE][INFO] -  It took 2526 to save all new posts!
+[1786890449][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5581","cacheMiss": "581","total_latency": "932"}
+[1786890450][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5585","cacheMiss": "581","total_latency": "937"}
+[1786890452][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5591","cacheMiss": "581","total_latency": "940"}
+[1786890453][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5600","cacheMiss": "582","total_latency": "942"}
+[1786890454][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5608","cacheMiss": "582","total_latency": "944"}
+[1786890455][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5616","cacheMiss": "583","total_latency": "948"}
+[1786890456][STORE][INFO] -  It took 2040 to save all new posts!
+[1786890457][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5625","cacheMiss": "584","total_latency": "950"}
+[1786890458][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5635","cacheMiss": "584","total_latency": "953"}
+[1786890459][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5645","cacheMiss": "584","total_latency": "955"}
+[1786890460][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5655","cacheMiss": "584","total_latency": "957"}
+[1786890461][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5658","cacheMiss": "584","total_latency": "959"}
+[1786890462][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5665","cacheMiss": "584","total_latency": "960"}
+[1786890463][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5677","cacheMiss": "584","total_latency": "962"}
+[1786890464][STORE][INFO] -  It took 2698 to save all new posts!
+[1786890465][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5690","cacheMiss": "584","total_latency": "966"}
+[1786890466][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5698","cacheMiss": "584","total_latency": "967"}
+[1786890467][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5706","cacheMiss": "585","total_latency": "970"}
+[1786890468][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5718","cacheMiss": "585","total_latency": "972"}
+[1786890469][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5726","cacheMiss": "585","total_latency": "975"}
+[1786890470][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5736","cacheMiss": "585","total_latency": "976"}
+[1786890471][STORE][INFO] -  It took 1783 to save all new posts!
+[1786890472][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5741","cacheMiss": "586","total_latency": "977"}
+[1786890473][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5751","cacheMiss": "586","total_latency": "980"}
+[1786890474][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5760","cacheMiss": "586","total_latency": "982"}
+[1786890475][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5768","cacheMiss": "586","total_latency": "985"}
+[1786890476][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5774","cacheMiss": "586","total_latency": "986"}
+[1786890478][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5782","cacheMiss": "587","total_latency": "988"}
+[1786890478][STORE][INFO] -  It took 2904 to save all new posts!
+[1786890479][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5796","cacheMiss": "587","total_latency": "990"}
+[1786890480][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5807","cacheMiss": "587","total_latency": "994"}
+[1786890481][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5818","cacheMiss": "587","total_latency": "997"}
+[1786890482][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5828","cacheMiss": "587","total_latency": "1000"}
+[1786890484][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5838","cacheMiss": "587","total_latency": "1002"}
+[1786890485][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5848","cacheMiss": "587","total_latency": "1002"}
+[1786890485][STORE][INFO] -  It took 1682 to save all new posts!
+[1786890486][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5856","cacheMiss": "587","total_latency": "1004"}
+[1786890487][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5868","cacheMiss": "587","total_latency": "1006"}
+[1786890488][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5877","cacheMiss": "587","total_latency": "1008"}
+[1786890490][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5886","cacheMiss": "587","total_latency": "1008"}
+[1786890491][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5891","cacheMiss": "587","total_latency": "1009"}
+[1786890492][STORE][INFO] -  It took 1842 to save all new posts!
+[1786890492][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5906","cacheMiss": "587","total_latency": "1008"}
+[1786890493][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5915","cacheMiss": "587","total_latency": "1010"}
+[1786890494][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5921","cacheMiss": "587","total_latency": "1011"}
+[1786890496][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5928","cacheMiss": "587","total_latency": "1013"}
+[1786890497][STORE][INFO] -  [@MetricsStore] - {"cacheHits": "5934","cacheMiss": "587","total_latency": "1016"}
+[1786890497][STORE][INFO] -  [END] =======================
+
