@@ -1,2 +1,3 @@
 Method,Name,Error,Occurrences,First Seen,Last Seen
-GET,/feed/[id],"ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)",5,2026-08-16T05:15:23Z,2026-08-16T05:15:37Z
+GET,/feed/[id],"ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)",2,2026-08-16T05:31:51Z,2026-08-16T05:32:06Z
+GET,/post/[zipf_id],"ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)",1,2026-08-16T05:32:49Z,2026-08-16T05:32:49Z
