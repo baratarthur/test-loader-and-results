@@ -6,7 +6,7 @@ source ../krabs/scripts/create-components.sh 0 3 172.29.1.10
 wait 10
 
 curl --request POST \
-  --url http://127.0.0.1:30080/adapt/3 \
+  --url http://127.0.0.1:30080/adapt/2 \
   --header 'Content-Type: application/json' \
   --data '[{"name": "192.168.5.10", "port": 30300}, {"name": "192.168.5.10", "port": 30301}, {"name": "192.168.5.10", "port": 30302}]'
 
