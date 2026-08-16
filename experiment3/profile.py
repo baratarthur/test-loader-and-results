@@ -24,26 +24,19 @@ class DynamicBehaviorShape(LoadTestShape):
             "write_ratio": 0.1,
         },
         { # 20 -> 30s
-            "duration": 30,
+            "duration": 40,
             "total_users": 40,
             "spawn_rate": 5,
             "zipf_ratio": 0.4,
-            "write_ratio": 0.1,
+            "write_ratio": 0.2,
         },
         { # 30 -> 120s
-            "duration": 120,
-            "total_users": 60,
-            "spawn_rate": 1,
-            "zipf_ratio": 0.8,
-            "write_ratio": 0.1,
-        },
-        { # 120 -> 160s
             "duration": 160,
             "total_users": 60,
             "spawn_rate": 2,
-            "zipf_ratio": 0.1,
-            "write_ratio": 0.8,
-        },
+            "zipf_ratio": 0.8,
+            "write_ratio": 0.5,
+        }
     ]
 
     def tick(self):
