@@ -1,6 +1,6 @@
 #!/bin/bash
 
-kubectl delete pods -n dana-remote-social-media-app-components dana-remote-social-media-app-0 dana-remote-social-media-app-1 dana-remote-social-media-app-2
+kubectl delete pods -n dana-remote-social-media-app-components dana-remote-social-media-app-0 dana-remote-social-media-app-1 dana-remote-social-media-app-2 dana-remote-social-media-app-3
 source ../krabs/scripts/create-components.sh 0 4 172.29.1.10
 
 wait 10
