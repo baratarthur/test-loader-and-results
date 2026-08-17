@@ -186,116 +186,220 @@ print(corr["Cache Requests/s"].sort_values(ascending=False))
 # PLOT
 # -------------------------------------------------
 
-fig, ax1 = plt.subplots(figsize=(16, 7))
+# -------------------------------------------------
+# BETTER EXPERIMENT PLOT
+# -------------------------------------------------
 
-# =====================================================
-# Left axis - Service latency
-# =====================================================
-ax1.set_xlabel("Sample")
-ax1.set_ylabel("Latency (ms)", color="tab:red")
+import matplotlib.pyplot as plt
+import numpy as np
 
-ax1.plot(
-    merged["Sample"],
-    merged["Total Average Response Time"],
-    color="tab:red",
-    linewidth=2.5,
-    label="Avg Response Time"
+# -------------------------------------------------
+# Configuration
+# -------------------------------------------------
+
+FIGURE_PATH = "images/latency_cpu_memory_cache.png"
+
+x = merged["Sample"]
+
+fig, axes = plt.subplots(
+    3,
+    1,
+    figsize=(16, 11),
+    sharex=True,
+    gridspec_kw={"height_ratios": [1.2, 1, 1]}
 )
 
-ax1.plot(
-    merged["Sample"],
+# =================================================
+# 1. SERVICE PERFORMANCE
+# =================================================
+
+ax = axes[0]
+
+ax.plot(
+    x,
+    merged["Total Average Response Time"],
+    linewidth=2.5,
+    label="Average latency"
+)
+
+ax.plot(
+    x,
     merged["95%"],
-    color="darkred",
     linestyle="--",
     linewidth=2,
-    label="95th Percentile"
+    label="P95 latency"
 )
 
-ax1.tick_params(axis='y', labelcolor='tab:red')
+# Users on a secondary axis
+ax_users = ax.twinx()
 
-# =====================================================
-# Right axis - Resource utilization
-# =====================================================
-ax2 = ax1.twinx()
-
-ax2.set_ylabel("CPU (mCPU) / Memory (MiB) / Users")
-
-ax2.plot(
-    merged["Sample"],
-    merged["CPU"],
-    color="tab:blue",
-    linewidth=2,
-    label="CPU"
-)
-
-ax2.plot(
-    merged["Sample"],
-    merged["Memory"],
-    color="tab:green",
-    linewidth=2,
-    label="Memory"
-)
-
-ax2.plot(
-    merged["Sample"],
+ax_users.plot(
+    x,
     merged["User Count"],
-    color="tab:orange",
+    linestyle=":",
     linewidth=2,
     alpha=0.8,
     label="Users"
 )
 
-# =====================================================
-# Third axis - Failures per second
-# =====================================================
-ax3 = ax1.twinx()
-ax3.spines["right"].set_position(("outward", 70))
+ax.set_ylabel("Latency (ms)")
+ax_users.set_ylabel("Users")
 
-ax3.set_ylabel("Cache Metrics")
+ax.set_title(
+    "Service Performance",
+    loc="left",
+    fontweight="bold"
+)
 
-ax3.plot(
-    merged["Sample"],
-    merged["Cache Hit Ratio"],
-    color="purple",
+ax.grid(
+    axis="y",
+    alpha=0.3
+)
+
+# Combine legends
+lines1, labels1 = ax.get_legend_handles_labels()
+lines2, labels2 = ax_users.get_legend_handles_labels()
+
+ax.legend(
+    lines1 + lines2,
+    labels1 + labels2,
+    loc="upper left",
+    ncol=3
+)
+
+
+# =================================================
+# 2. RESOURCE UTILIZATION
+# =================================================
+
+ax = axes[1]
+
+ax.plot(
+    x,
+    merged["CPU"],
+    linewidth=2.5,
+    label="CPU"
+)
+
+ax.set_ylabel("CPU (mCPU)")
+
+# Memory secondary axis
+ax_memory = ax.twinx()
+
+ax_memory.plot(
+    x,
+    merged["Memory"],
     linewidth=2,
-    label="Cache Hit Ratio"
-)
-
-merged["Normalized Cache Size"] = (
-    merged["Cache Size"] /
-    merged["Cache Size"].max()
-)
-
-ax3.plot(
-    merged["Sample"],
-    merged["Normalized Cache Size"],
     linestyle="--",
-    color="brown",
-    label="Normalized Cache Size"
+    label="Memory"
 )
 
-ax3.set_ylim(bottom=0)
-# =====================================================
-# Legend
-# =====================================================
-lines = (
-    ax1.get_lines() +
-    ax2.get_lines() +
-    ax3.get_lines()
+ax_memory.set_ylabel("Memory (MiB)")
+
+ax.set_title(
+    "Resource Utilization",
+    loc="left",
+    fontweight="bold"
 )
 
-labels = [line.get_label() for line in lines]
+ax.grid(
+    axis="y",
+    alpha=0.3
+)
 
-ax1.legend(lines, labels, loc="upper left", fontsize=10)
+lines1, labels1 = ax.get_legend_handles_labels()
+lines2, labels2 = ax_memory.get_legend_handles_labels()
 
-plt.title("Impact of Cache on Service Performance, Resource Utilization and Errors")
+ax.legend(
+    lines1 + lines2,
+    labels1 + labels2,
+    loc="upper left"
+)
 
-ax1.grid(alpha=0.3)
 
-plt.tight_layout()
+# =================================================
+# 3. CACHE BEHAVIOR
+# =================================================
+
+ax = axes[2]
+
+# Cache hit ratio
+ax.plot(
+    x,
+    merged["Cache Hit Ratio"],
+    linewidth=2.5,
+    label="Cache hit ratio"
+)
+
+ax.set_ylabel("Hit ratio")
+ax.set_ylim(0, 1.05)
+
+# Cache size + requests/s on secondary axis
+ax_cache = ax.twinx()
+
+ax_cache.plot(
+    x,
+    merged["Cache Requests/s"],
+    linestyle=":",
+    linewidth=2,
+    label="Cache requests/s"
+)
+
+ax_cache.set_ylabel(
+    "Cache size / requests/s"
+)
+
+ax.set_title(
+    "Cache Behavior",
+    loc="left",
+    fontweight="bold"
+)
+
+ax.grid(
+    axis="y",
+    alpha=0.3
+)
+
+lines1, labels1 = ax.get_legend_handles_labels()
+lines2, labels2 = ax_cache.get_legend_handles_labels()
+
+ax.legend(
+    lines1 + lines2,
+    labels1 + labels2,
+    loc="upper left"
+)
+
+
+# =================================================
+# X AXIS
+# =================================================
+
+axes[2].set_xlabel(
+    "Experiment sample"
+)
+
+# -------------------------------------------------
+# Overall title
+# -------------------------------------------------
+
+fig.suptitle(
+    "Impact of Cache Behavior on Service Performance "
+    "and Resource Utilization",
+    fontsize=16,
+    fontweight="bold",
+    y=0.995
+)
+
+# -------------------------------------------------
+# Layout
+# -------------------------------------------------
+
+plt.tight_layout(
+    rect=[0, 0, 1, 0.97]
+)
 
 plt.savefig(
-    "images/latency_cpu_memory_errors.png",
+    FIGURE_PATH,
     dpi=300,
     bbox_inches="tight"
 )
