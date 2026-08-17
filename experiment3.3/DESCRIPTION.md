@@ -1,0 +1,1 @@
+This second experiment measures the service improvement on using cache in edge systems that present high latency to connect in database
