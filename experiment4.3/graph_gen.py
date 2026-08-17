@@ -6,7 +6,12 @@ import matplotlib.pyplot as plt
 # -------------------------------------------------
 LOCUST_CSV = "results_csv/dana_stats_history.csv"
 RESOURCE_CSV = "results_csv/dana_metrics.csv"
+
 OUTPUT_CSV = "results_csv/correlated_dana_metrics.csv"
+CORRELATION_CSV = "results_csv/correlation_matrix_dana.csv"
+
+PLOT_PATH = "images/dana_remote_resource_analysis.png"
+
 
 # -------------------------------------------------
 # Load CSVs
@@ -14,35 +19,53 @@ OUTPUT_CSV = "results_csv/correlated_dana_metrics.csv"
 locust = pd.read_csv(LOCUST_CSV)
 resources = pd.read_csv(RESOURCE_CSV)
 
-# -------------------------
+
+# -------------------------------------------------
 # Timestamp
-# -------------------------
+# -------------------------------------------------
 resources["timestamp"] = pd.to_datetime(
     resources["timestamp"],
     unit="s"
 )
 
-# -------------------------
-# CPU (1m -> 1)
-# If you prefer cores, divide by 1000.
-# -------------------------
-cpu_columns = ["dana_cpu", "remote_cpu"]
+
+# -------------------------------------------------
+# CPU conversion
+#
+# Kubernetes examples:
+#   100m -> 100 mCPU
+#   500m -> 500 mCPU
+#   1    -> 1000 mCPU
+# -------------------------------------------------
+
+def convert_cpu(value):
+    value = str(value).strip()
+
+    if value.endswith("m"):
+        return float(value[:-1])
+
+    # Kubernetes CPU expressed in cores
+    return float(value) * 1000
+
+
+cpu_columns = [
+    "dana_cpu",
+    "remote_cpu"
+]
 
 for col in cpu_columns:
-    resources[col] = (
-        resources[col]
-        .astype(str)
-        .str.replace("m", "", regex=False)
-        .astype(float)
-    )
+    resources[col] = resources[col].apply(convert_cpu)
 
-# Uncomment to convert to CPU cores instead of millicores
-# resources["CPU"] = resources["CPU"] / 1000
 
-# -------------------------
-# Memory
-# Converts Ki, Mi, Gi to MiB
-# -------------------------
+# -------------------------------------------------
+# Memory conversion
+#
+# Converts:
+#   Ki -> MiB
+#   Mi -> MiB
+#   Gi -> MiB
+#   Ti -> MiB
+# -------------------------------------------------
 
 def convert_memory(value):
     value = str(value).strip()
@@ -62,22 +85,33 @@ def convert_memory(value):
     else:
         return float(value)
 
-memory_columns = ["dana_mem", "remote_mem"]
+
+memory_columns = [
+    "dana_mem",
+    "remote_mem"
+]
 
 for col in memory_columns:
     resources[col] = resources[col].apply(convert_memory)
 
+
+print("\nResource metrics:")
 print(resources.head())
+
 
 # -------------------------------------------------
 # Keep only the smallest dataset length
 # -------------------------------------------------
-n = min(len(locust), len(resources))
+n = min(
+    len(locust),
+    len(resources)
+)
 
 locust = locust.iloc[:n].reset_index(drop=True)
 resources = resources.iloc[:n].reset_index(drop=True)
 
-print(f"Using {n} samples.")
+print(f"\nUsing {n} samples.")
+
 
 # -------------------------------------------------
 # Merge by sample index
@@ -86,14 +120,45 @@ merged = locust.copy()
 
 merged["Captured Timestamp"] = resources["timestamp"]
 
-merged["Dana CPU"] = pd.to_numeric(resources["dana_cpu"], errors="coerce")
-merged["Dana Memory"] = pd.to_numeric(resources["dana_mem"], errors="coerce")
+merged["Dana CPU"] = pd.to_numeric(
+    resources["dana_cpu"],
+    errors="coerce"
+)
 
-merged["Remote CPU"] = pd.to_numeric(resources["remote_cpu"], errors="coerce")
-merged["Remote Memory"] = pd.to_numeric(resources["remote_mem"], errors="coerce")
+merged["Dana Memory"] = pd.to_numeric(
+    resources["dana_mem"],
+    errors="coerce"
+)
 
-# Create an explicit sample index
-merged.insert(0, "Sample", range(n))
+merged["Remote CPU"] = pd.to_numeric(
+    resources["remote_cpu"],
+    errors="coerce"
+)
+
+merged["Remote Memory"] = pd.to_numeric(
+    resources["remote_mem"],
+    errors="coerce"
+)
+
+
+# -------------------------------------------------
+# Create sample index
+# -------------------------------------------------
+merged.insert(
+    0,
+    "Sample",
+    range(n)
+)
+
+
+# -------------------------------------------------
+# Create elapsed time
+# -------------------------------------------------
+merged["Elapsed Time (s)"] = (
+    merged["Captured Timestamp"]
+    - merged["Captured Timestamp"].iloc[0]
+).dt.total_seconds()
+
 
 # -------------------------------------------------
 # Convert Locust numeric columns
@@ -127,167 +192,296 @@ numeric_columns = [
 ]
 
 for col in numeric_columns:
+
     if col in merged.columns:
-        merged[col] = pd.to_numeric(merged[col], errors="coerce")
+
+        merged[col] = pd.to_numeric(
+            merged[col],
+            errors="coerce"
+        )
+
 
 # -------------------------------------------------
 # Save merged data
 # -------------------------------------------------
-merged.to_csv(OUTPUT_CSV, index=False)
-print(f"Merged dataset written to {OUTPUT_CSV}")
+merged.to_csv(
+    OUTPUT_CSV,
+    index=False
+)
 
-# -------------------------------------------------
-# Correlation matrix
-# -------------------------------------------------
-corr = merged[numeric_columns].corr(method="pearson")
+print(
+    f"\nMerged dataset written to {OUTPUT_CSV}"
+)
+
+
+# =================================================
+# CORRELATION MATRIX
+# =================================================
+
+corr = merged[numeric_columns].corr(
+    method="pearson"
+)
 
 print("\nCorrelation Matrix")
-print(corr.round(3))
+print(
+    corr.round(3)
+)
 
-corr.to_csv("results_csv/correlation_matrix_dana.csv")
+corr.to_csv(
+    CORRELATION_CSV
+)
+
 
 # -------------------------------------------------
-# CPU and Memory correlations
+# Resource correlations
 # -------------------------------------------------
+
 print("\nDana CPU correlations")
-print(corr["Dana CPU"].sort_values(ascending=False))
+print(
+    corr["Dana CPU"]
+    .sort_values(ascending=False)
+)
 
 print("\nDana Memory correlations")
-print(corr["Dana Memory"].sort_values(ascending=False))
+print(
+    corr["Dana Memory"]
+    .sort_values(ascending=False)
+)
 
 print("\nRemote CPU correlations")
-print(corr["Remote CPU"].sort_values(ascending=False))
+print(
+    corr["Remote CPU"]
+    .sort_values(ascending=False)
+)
 
 print("\nRemote Memory correlations")
-print(corr["Remote Memory"].sort_values(ascending=False))
+print(
+    corr["Remote Memory"]
+    .sort_values(ascending=False)
+)
 
-# -------------------------------------------------
+
+# =================================================
 # PLOT
+# =================================================
+
+x = merged["Elapsed Time (s)"]
+
+
+fig, axes = plt.subplots(
+    3,
+    1,
+    figsize=(16, 11),
+    sharex=True,
+    gridspec_kw={
+        "height_ratios": [1.2, 1, 1]
+    }
+)
+
+
+# =================================================
+# PANEL 1
+# SERVICE PERFORMANCE
+# =================================================
+
+ax = axes[0]
+
+# Average latency
+ax.plot(
+    x,
+    merged["Total Average Response Time"],
+    linewidth=2.5,
+    label="Average latency"
+)
+
+# P95 latency
+ax.plot(
+    x,
+    merged["95%"],
+    linestyle="--",
+    linewidth=2,
+    label="P95 latency"
+)
+
+ax.set_ylabel(
+    "Latency (ms)"
+)
+
+ax.set_title(
+    "Service Performance",
+    loc="left",
+    fontweight="bold"
+)
+
+ax.grid(
+    axis="y",
+    alpha=0.3
+)
+
+
+# -------------------------------------------------
+# Users on secondary axis
 # -------------------------------------------------
 
-fig, ax1 = plt.subplots(figsize=(16, 7))
+ax_users = ax.twinx()
 
-# =====================================================
-# Left axis - Service latency
-# =====================================================
-ax1.set_xlabel("Sample")
-ax1.set_ylabel("Latency (ms)", color="tab:red")
-
-ax1.plot(
-    merged["Sample"],
-    merged["Total Average Response Time"],
-    color="tab:red",
-    linewidth=2.5,
-    label="Avg Response Time"
-)
-
-ax1.plot(
-    merged["Sample"],
-    merged["95%"],
-    color="darkred",
-    linestyle="--",
-    linewidth=2,
-    label="95th Percentile"
-)
-
-ax1.tick_params(axis='y', labelcolor='tab:red')
-
-# =====================================================
-# Right axis - Resource utilization
-# =====================================================
-ax2 = ax1.twinx()
-
-ax2.set_ylabel("Resources")
-
-ax2.plot(
-    merged["Sample"],
-    merged["Dana CPU"],
-    color="tab:blue",
-    linewidth=2,
-    label="Dana CPU"
-)
-
-ax2.plot(
-    merged["Sample"],
-    merged["Dana Memory"],
-    color="tab:green",
-    linewidth=2,
-    label="Dana Memory"
-)
-
-ax2.plot(
-    merged["Sample"],
-    merged["Remote CPU"],
-    color="tab:cyan",
-    linewidth=2,
-    linestyle="--",
-    label="Remote CPU"
-)
-
-ax2.plot(
-    merged["Sample"],
-    merged["Remote Memory"],
-    color="limegreen",
-    linewidth=2,
-    linestyle="--",
-    label="Remote Memory"
-)
-
-ax2.plot(
-    merged["Sample"],
+ax_users.plot(
+    x,
     merged["User Count"],
-    color="tab:orange",
+    linestyle=":",
     linewidth=2,
     alpha=0.8,
     label="Users"
 )
 
-# =====================================================
-# Third axis - Failures per second
-# =====================================================
-# ax3 = ax1.twinx()
-
-# # Move third axis outward
-# ax3.spines["right"].set_position(("outward", 70))
-
-# ax3.set_ylabel("Failures/s", color="black")
-
-# ax3.plot(
-#     merged["Sample"],
-#     merged["Failures/s"],
-#     color="black",
-#     linewidth=2,
-#     linestyle=":",
-#     marker="x",
-#     markersize=4,
-#     label="Failures/s"
-# )
-
-# ax3.tick_params(axis='y', labelcolor='black')
-
-# =====================================================
-# Legend
-# =====================================================
-lines = (
-    ax1.get_lines() +
-    ax2.get_lines()
-    # ax3.get_lines()
+ax_users.set_ylabel(
+    "Users"
 )
 
-labels = [line.get_label() for line in lines]
 
-ax1.legend(lines, labels, loc="upper left", fontsize=10)
+# -------------------------------------------------
+# Combined legend
+# -------------------------------------------------
 
-plt.title("Impact of Cache on Service Performance, Resource Utilization and Errors")
+lines1, labels1 = ax.get_legend_handles_labels()
 
-ax1.grid(alpha=0.3)
+lines2, labels2 = (
+    ax_users.get_legend_handles_labels()
+)
 
-plt.tight_layout()
+ax.legend(
+    lines1 + lines2,
+    labels1 + labels2,
+    loc="upper left",
+    ncol=3
+)
+
+
+# =================================================
+# PANEL 2
+# CPU UTILIZATION
+# =================================================
+
+ax = axes[1]
+
+# Dana CPU
+ax.plot(
+    x,
+    merged["Dana CPU"],
+    linewidth=2.5,
+    label="Dana CPU"
+)
+
+# Remote CPU
+ax.plot(
+    x,
+    merged["Remote CPU"],
+    linestyle="--",
+    linewidth=2.5,
+    label="Remote CPU"
+)
+
+ax.set_ylabel(
+    "CPU (mCPU)"
+)
+
+ax.set_title(
+    "CPU Utilization",
+    loc="left",
+    fontweight="bold"
+)
+
+ax.grid(
+    axis="y",
+    alpha=0.3
+)
+
+ax.legend(
+    loc="upper left"
+)
+
+
+# =================================================
+# PANEL 3
+# MEMORY UTILIZATION
+# =================================================
+
+ax = axes[2]
+
+# Dana memory
+ax.plot(
+    x,
+    merged["Dana Memory"],
+    linewidth=2.5,
+    label="Dana memory"
+)
+
+# Remote memory
+ax.plot(
+    x,
+    merged["Remote Memory"],
+    linestyle="--",
+    linewidth=2.5,
+    label="Remote memory"
+)
+
+ax.set_ylabel(
+    "Memory (MiB)"
+)
+
+ax.set_xlabel(
+    "Elapsed time (s)"
+)
+
+ax.set_title(
+    "Memory Utilization",
+    loc="left",
+    fontweight="bold"
+)
+
+ax.grid(
+    axis="y",
+    alpha=0.3
+)
+
+ax.legend(
+    loc="upper left"
+)
+
+
+# =================================================
+# OVERALL TITLE
+# =================================================
+
+fig.suptitle(
+    "Service Performance and Resource Utilization",
+    fontsize=16,
+    fontweight="bold",
+    y=0.995
+)
+
+
+# =================================================
+# LAYOUT
+# =================================================
+
+plt.tight_layout(
+    rect=[0, 0, 1, 0.97]
+)
+
+
+# =================================================
+# SAVE FIGURE
+# =================================================
 
 plt.savefig(
-    "images/latency_cpu_memory_errors.png",
+    PLOT_PATH,
     dpi=300,
     bbox_inches="tight"
+)
+
+print(
+    f"\nPlot written to {PLOT_PATH}"
 )
 
 plt.show()
