@@ -32,7 +32,7 @@ class DynamicBehaviorShape(LoadTestShape):
         },
         { # 30s -> 6m
             "duration": 6*60,
-            "total_users": 45,
+            "total_users": 60,
             "spawn_rate": 3,
             "zipf_ratio": 0.8,
             "write_ratio": 0.2,

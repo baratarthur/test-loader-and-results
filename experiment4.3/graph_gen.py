@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 # -------------------------------------------------
 # Configuration
 # -------------------------------------------------
-LOCUST_CSV = "results_csv/dana_stats_history.csv"
-RESOURCE_CSV = "results_csv/dana_metrics.csv"
+LOCUST_CSV = "results_csv/dana2_stats_history.csv"
+RESOURCE_CSV = "results_csv/dana2_metrics.csv"
 
-OUTPUT_CSV = "results_csv/correlated_dana_metrics.csv"
-CORRELATION_CSV = "results_csv/correlation_matrix_dana.csv"
+OUTPUT_CSV = "results_csv/correlated_dana2_metrics.csv"
+CORRELATION_CSV = "results_csv/correlation_matrix_dana2.csv"
 
-PLOT_PATH = "images/dana_remote_resource_analysis.png"
+PLOT_PATH = "images/dana2_remote_resource_analysis.png"
 
 
 # -------------------------------------------------
