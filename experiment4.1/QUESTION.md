@@ -1,1 +1,0 @@
-Does increase of state locality subsets impact the performance?

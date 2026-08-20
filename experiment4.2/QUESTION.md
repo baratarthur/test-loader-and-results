@@ -1,1 +1,0 @@
-What happens when we have more sockets than the amount of requests per second?
