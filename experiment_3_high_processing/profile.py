@@ -9,34 +9,27 @@ CURRENT_WRITE_RATIO = 0.1  # Default: 10% writes
 
 class DynamicBehaviorShape(LoadTestShape):
     stages = [
-        { # 0 -> 10s
+        { # 0 -> 20s
             "duration": 20,
             "total_users": 10,
             "spawn_rate": 2,
             "zipf_ratio": 0.0,
             "write_ratio": 0.1,
         },
-        { # 10 -> 20s
+        { # 20 -> 40s
             "duration": 40,
             "total_users": 20,
             "spawn_rate": 5,
             "zipf_ratio": 0.2,
             "write_ratio": 0.1,
         },
-        { # 20 -> 30s
-            "duration": 60,
-            "total_users": 40,
-            "spawn_rate": 5,
-            "zipf_ratio": 0.4,
-            "write_ratio": 0.2,
-        },
-        { # 30 -> 120s
+        { # 40 -> 160s
             "duration": 168,
             "total_users": 40,
-            "spawn_rate": 2,
-            "zipf_ratio": 0.8,
-            "write_ratio": 0.5,
-        }
+            "spawn_rate": 5,
+            "zipf_ratio": 0.6,
+            "write_ratio": 0.2,
+        },
     ]
 
     def tick(self):
