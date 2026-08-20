@@ -10,29 +10,29 @@ CURRENT_WRITE_RATIO = 0.1  # Default: 10% writes
 class DynamicBehaviorShape(LoadTestShape):
     stages = [
         { # 0 -> 10s
-            "duration": 10,
+            "duration": 20,
             "total_users": 10,
             "spawn_rate": 2,
             "zipf_ratio": 0.0,
             "write_ratio": 0.1,
         },
         { # 10 -> 20s
-            "duration": 20,
+            "duration": 40,
             "total_users": 20,
             "spawn_rate": 5,
             "zipf_ratio": 0.2,
             "write_ratio": 0.1,
         },
         { # 20 -> 30s
-            "duration": 40,
+            "duration": 60,
             "total_users": 40,
             "spawn_rate": 5,
             "zipf_ratio": 0.4,
             "write_ratio": 0.2,
         },
         { # 30 -> 120s
-            "duration": 160,
-            "total_users": 60,
+            "duration": 168,
+            "total_users": 40,
             "spawn_rate": 2,
             "zipf_ratio": 0.8,
             "write_ratio": 0.5,
