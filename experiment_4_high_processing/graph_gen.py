@@ -31,17 +31,17 @@ import matplotlib.pyplot as plt
 # ================================================================
 # Configuration
 # ================================================================
-DATA_DIR = Path("./results_csv/fragment")
-OUTPUT_DIR = DATA_DIR / "monolith_cache_plots_f_3c"
+DATA_DIR = Path("./results_csv/replicate")
+OUTPUT_DIR = DATA_DIR / "monolith_cache_plots_r_3c"
 
 CACHE_SIZES = [100, 200, 300, 400, 500]
 
 # New metrics filename pattern.
-METRICS_PATTERN = "dana_metrics_f_3c_{cache}.csv"
+METRICS_PATTERN = "dana_metrics_r_3c_{cache}.csv"
 
 # Locust files can remain in the old format.
-STATS_PATTERN = "dana_monolith_{cache}_stats.csv"
-HISTORY_PATTERN = "dana_monolith_{cache}_stats_history.csv"
+STATS_PATTERN = "dana_r_3c_{cache}_stats.csv"
+HISTORY_PATTERN = "dana_r_3c_{cache}_stats_history.csv"
 
 # Ignore initial warm-up period in history plots.
 WARMUP_SECONDS = 10
