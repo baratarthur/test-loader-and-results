@@ -36,8 +36,8 @@ import matplotlib.pyplot as plt
 # Configuration
 # ---------------------------------------------------------------------
 DATA_DIR = Path("./results_csv")
-OUTPUT_DIR = DATA_DIR / "monolith_cache_plots"
-CACHE_SIZES = [100, 200, 300, 400, 500]
+OUTPUT_DIR = DATA_DIR / "monolith_selected_cache_plots"
+CACHE_SIZES = [300, 400, 500]
 
 # If True, response-time plots use the Locust history.
 # If False, they use the final *_stats.csv percentile values.
@@ -202,117 +202,78 @@ if not metrics and not history and not final_stats:
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+LINE_STYLES = ["-", "--", "-.", ":", (0, (6, 2, 1, 2)), (0, (3, 1, 1, 1))]
+plt.rcParams.update({
+    "font.size": 18,
+    "axes.titlesize": 24,
+    "axes.labelsize": 20,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 19,
+    "legend.title_fontsize": 19,
+})
 
 # ---------------------------------------------------------------------
-# Plot 1: CPU usage over time
+# Plot 1: CPU utilization over time
 # ---------------------------------------------------------------------
 if metrics:
-    plt.figure(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(16, 8))
 
-    for size in sorted(metrics):
+    for index, size in enumerate(sorted(metrics)):
         df = metrics[size]
-        plt.plot(
+        ax.plot(
             df["elapsed_s"],
             df["cpu_cores"],
-            linewidth=1.8,
+            color="black",
+            linestyle=LINE_STYLES[index % len(LINE_STYLES)],
+            linewidth=2.4,
             label=f"{size} entries",
         )
 
-    plt.xlabel("Elapsed time (s)")
-    plt.ylabel("CPU usage (cores)")
-    plt.title("Monolithic application CPU usage vs. cache size")
-    plt.grid(True, alpha=0.25)
-    plt.legend(title="Cache size")
-    plt.tight_layout()
-    plt.savefig(OUTPUT_DIR / "01_cpu_usage.png", dpi=300)
-    plt.close()
+    ax.set_xlabel("Elapsed time (s)")
+    ax.set_ylabel("CPU utilization (cores)")
+    ax.set_title("Monolithic Application CPU Utilization by Cache Size")
+    ax.tick_params(axis="both", labelsize=18)
+    ax.grid(True, linestyle=":", linewidth=0.8, alpha=0.7)
+    ax.legend(title="Cache size", title_fontsize=19)
+    fig.tight_layout()
+    fig.savefig(OUTPUT_DIR / "01_cpu_utilization.png", dpi=300, bbox_inches="tight")
+    plt.close(fig)
 
 
 # ---------------------------------------------------------------------
-# Plot 2: Memory usage over time
-# ---------------------------------------------------------------------
-if metrics:
-    plt.figure(figsize=(10, 5))
-
-    for size in sorted(metrics):
-        df = metrics[size]
-        plt.plot(
-            df["elapsed_s"],
-            df["memory_mib"],
-            linewidth=1.8,
-            label=f"{size} entries",
-        )
-
-    plt.xlabel("Elapsed time (s)")
-    plt.ylabel("Memory usage (MiB)")
-    plt.title("Monolithic application memory usage vs. cache size")
-    plt.grid(True, alpha=0.25)
-    plt.legend(title="Cache size")
-    plt.tight_layout()
-    plt.savefig(OUTPUT_DIR / "02_memory_usage.png", dpi=300)
-    plt.close()
-
-
-# ---------------------------------------------------------------------
-# Plot 3: Throughput over time
+# Plot 2: Throughput over time
 # ---------------------------------------------------------------------
 if history:
-    plt.figure(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(16, 8))
 
-    for size in sorted(history):
+    for index, size in enumerate(sorted(history)):
         df = history[size]
-
         if "Requests/s" not in df.columns:
             continue
 
-        plt.plot(
+        ax.plot(
             df["elapsed_s"],
             df["Requests/s"],
-            linewidth=1.8,
+            color="black",
+            linestyle=LINE_STYLES[index % len(LINE_STYLES)],
+            linewidth=2.4,
             label=f"{size} entries",
         )
 
-    plt.xlabel("Elapsed time (s)")
-    plt.ylabel("Requests/s")
-    plt.title("Monolithic application throughput vs. cache size")
-    plt.grid(True, alpha=0.25)
-    plt.legend(title="Cache size")
-    plt.tight_layout()
-    plt.savefig(OUTPUT_DIR / "03_throughput.png", dpi=300)
-    plt.close()
+    ax.set_xlabel("Elapsed time (s)")
+    ax.set_ylabel("Throughput (requests/s)")
+    ax.set_title("Monolithic Application Throughput by Cache Size")
+    ax.tick_params(axis="both", labelsize=18)
+    ax.grid(True, linestyle=":", linewidth=0.8, alpha=0.7)
+    ax.legend(title="Cache size", title_fontsize=19)
+    fig.tight_layout()
+    fig.savefig(OUTPUT_DIR / "02_throughput.png", dpi=300, bbox_inches="tight")
+    plt.close(fig)
 
 
 # ---------------------------------------------------------------------
-# Plot 4: Average response time over time
-# ---------------------------------------------------------------------
-if history:
-    plt.figure(figsize=(10, 5))
-
-    for size in sorted(history):
-        df = history[size]
-
-        if "Total Average Response Time" not in df.columns:
-            continue
-
-        plt.plot(
-            df["elapsed_s"],
-            df["Total Average Response Time"],
-            linewidth=1.8,
-            label=f"{size} entries",
-        )
-
-    plt.xlabel("Elapsed time (s)")
-    plt.ylabel("Average response time (ms)")
-    plt.title("Monolithic application latency vs. cache size")
-    plt.grid(True, alpha=0.25)
-    plt.legend(title="Cache size")
-    plt.tight_layout()
-    plt.savefig(OUTPUT_DIR / "04_average_latency.png", dpi=300)
-    plt.close()
-
-
-# ---------------------------------------------------------------------
-# Plot 5: Percentile latency comparison
+# Plot 3: Percentile latency comparison
 # ---------------------------------------------------------------------
 if final_stats:
     rows = []
@@ -363,87 +324,31 @@ if final_stats:
     percentile_df = pd.DataFrame(rows)
 
     if not percentile_df.empty:
-        plt.figure(figsize=(10, 5))
+        fig, ax = plt.subplots(figsize=(16, 8))
 
-        for p in ["50%", "75%", "90%", "95%", "99%", "100%"]:
+        percentiles = ["50%", "75%", "90%", "95%", "99%", "100%"]
+        for index, p in enumerate(percentiles):
             if p in percentile_df:
-                plt.plot(
+                ax.plot(
                     percentile_df["cache_size"],
                     percentile_df[p],
+                    color="black",
+                    linestyle=LINE_STYLES[index % len(LINE_STYLES)],
                     marker="o",
-                    linewidth=1.8,
+                    linewidth=2.4,
                     label=p,
                 )
 
-        plt.xlabel("Cache size (entries)")
-        plt.ylabel("Response time (ms)")
-        plt.title("Latency percentiles vs. cache size")
-        plt.xticks(CACHE_SIZES)
-        plt.grid(True, alpha=0.25)
-        plt.legend(title="Percentile")
-        plt.tight_layout()
-        plt.savefig(OUTPUT_DIR / "05_latency_percentiles.png", dpi=300)
-        plt.close()
-
-
-# ---------------------------------------------------------------------
-# Plot 6: Feed endpoint latency
-# ---------------------------------------------------------------------
-if final_stats:
-    feed_rows = []
-
-    for size in sorted(final_stats):
-        df = final_stats[size]
-
-        if "Name" not in df.columns:
-            continue
-
-        feed = df[df["Name"].astype(str).str.contains(
-            r"/feed", case=False, regex=True, na=False
-        )]
-
-        if feed.empty:
-            continue
-
-        row = feed.iloc[0]
-
-        feed_rows.append({
-            "cache_size": size,
-            "median": row.get("Median Response Time", np.nan),
-            "average": row.get("Average Response Time", np.nan),
-            "p95": row.get("95%", np.nan),
-            "p99": row.get("99%", np.nan),
-            "max": row.get("Max Response Time", np.nan),
-        })
-
-    feed_df = pd.DataFrame(feed_rows)
-
-    if not feed_df.empty:
-        plt.figure(figsize=(10, 5))
-
-        for column, label in [
-            ("median", "Median"),
-            ("average", "Average"),
-            ("p95", "P95"),
-            ("p99", "P99"),
-        ]:
-            plt.plot(
-                feed_df["cache_size"],
-                feed_df[column],
-                marker="o",
-                linewidth=1.8,
-                label=label,
-            )
-
-        plt.xlabel("Cache size (entries)")
-        plt.ylabel("Response time (ms)")
-        plt.title("GET /feed latency vs. cache size")
-        plt.xticks(CACHE_SIZES)
-        plt.grid(True, alpha=0.25)
-        plt.legend()
-        plt.tight_layout()
-        plt.savefig(OUTPUT_DIR / "06_feed_latency.png", dpi=300)
-        plt.close()
+        ax.set_xlabel("Cache size (entries)")
+        ax.set_ylabel("Response time (ms)")
+        ax.set_title("Response Time Percentiles by Cache Size")
+        ax.set_xticks(CACHE_SIZES)
+        ax.tick_params(axis="both", labelsize=18)
+        ax.grid(True, linestyle=":", linewidth=0.8, alpha=0.7)
+        ax.legend(title="Percentile", title_fontsize=19)
+        fig.tight_layout()
+        fig.savefig(OUTPUT_DIR / "03_latency_percentiles.png", dpi=300, bbox_inches="tight")
+        plt.close(fig)
 
 
 # ---------------------------------------------------------------------

@@ -163,18 +163,19 @@ print(corr["Memory"].sort_values(ascending=False))
 # PLOT
 # -------------------------------------------------
 
-fig, ax1 = plt.subplots(figsize=(16, 7))
+fig, ax1 = plt.subplots(figsize=(16, 8))
 
 # =====================================================
 # Left axis - Service latency
 # =====================================================
-ax1.set_xlabel("Sample")
-ax1.set_ylabel("Latency (ms)", color="tab:red")
+ax1.set_xlabel("Sample", fontsize=20)
+ax1.set_ylabel("Latency (ms)", fontsize=20)
 
 ax1.plot(
     merged["Sample"],
     merged["Total Average Response Time"],
-    color="tab:red",
+    color="black",
+    linestyle="-",
     linewidth=2.5,
     label="Avg Response Time"
 )
@@ -182,89 +183,51 @@ ax1.plot(
 ax1.plot(
     merged["Sample"],
     merged["95%"],
-    color="darkred",
+    color="black",
     linestyle="--",
     linewidth=2,
     label="95th Percentile"
 )
 
-ax1.tick_params(axis='y', labelcolor='tab:red')
+ax1.tick_params(axis="both", labelsize=18)
 
 # =====================================================
-# Right axis - Resource utilization
+# Right axis - Cache hit ratio
 # =====================================================
 ax2 = ax1.twinx()
 
-ax2.set_ylabel("CPU (mCPU) / Memory (MiB) / Users")
-
+ax2.set_ylabel("Cache Hit Ratio", fontsize=20)
 ax2.plot(
-    merged["Sample"],
-    merged["CPU"],
-    color="tab:blue",
-    linewidth=2,
-    label="CPU"
-)
-
-ax2.plot(
-    merged["Sample"],
-    merged["Memory"],
-    color="tab:green",
-    linewidth=2,
-    label="Memory"
-)
-
-ax2.plot(
-    merged["Sample"],
-    merged["User Count"],
-    color="tab:orange",
-    linewidth=2,
-    alpha=0.8,
-    label="Users"
-)
-
-# =====================================================
-# Third axis - Failures per second
-# =====================================================
-ax3 = ax1.twinx()
-
-ax3.spines["right"].set_position(("outward", 70))
-
-ax3.set_ylabel("Cache Hit Ratio")
-
-ax3.plot(
     merged["Sample"],
     merged["Cache Hit Ratio"],
-    color="purple",
+    color="black",
     linewidth=2,
-    linestyle="-",
+    linestyle="-.",
     label="Cache Hit Ratio"
 )
 
-ax3.set_ylim(0, 1)
+ax2.set_ylim(0, 1)
+ax2.tick_params(axis="y", labelsize=18)
 
 # =====================================================
 # Legend
 # =====================================================
-lines = (
-    ax1.get_lines() +
-    ax2.get_lines() +
-    ax3.get_lines()
-)
+lines = ax1.get_lines() + ax2.get_lines()
 
 labels = [line.get_label() for line in lines]
 
-ax1.legend(lines, labels, loc="upper left", fontsize=10)
+ax1.legend(lines, labels, loc="upper left", fontsize=19, frameon=True)
 
-plt.title("Impact of Cache on Service Performance, Resource Utilization and Errors")
+plt.title("Cache Hit Ratio and Service Response Time", fontsize=24)
 
-ax1.grid(alpha=0.3)
+ax1.grid(axis="both", linestyle=":", linewidth=0.8, color="gray", alpha=0.7)
 
 plt.tight_layout()
 
 plt.savefig(
-    "images/latency_cpu_memory_errors.png",
+    "images/cache_hit_ratio_response_time.png",
     dpi=300,
     bbox_inches="tight"
 )
 
-plt.show()
+plt.close(fig)

@@ -1,94 +1,21 @@
-import pandas as pd
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+import pandas as pd
 
-# -------------------------------------------------
-# Configuration
-# -------------------------------------------------
-LOCUST_CSV = "results_csv/dana_stats_history.csv"
-RESOURCE_CSV = "results_csv/dana_metrics_cpu.csv"
-OUTPUT_CSV = "results_csv/correlated_dana_metrics.csv"
 
-# -------------------------------------------------
-# Load CSVs
-# -------------------------------------------------
-locust = pd.read_csv(LOCUST_CSV)
-resources = pd.read_csv(RESOURCE_CSV)
+DATASETS = {
+    "dana": {
+        "locust": "results_csv/dana_stats_history.csv",
+        "resources": "results_csv/dana_metrics_cpu.csv",
+    },
+    "python": {
+        "locust": "results_csv/python_stats_history.csv",
+        "resources": "results_csv/python_metrics_cpu.csv",
+    },
+}
 
-# -------------------------
-# Timestamp
-# -------------------------
-resources["timestamp"] = pd.to_datetime(
-    resources["timestamp"],
-    unit="s"
-)
-
-# -------------------------
-# CPU (1m -> 1)
-# If you prefer cores, divide by 1000.
-# -------------------------
-resources["CPU"] = (
-    resources["CPU"]
-    .astype(str)
-    .str.replace("m", "", regex=False)
-    .astype(float)
-)
-
-# Uncomment to convert to CPU cores instead of millicores
-# resources["CPU"] = resources["CPU"] / 1000
-
-# -------------------------
-# Memory
-# Converts Ki, Mi, Gi to MiB
-# -------------------------
-
-def convert_memory(value):
-    value = str(value).strip()
-
-    if value.endswith("Ki"):
-        return float(value[:-2]) / 1024
-
-    elif value.endswith("Mi"):
-        return float(value[:-2])
-
-    elif value.endswith("Gi"):
-        return float(value[:-2]) * 1024
-
-    elif value.endswith("Ti"):
-        return float(value[:-2]) * 1024 * 1024
-
-    else:
-        return float(value)
-
-resources["Memory"] = resources["Memory"].apply(convert_memory)
-
-print(resources.head())
-
-# -------------------------------------------------
-# Keep only the smallest dataset length
-# -------------------------------------------------
-n = min(len(locust), len(resources))
-
-locust = locust.iloc[:n].reset_index(drop=True)
-resources = resources.iloc[:n].reset_index(drop=True)
-
-print(f"Using {n} samples.")
-
-# -------------------------------------------------
-# Merge by sample index
-# -------------------------------------------------
-merged = locust.copy()
-
-merged["Captured Timestamp"] = resources["timestamp"]
-merged["CPU"] = pd.to_numeric(resources["CPU"], errors="coerce")
-merged["Memory"] = pd.to_numeric(resources["Memory"], errors="coerce")
-
-# Create an explicit sample index
-merged.insert(0, "Sample", range(n))
-
-# -------------------------------------------------
-# Convert Locust numeric columns
-# -------------------------------------------------
-numeric_columns = [
+NUMERIC_COLUMNS = [
     "User Count",
     "Requests/s",
     "Failures/s",
@@ -111,147 +38,120 @@ numeric_columns = [
     "Total Max Response Time",
     "Total Average Content Size",
     "CPU",
-    "Memory"
+    "Memory",
 ]
 
-for col in numeric_columns:
-    if col in merged.columns:
-        merged[col] = pd.to_numeric(merged[col], errors="coerce")
 
-# -------------------------------------------------
-# Save merged data
-# -------------------------------------------------
-merged.to_csv(OUTPUT_CSV, index=False)
-print(f"Merged dataset written to {OUTPUT_CSV}")
+def convert_memory(value):
+    value = str(value).strip()
+    units = {"Ki": 1 / 1024, "Mi": 1, "Gi": 1024, "Ti": 1024 * 1024}
 
-# -------------------------------------------------
-# Correlation matrix
-# -------------------------------------------------
-corr = merged[numeric_columns].corr(method="pearson")
+    for unit, multiplier in units.items():
+        if value.endswith(unit):
+            return float(value[: -len(unit)]) * multiplier
 
-print("\nCorrelation Matrix")
-print(corr.round(3))
+    return float(value)
 
-corr.to_csv("results_csv/correlation_matrix_dana.csv")
 
-# -------------------------------------------------
-# CPU and Memory correlations
-# -------------------------------------------------
-print("\nCPU correlations")
-print(corr["CPU"].sort_values(ascending=False))
+def make_chart(merged, dataset_name):
+    fig, ax1 = plt.subplots(figsize=(16, 8))
+    ax1.set_xlabel("Sample", fontsize=20)
+    ax1.set_ylabel("Latency (ms)", fontsize=20)
 
-print("\nMemory correlations")
-print(corr["Memory"].sort_values(ascending=False))
+    ax1.plot(
+        merged["Sample"],
+        merged["Total Average Response Time"],
+        color="black",
+        linestyle="-",
+        linewidth=2.5,
+        label="Avg Response Time",
+    )
+    ax1.plot(
+        merged["Sample"],
+        merged["95%"],
+        color="black",
+        linestyle="--",
+        linewidth=2,
+        label="95th Percentile",
+    )
+    ax1.tick_params(axis="both", labelsize=18)
 
-# -------------------------------------------------
-# PLOT
-# -------------------------------------------------
+    ax2 = ax1.twinx()
+    ax2.set_ylabel("CPU (mCPU)", fontsize=20)
+    ax2.plot(
+        merged["Sample"],
+        merged["CPU"],
+        color="black",
+        linestyle="-.",
+        linewidth=2,
+        label="CPU",
+    )
+    ax2.tick_params(axis="y", labelsize=18)
 
-fig, ax1 = plt.subplots(figsize=(16, 7))
+    lines = ax1.get_lines() + ax2.get_lines()
+    ax1.legend(
+        lines,
+        [line.get_label() for line in lines],
+        loc="upper left",
+        fontsize=19,
+        frameon=True,
+    )
+    ax1.set_title(
+        f"Experiment 1 (10 ms) — {dataset_name.title()}: Response Time and CPU",
+        fontsize=24,
+    )
+    ax1.grid(axis="both", linestyle=":", linewidth=0.8, color="gray", alpha=0.7)
+    fig.tight_layout()
 
-# =====================================================
-# Left axis - Service latency
-# =====================================================
-ax1.set_xlabel("Sample")
-ax1.set_ylabel("Latency (ms)", color="tab:red")
+    output_path = Path("images") / f"latency_response_time_cpu_{dataset_name}.png"
+    fig.savefig(output_path, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+    print(f"Chart saved to {output_path}")
 
-ax1.plot(
-    merged["Sample"],
-    merged["Total Average Response Time"],
-    color="tab:red",
-    linewidth=2.5,
-    label="Avg Response Time"
-)
 
-ax1.plot(
-    merged["Sample"],
-    merged["95%"],
-    color="darkred",
-    linestyle="--",
-    linewidth=2,
-    label="95th Percentile"
-)
+def process_dataset(dataset_name, paths):
+    locust = pd.read_csv(paths["locust"])
+    resources = pd.read_csv(paths["resources"])
 
-ax1.tick_params(axis='y', labelcolor='tab:red')
+    resources["timestamp"] = pd.to_datetime(resources["timestamp"], unit="s")
+    resources["CPU"] = (
+        resources["CPU"].astype(str).str.replace("m", "", regex=False).astype(float)
+    )
+    resources["Memory"] = resources["Memory"].apply(convert_memory)
 
-# =====================================================
-# Right axis - Resource utilization
-# =====================================================
-ax2 = ax1.twinx()
+    sample_count = min(len(locust), len(resources))
+    locust = locust.iloc[:sample_count].reset_index(drop=True)
+    resources = resources.iloc[:sample_count].reset_index(drop=True)
 
-ax2.set_ylabel("CPU (mCPU) / Memory (MiB) / Users")
+    merged = locust.copy()
+    merged["Captured Timestamp"] = resources["timestamp"]
+    merged["CPU"] = pd.to_numeric(resources["CPU"], errors="coerce")
+    merged["Memory"] = pd.to_numeric(resources["Memory"], errors="coerce")
+    merged.insert(0, "Sample", range(sample_count))
 
-ax2.plot(
-    merged["Sample"],
-    merged["CPU"],
-    color="tab:blue",
-    linewidth=2,
-    label="CPU"
-)
+    for column in NUMERIC_COLUMNS:
+        if column in merged.columns:
+            merged[column] = pd.to_numeric(merged[column], errors="coerce")
 
-ax2.plot(
-    merged["Sample"],
-    merged["Memory"],
-    color="tab:green",
-    linewidth=2,
-    label="Memory"
-)
+    merged_path = Path("results_csv") / f"correlated_{dataset_name}_metrics.csv"
+    merged.to_csv(merged_path, index=False)
+    print(f"Using {sample_count} samples for {dataset_name}.")
+    print(f"Merged dataset written to {merged_path}")
 
-ax2.plot(
-    merged["Sample"],
-    merged["User Count"],
-    color="tab:orange",
-    linewidth=2,
-    alpha=0.8,
-    label="Users"
-)
+    correlation_columns = [column for column in NUMERIC_COLUMNS if column in merged.columns]
+    corr = merged[correlation_columns].corr(method="pearson")
+    correlation_path = Path("results_csv") / f"correlation_matrix_{dataset_name}.csv"
+    corr.to_csv(correlation_path)
 
-# =====================================================
-# Third axis - Failures per second
-# =====================================================
-ax3 = ax1.twinx()
+    if "CPU" in corr:
+        print(f"\n{dataset_name.title()} CPU correlations")
+        print(corr["CPU"].sort_values(ascending=False))
+    if "Memory" in corr:
+        print(f"\n{dataset_name.title()} Memory correlations")
+        print(corr["Memory"].sort_values(ascending=False))
 
-# Move third axis outward
-ax3.spines["right"].set_position(("outward", 70))
+    make_chart(merged, dataset_name)
 
-ax3.set_ylabel("Failures/s", color="black")
 
-ax3.plot(
-    merged["Sample"],
-    merged["Failures/s"],
-    color="black",
-    linewidth=2,
-    linestyle=":",
-    marker="x",
-    markersize=4,
-    label="Failures/s"
-)
-
-ax3.tick_params(axis='y', labelcolor='black')
-
-# =====================================================
-# Legend
-# =====================================================
-lines = (
-    ax1.get_lines() +
-    ax2.get_lines() +
-    ax3.get_lines()
-)
-
-labels = [line.get_label() for line in lines]
-
-ax1.legend(lines, labels, loc="upper left", fontsize=10)
-
-plt.title("Impact of Database Latency on Service Performance, Resource Utilization and Errors")
-
-ax1.grid(alpha=0.3)
-
-plt.tight_layout()
-
-plt.savefig(
-    "images/latency_cpu_memory_errors.png",
-    dpi=300,
-    bbox_inches="tight"
-)
-
-plt.show()
+for name, dataset_paths in DATASETS.items():
+    process_dataset(name, dataset_paths)

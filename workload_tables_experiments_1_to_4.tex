@@ -1,0 +1,103 @@
+\documentclass[twocolumn]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=1.5cm,columnsep=0.6cm]{geometry}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{table}[t]
+    \centering
+    \caption{Experiment 1 workload (10 ms latency)}
+    \label{tab:workload-exp1}
+    \scriptsize
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}ccccc@{}}
+        \toprule
+        Stage & Change at (s) & Users & Zipf (\%) & Writes (\%) \\
+        \midrule
+        1 & 10 & 10 & 0 & 10 \\
+        2 & 20 & 20 & 10 & 10 \\
+        3 & 50 & 40 & 80 & 10 \\
+        4 & 60 & 20 & 10 & 10 \\
+        \bottomrule
+    \end{tabular*}
+\end{table}
+
+\begin{table}[t]
+    \centering
+    \caption{Experiment 1.5 workload (15 ms latency)}
+    \label{tab:workload-exp1-5}
+    \scriptsize
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}ccccc@{}}
+        \toprule
+        Stage & Change at (s) & Users & Zipf (\%) & Writes (\%) \\
+        \midrule
+        1 & 10 & 10 & 0 & 10 \\
+        2 & 20 & 20 & 10 & 10 \\
+        3 & 50 & 40 & 80 & 10 \\
+        4 & 60 & 20 & 10 & 10 \\
+        \bottomrule
+    \end{tabular*}
+\end{table}
+
+\begin{table}[t]
+    \centering
+    \caption{Experiment 2 workload}
+    \label{tab:workload-exp2}
+    \scriptsize
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}ccccc@{}}
+        \toprule
+        Stage & Change at (s) & Users & Zipf (\%) & Writes (\%) \\
+        \midrule
+        1 & 10 & 10 & 0 & 10 \\
+        2 & 20 & 20 & 20 & 10 \\
+        3 & 30 & 40 & 40 & 10 \\
+        4 & 50 & 40 & 80 & 10 \\
+        5 & 60 & 20 & 10 & 80 \\
+        \bottomrule
+    \end{tabular*}
+\end{table}
+
+\begin{table}[t]
+    \centering
+    \caption{Experiment 3 high-processing workload}
+    \label{tab:workload-exp3}
+    \scriptsize
+    \setlength{\tabcolsep}{2pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}ccccc@{}}
+        \toprule
+        Stage & Change at (s) & Users & Zipf (\%) & Writes (\%) \\
+        \midrule
+        1 & 20 & 10 & 0 & 10 \\
+        2 & 40 & 20 & 20 & 10 \\
+        3 & 168 & 40 & 60 & 20 \\
+        \bottomrule
+    \end{tabular*}
+\end{table}
+
+\begin{table}[t]
+    \centering
+    \caption{Experiment 4 high-processing workload}
+    \label{tab:workload-exp4}
+    \scriptsize
+    \setlength{\tabcolsep}{2pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}ccccc@{}}
+        \toprule
+        Stage & Change at (s) & Users & Zipf (\%) & Writes (\%) \\
+        \midrule
+        1 & 20 & 10 & 0 & 10 \\
+        2 & 40 & 20 & 20 & 10 \\
+        3 & 168 & 40 & 60 & 20 \\
+        \bottomrule
+    \end{tabular*}
+\end{table}
+
+\end{document}

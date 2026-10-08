@@ -1,95 +1,67 @@
 #!/usr/bin/env python3
-"""
-Plot monolithic/distributed resource behavior for the new metrics format.
-
-New metrics files:
-    dana_metrics_r_3c_100.csv
-    dana_metrics_r_3c_200.csv
-    dana_metrics_r_3c_300.csv
-    dana_metrics_r_3c_400.csv
-    dana_metrics_r_3c_500.csv
-
-Expected metrics columns:
-    timestamp,dana_cpu,dana_mem,remote_cpu,remote_mem
-
-The script also supports the Locust files if they follow:
-    dana_monolith_100_stats.csv
-    dana_monolith_100_stats_history.csv
-    ...
-
-All plots are written to:
-    monolith_cache_plots_r_3c/
-"""
+"""Generate selected cache comparison plots for fragmentation and replication."""
 
 from pathlib import Path
-import re
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
 
-# ================================================================
-# Configuration
-# ================================================================
-DATA_DIR = Path("./results_csv/replicate")
-OUTPUT_DIR = DATA_DIR / "monolith_cache_plots_r_3c"
+CACHE_SIZES = [200, 300, 400, 500]
+EXPERIMENTS = {
+    "fragment": {
+        "label": "Fragmentation",
+        "data_dir": Path("results_csv/fragment"),
+        "output_dir": Path("results_csv/fragment/plots_cache_200_300_400_500"),
+        "metrics_pattern": "dana_metrics_f_3c_{cache}.csv",
+        "stats_pattern": "dana_f_3c_{cache}_stats.csv",
+    },
+    "replicate": {
+        "label": "Replication",
+        "data_dir": Path("results_csv/replicate"),
+        "output_dir": Path("results_csv/replicate/plots_cache_200_300_400_500"),
+        "metrics_pattern": "dana_metrics_r_3c_{cache}.csv",
+        "stats_pattern": "dana_r_3c_{cache}_stats.csv",
+    },
+}
 
-CACHE_SIZES = [100, 200, 300, 400, 500]
+CACHE_LINE_STYLES = ["-", "--", "-.", ":"]
+PERCENTILE_LINE_STYLES = ["-", "--", "-.", ":", (0, (8, 2, 1, 2))]
+PERCENTILES = [("50%", "P50"), ("75%", "P75"), ("90%", "P90"), ("95%", "P95"), ("99%", "P99")]
 
-# New metrics filename pattern.
-METRICS_PATTERN = "dana_metrics_r_3c_{cache}.csv"
+plt.rcParams.update({
+    "font.size": 18,
+    "axes.titlesize": 24,
+    "axes.labelsize": 20,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 19,
+    "legend.title_fontsize": 19,
+})
 
-# Locust files can remain in the old format.
-STATS_PATTERN = "dana_r_3c_{cache}_stats.csv"
-HISTORY_PATTERN = "dana_r_3c_{cache}_stats_history.csv"
 
-# Ignore initial warm-up period in history plots.
-WARMUP_SECONDS = 10
-
-
-# ================================================================
-# Parsing helpers
-# ================================================================
 def parse_cpu(value):
-    """
-    Convert Kubernetes CPU quantities to CPU cores.
-
-    Examples:
-        54m   -> 0.054 cores
-        1077m -> 1.077 cores
-        1     -> 1.0 cores
-    """
     if pd.isna(value):
         return np.nan
-
-    s = str(value).strip()
-
+    text = str(value).strip()
     try:
-        if s.endswith("n"):
-            return float(s[:-1]) / 1_000_000_000
-        if s.endswith("u"):
-            return float(s[:-1]) / 1_000_000
-        if s.endswith("m"):
-            return float(s[:-1]) / 1000
-        return float(s)
+        if text.endswith("n"):
+            return float(text[:-1]) / 1_000_000_000
+        if text.endswith("u"):
+            return float(text[:-1]) / 1_000_000
+        if text.endswith("m"):
+            return float(text[:-1]) / 1000
+        return float(text)
     except ValueError:
         return np.nan
 
 
 def parse_memory_mib(value):
-    """
-    Convert Kubernetes memory quantities to MiB.
-
-    Examples:
-        38Mi  -> 38
-        1Gi   -> 1024
-        500Ki -> 0.488...
-    """
     if pd.isna(value):
         return np.nan
 
-    s = str(value).strip()
-
+    text = str(value).strip()
     units = {
         "Ki": 1 / 1024,
         "Mi": 1,
@@ -100,658 +72,227 @@ def parse_memory_mib(value):
         "G": 1024,
         "T": 1024 * 1024,
     }
-
     for unit, multiplier in units.items():
-        if s.endswith(unit):
+        if text.endswith(unit):
             try:
-                return float(s[:-len(unit)]) * multiplier
+                return float(text[:-len(unit)]) * multiplier
             except ValueError:
                 return np.nan
 
     try:
-        # If no unit exists, assume bytes.
-        return float(s) / (1024 ** 2)
+        return float(text) / (1024 ** 2)
     except ValueError:
         return np.nan
 
 
-def load_metrics(cache_size):
-    """
-    Load the new resource metrics format:
-        timestamp,dana_cpu,dana_mem,remote_cpu,remote_mem
-    """
-    path = DATA_DIR / METRICS_PATTERN.format(cache=cache_size)
-
+def load_metrics(config, cache_size):
+    path = config["data_dir"] / config["metrics_pattern"].format(cache=cache_size)
     if not path.exists():
-        print(f"[WARN] Missing metrics file: {path.name}")
+        print(f"[WARN] Missing metrics file: {path}")
         return None
 
     df = pd.read_csv(path)
-
-    required = {
-        "timestamp",
-        "dana_cpu",
-        "dana_mem",
-        "remote_cpu",
-        "remote_mem",
-    }
-
+    required = {"timestamp", "dana_cpu", "dana_mem", "remote_cpu", "remote_mem"}
     missing = required - set(df.columns)
-
     if missing:
-        print(
-            f"[WARN] {path.name}: missing columns "
-            f"{sorted(missing)}"
-        )
+        print(f"[WARN] {path}: missing columns {sorted(missing)}")
         return None
 
     df = df.copy()
-
     df["dana_cpu_cores"] = df["dana_cpu"].apply(parse_cpu)
-    df["remote_cpu_cores"] = df["remote_cpu"].apply(parse_cpu)
-
     df["dana_memory_mib"] = df["dana_mem"].apply(parse_memory_mib)
     df["remote_memory_mib"] = df["remote_mem"].apply(parse_memory_mib)
-
-    df["total_cpu_cores"] = (
-        df["dana_cpu_cores"] +
-        df["remote_cpu_cores"]
-    )
-
-    df["total_memory_mib"] = (
-        df["dana_memory_mib"] +
-        df["remote_memory_mib"]
-    )
-
-    # Make time relative to the beginning of each experiment.
-    df["elapsed_s"] = (
-        df["timestamp"] - df["timestamp"].iloc[0]
-    )
-
-    df["cache_size"] = cache_size
-
+    df["total_memory_mib"] = df["dana_memory_mib"] + df["remote_memory_mib"]
+    timestamp = pd.to_numeric(df["timestamp"], errors="coerce")
+    df["elapsed_s"] = timestamp - timestamp.iloc[0]
     return df
 
 
-def load_history(cache_size):
-    path = DATA_DIR / HISTORY_PATTERN.format(cache=cache_size)
-
+def load_stats(config, cache_size):
+    path = config["data_dir"] / config["stats_pattern"].format(cache=cache_size)
     if not path.exists():
+        print(f"[WARN] Missing stats file: {path}")
         return None
-
-    df = pd.read_csv(path)
-
-    if "Timestamp" not in df.columns:
-        print(f"[WARN] {path.name}: no Timestamp column")
-        return None
-
-    # Prefer Locust's Aggregated row.
-    if "Name" in df.columns:
-        aggregated = df[
-            df["Name"].astype(str).str.lower() == "aggregated"
-        ]
-
-        if not aggregated.empty:
-            df = aggregated.copy()
-
-    df = df.copy()
-
-    df["elapsed_s"] = (
-        df["Timestamp"] - df["Timestamp"].iloc[0]
-    )
-
-    if WARMUP_SECONDS > 0:
-        df = df[
-            df["elapsed_s"] >= WARMUP_SECONDS
-        ].copy()
-
-    return df
-
-
-def load_stats(cache_size):
-    path = DATA_DIR / STATS_PATTERN.format(cache=cache_size)
-
-    if not path.exists():
-        return None
-
     return pd.read_csv(path)
 
 
-# ================================================================
-# Load experiments
-# ================================================================
-metrics = {}
-history = {}
-stats = {}
+def make_time_series_plot(config, metrics, value_column, y_label, title, filename):
+    fig, ax = plt.subplots(figsize=(16, 8))
+    for index, cache_size in enumerate(CACHE_SIZES):
+        df = metrics.get(cache_size)
+        if df is None:
+            continue
+        ax.plot(
+            df["elapsed_s"],
+            df[value_column],
+            color="black",
+            linestyle=CACHE_LINE_STYLES[index],
+            linewidth=2.6,
+            label=f"Cache {cache_size}",
+        )
 
-for cache in CACHE_SIZES:
-
-    m = load_metrics(cache)
-    if m is not None:
-        metrics[cache] = m
-
-    h = load_history(cache)
-    if h is not None:
-        history[cache] = h
-
-    s = load_stats(cache)
-    if s is not None:
-        stats[cache] = s
-
-
-if not metrics:
-    raise SystemExit(
-        "No new metrics files were found.\n"
-        "Expected files such as:\n"
-        "  dana_metrics_r_3c_100.csv\n"
-        "  dana_metrics_r_3c_200.csv\n"
-        "  dana_metrics_r_3c_300.csv\n"
-        "  dana_metrics_r_3c_400.csv\n"
-        "  dana_metrics_r_3c_500.csv"
+    ax.set_xlabel("Elapsed time (s)")
+    ax.set_ylabel(y_label)
+    ax.set_title(f"{config['label']}: {title}")
+    ax.tick_params(axis="both", labelsize=18)
+    ax.grid(True, linestyle=":", linewidth=0.8, alpha=0.7)
+    ax.legend(
+        title="Cache size",
+        title_fontsize=19,
+        loc="center left",
+        bbox_to_anchor=(1.02, 0.5),
     )
-
-
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-print("\nLoaded metrics:")
-for cache, df in metrics.items():
-    print(
-        f"  cache={cache}: "
-        f"{len(df)} samples"
-    )
-
-
-# ================================================================
-# 1. Dana CPU
-# ================================================================
-plt.figure(figsize=(10, 5))
-
-for cache in sorted(metrics):
-    df = metrics[cache]
-
-    plt.plot(
-        df["elapsed_s"],
-        df["dana_cpu_cores"],
-        linewidth=1.8,
-        label=f"Cache {cache}",
-    )
-
-plt.xlabel("Elapsed time (s)")
-plt.ylabel("Dana CPU usage (cores)")
-plt.title("Monolithic application: Dana CPU usage")
-plt.grid(True, alpha=0.25)
-plt.legend()
-plt.tight_layout()
-plt.savefig(
-    OUTPUT_DIR / "01_dana_cpu.png",
-    dpi=300,
-)
-plt.close()
-
-
-# ================================================================
-# 2. Remote CPU
-# ================================================================
-plt.figure(figsize=(10, 5))
-
-for cache in sorted(metrics):
-    df = metrics[cache]
-
-    plt.plot(
-        df["elapsed_s"],
-        df["remote_cpu_cores"],
-        linewidth=1.8,
-        label=f"Cache {cache}",
-    )
-
-plt.xlabel("Elapsed time (s)")
-plt.ylabel("Remote CPU usage (cores)")
-plt.title("Remote component CPU usage vs. cache size")
-plt.grid(True, alpha=0.25)
-plt.legend()
-plt.tight_layout()
-plt.savefig(
-    OUTPUT_DIR / "02_remote_cpu.png",
-    dpi=300,
-)
-plt.close()
-
-
-# ================================================================
-# 3. Total CPU
-# ================================================================
-plt.figure(figsize=(10, 5))
-
-for cache in sorted(metrics):
-    df = metrics[cache]
-
-    plt.plot(
-        df["elapsed_s"],
-        df["total_cpu_cores"],
-        linewidth=1.8,
-        label=f"Cache {cache}",
-    )
-
-plt.xlabel("Elapsed time (s)")
-plt.ylabel("Total CPU usage (cores)")
-plt.title("Total CPU consumption vs. cache size")
-plt.grid(True, alpha=0.25)
-plt.legend()
-plt.tight_layout()
-plt.savefig(
-    OUTPUT_DIR / "03_total_cpu.png",
-    dpi=300,
-)
-plt.close()
-
-
-# ================================================================
-# 4. Dana memory
-# ================================================================
-plt.figure(figsize=(10, 5))
-
-for cache in sorted(metrics):
-    df = metrics[cache]
-
-    plt.plot(
-        df["elapsed_s"],
-        df["dana_memory_mib"],
-        linewidth=1.8,
-        label=f"Cache {cache}",
-    )
-
-plt.xlabel("Elapsed time (s)")
-plt.ylabel("Dana memory (MiB)")
-plt.title("Monolithic application: Dana memory usage")
-plt.grid(True, alpha=0.25)
-plt.legend()
-plt.tight_layout()
-plt.savefig(
-    OUTPUT_DIR / "04_dana_memory.png",
-    dpi=300,
-)
-plt.close()
-
-
-# ================================================================
-# 5. Remote memory
-# ================================================================
-plt.figure(figsize=(10, 5))
-
-for cache in sorted(metrics):
-    df = metrics[cache]
-
-    plt.plot(
-        df["elapsed_s"],
-        df["remote_memory_mib"],
-        linewidth=1.8,
-        label=f"Cache {cache}",
-    )
-
-plt.xlabel("Elapsed time (s)")
-plt.ylabel("Remote memory (MiB)")
-plt.title("Remote component memory usage vs. cache size")
-plt.grid(True, alpha=0.25)
-plt.legend()
-plt.tight_layout()
-plt.savefig(
-    OUTPUT_DIR / "05_remote_memory.png",
-    dpi=300,
-)
-plt.close()
-
-
-# ================================================================
-# 6. Total memory
-# ================================================================
-plt.figure(figsize=(10, 5))
-
-for cache in sorted(metrics):
-    df = metrics[cache]
-
-    plt.plot(
-        df["elapsed_s"],
-        df["total_memory_mib"],
-        linewidth=1.8,
-        label=f"Cache {cache}",
-    )
-
-plt.xlabel("Elapsed time (s)")
-plt.ylabel("Total memory (MiB)")
-plt.title("Total memory consumption vs. cache size")
-plt.grid(True, alpha=0.25)
-plt.legend()
-plt.tight_layout()
-plt.savefig(
-    OUTPUT_DIR / "06_total_memory.png",
-    dpi=300,
-)
-plt.close()
-
-
-# ================================================================
-# 7. CPU vs cache size
-# ================================================================
-cpu_summary = []
-
-for cache in sorted(metrics):
-    df = metrics[cache]
-
-    cpu_summary.append({
-        "cache_size": cache,
-        "dana_mean": df["dana_cpu_cores"].mean(),
-        "dana_max": df["dana_cpu_cores"].max(),
-        "remote_mean": df["remote_cpu_cores"].mean(),
-        "remote_max": df["remote_cpu_cores"].max(),
-        "total_mean": df["total_cpu_cores"].mean(),
-        "total_max": df["total_cpu_cores"].max(),
-    })
-
-cpu_summary = pd.DataFrame(cpu_summary)
-
-plt.figure(figsize=(10, 5))
-
-plt.plot(
-    cpu_summary["cache_size"],
-    cpu_summary["dana_mean"],
-    marker="o",
-    linewidth=1.8,
-    label="Dana mean",
-)
-
-plt.plot(
-    cpu_summary["cache_size"],
-    cpu_summary["remote_mean"],
-    marker="o",
-    linewidth=1.8,
-    label="Remote mean",
-)
-
-plt.plot(
-    cpu_summary["cache_size"],
-    cpu_summary["total_mean"],
-    marker="o",
-    linewidth=1.8,
-    label="Total mean",
-)
-
-plt.xlabel("Cache size (entries)")
-plt.ylabel("Mean CPU usage (cores)")
-plt.title("Mean CPU consumption vs. cache size")
-plt.xticks(CACHE_SIZES)
-plt.grid(True, alpha=0.25)
-plt.legend()
-plt.tight_layout()
-plt.savefig(
-    OUTPUT_DIR / "07_mean_cpu_vs_cache.png",
-    dpi=300,
-)
-plt.close()
-
-
-# ================================================================
-# 8. Memory vs cache size
-# ================================================================
-memory_summary = []
-
-for cache in sorted(metrics):
-    df = metrics[cache]
-
-    memory_summary.append({
-        "cache_size": cache,
-        "dana_mean": df["dana_memory_mib"].mean(),
-        "remote_mean": df["remote_memory_mib"].mean(),
-        "total_mean": df["total_memory_mib"].mean(),
-        "dana_max": df["dana_memory_mib"].max(),
-        "remote_max": df["remote_memory_mib"].max(),
-        "total_max": df["total_memory_mib"].max(),
-    })
-
-memory_summary = pd.DataFrame(memory_summary)
-
-plt.figure(figsize=(10, 5))
-
-plt.plot(
-    memory_summary["cache_size"],
-    memory_summary["dana_mean"],
-    marker="o",
-    linewidth=1.8,
-    label="Dana mean",
-)
-
-plt.plot(
-    memory_summary["cache_size"],
-    memory_summary["remote_mean"],
-    marker="o",
-    linewidth=1.8,
-    label="Remote mean",
-)
-
-plt.plot(
-    memory_summary["cache_size"],
-    memory_summary["total_mean"],
-    marker="o",
-    linewidth=1.8,
-    label="Total mean",
-)
-
-plt.xlabel("Cache size (entries)")
-plt.ylabel("Mean memory usage (MiB)")
-plt.title("Mean memory consumption vs. cache size")
-plt.xticks(CACHE_SIZES)
-plt.grid(True, alpha=0.25)
-plt.legend()
-plt.tight_layout()
-plt.savefig(
-    OUTPUT_DIR / "08_mean_memory_vs_cache.png",
-    dpi=300,
-)
-plt.close()
-
-
-# ================================================================
-# 9. Locust throughput vs cache
-# ================================================================
-throughput_rows = []
-
-for cache in sorted(history):
-    df = history[cache]
-
-    if "Requests/s" not in df.columns:
-        continue
-
-    throughput_rows.append({
-        "cache_size": cache,
-        "requests_per_second": pd.to_numeric(
-            df["Requests/s"],
-            errors="coerce",
-        ).mean(),
-    })
-
-throughput_df = pd.DataFrame(throughput_rows)
-
-if not throughput_df.empty:
-
-    plt.figure(figsize=(10, 5))
-
-    plt.plot(
-        throughput_df["cache_size"],
-        throughput_df["requests_per_second"],
-        marker="o",
-        linewidth=1.8,
-    )
-
-    plt.xlabel("Cache size (entries)")
-    plt.ylabel("Requests/s")
-    plt.title("Throughput vs. cache size")
-    plt.xticks(CACHE_SIZES)
-    plt.grid(True, alpha=0.25)
-    plt.tight_layout()
-    plt.savefig(
-        OUTPUT_DIR / "09_throughput_vs_cache.png",
-        dpi=300,
-    )
-    plt.close()
-
-
-# ================================================================
-# 10. Locust latency vs cache
-# ================================================================
-latency_rows = []
-
-for cache in sorted(history):
-    df = history[cache]
-
-    if "Total Average Response Time" not in df.columns:
-        continue
-
-    latency_rows.append({
-        "cache_size": cache,
-        "average_latency_ms": pd.to_numeric(
-            df["Total Average Response Time"],
-            errors="coerce",
-        ).mean(),
-    })
-
-latency_df = pd.DataFrame(latency_rows)
-
-if not latency_df.empty:
-
-    plt.figure(figsize=(10, 5))
-
-    plt.plot(
-        latency_df["cache_size"],
-        latency_df["average_latency_ms"],
-        marker="o",
-        linewidth=1.8,
-    )
-
-    plt.xlabel("Cache size (entries)")
-    plt.ylabel("Average response time (ms)")
-    plt.title("Average latency vs. cache size")
-    plt.xticks(CACHE_SIZES)
-    plt.grid(True, alpha=0.25)
-    plt.tight_layout()
-    plt.savefig(
-        OUTPUT_DIR / "10_average_latency_vs_cache.png",
-        dpi=300,
-    )
-    plt.close()
-
-
-# ================================================================
-# 11. Latency percentiles vs cache
-# ================================================================
-percentile_rows = []
-
-for cache in sorted(stats):
-
-    df = stats[cache]
-
-    if "Name" not in df.columns:
-        continue
-
-    aggregated = df[
-        df["Name"].astype(str).str.lower() == "aggregated"
-    ]
-
-    if aggregated.empty:
-        continue
-
-    row = aggregated.iloc[0]
-
-    percentile_rows.append({
-        "cache_size": cache,
-        "p50": pd.to_numeric(row.get("50%"), errors="coerce"),
-        "p75": pd.to_numeric(row.get("75%"), errors="coerce"),
-        "p90": pd.to_numeric(row.get("90%"), errors="coerce"),
-        "p95": pd.to_numeric(row.get("95%"), errors="coerce"),
-        "p99": pd.to_numeric(row.get("99%"), errors="coerce"),
-    })
-
-percentile_df = pd.DataFrame(percentile_rows)
-
-if not percentile_df.empty:
-
-    plt.figure(figsize=(10, 5))
-
-    for column, label in [
-        ("p50", "P50"),
-        ("p75", "P75"),
-        ("p90", "P90"),
-        ("p95", "P95"),
-        ("p99", "P99"),
-    ]:
-
-        plt.plot(
-            percentile_df["cache_size"],
-            percentile_df[column],
+    fig.tight_layout(rect=(0, 0, 0.78, 1))
+    fig.savefig(config["output_dir"] / filename, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+
+def make_percentile_plot(config, stats_by_size):
+    rows = []
+    for cache_size in CACHE_SIZES:
+        df = stats_by_size.get(cache_size)
+        if df is None or "Name" not in df.columns:
+            continue
+
+        aggregated = df[df["Name"].astype(str).str.lower() == "aggregated"]
+        if aggregated.empty:
+            continue
+
+        row = aggregated.iloc[0]
+        values = {"cache_size": cache_size}
+        for column, _label in PERCENTILES:
+            values[column] = pd.to_numeric(row.get(column), errors="coerce")
+        rows.append(values)
+
+    percentiles = pd.DataFrame(rows)
+    if percentiles.empty:
+        print(f"[WARN] No aggregated percentile rows found for {config['label']}.")
+        return
+
+    fig, ax = plt.subplots(figsize=(16, 8))
+    for index, (column, label) in enumerate(PERCENTILES):
+        ax.plot(
+            percentiles["cache_size"],
+            percentiles[column],
+            color="black",
+            linestyle=PERCENTILE_LINE_STYLES[index],
             marker="o",
-            linewidth=1.8,
+            markersize=8,
+            linewidth=2.6,
             label=label,
         )
 
-    plt.xlabel("Cache size (entries)")
-    plt.ylabel("Response time (ms)")
-    plt.title("Latency percentiles vs. cache size")
-    plt.xticks(CACHE_SIZES)
-    plt.grid(True, alpha=0.25)
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(
-        OUTPUT_DIR / "11_latency_percentiles_vs_cache.png",
+    ax.set_xlabel("Cache size (entries)")
+    ax.set_ylabel("Response time (ms)")
+    ax.set_title(f"{config['label']}: Latency percentiles by cache size")
+    ax.set_xticks(CACHE_SIZES)
+    ax.tick_params(axis="both", labelsize=18)
+    ax.grid(True, linestyle=":", linewidth=0.8, alpha=0.7)
+    ax.legend(
+        title="Percentile",
+        title_fontsize=19,
+        loc="center left",
+        bbox_to_anchor=(1.02, 0.5),
+    )
+    fig.tight_layout(rect=(0, 0, 0.78, 1))
+    fig.savefig(
+        config["output_dir"] / "11_latency_percentiles_vs_cache.png",
         dpi=300,
+        bbox_inches="tight",
     )
-    plt.close()
+    plt.close(fig)
 
 
-# ================================================================
-# 12. Combined summary CSV
-# ================================================================
-summary = cpu_summary.merge(
-    memory_summary,
-    on="cache_size",
-    suffixes=("_cpu", "_memory"),
-    how="outer",
-)
+def make_throughput_plot(config, stats_by_size):
+    rows = []
+    for cache_size in CACHE_SIZES:
+        df = stats_by_size.get(cache_size)
+        if df is None or "Name" not in df.columns or "Requests/s" not in df.columns:
+            continue
 
-if not throughput_df.empty:
-    summary = summary.merge(
-        throughput_df,
-        on="cache_size",
-        how="left",
+        aggregated = df[df["Name"].astype(str).str.lower() == "aggregated"]
+        if aggregated.empty:
+            continue
+        rows.append({
+            "cache_size": cache_size,
+            "throughput": pd.to_numeric(aggregated.iloc[0]["Requests/s"], errors="coerce"),
+        })
+
+    throughput = pd.DataFrame(rows).dropna(subset=["throughput"])
+    if throughput.empty:
+        print(f"[WARN] No aggregated throughput rows found for {config['label']}.")
+        return
+
+    fig, ax = plt.subplots(figsize=(16, 8))
+    ax.plot(
+        throughput["cache_size"],
+        throughput["throughput"],
+        color="black",
+        linestyle="-",
+        marker="o",
+        markersize=9,
+        linewidth=2.8,
     )
-
-if not latency_df.empty:
-    summary = summary.merge(
-        latency_df,
-        on="cache_size",
-        how="left",
+    for cache_size, value in zip(throughput["cache_size"], throughput["throughput"]):
+        ax.annotate(
+            f"{value:.2f}",
+            (cache_size, value),
+            textcoords="offset points",
+            xytext=(0, 10),
+            ha="center",
+            fontsize=16,
+        )
+    ax.set_xlabel("Cache size (entries)")
+    ax.set_ylabel("Throughput (requests/s)")
+    ax.set_title(f"{config['label']}: Throughput by cache size")
+    ax.set_xticks(CACHE_SIZES)
+    ax.set_ylim(bottom=0, top=max(throughput["throughput"]) * 1.12)
+    ax.tick_params(axis="both", labelsize=18)
+    ax.grid(True, linestyle=":", linewidth=0.8, alpha=0.7)
+    fig.tight_layout()
+    fig.savefig(
+        config["output_dir"] / "01_throughput_vs_cache.png",
+        dpi=300,
+        bbox_inches="tight",
     )
+    plt.close(fig)
 
-if not percentile_df.empty:
-    summary = summary.merge(
-        percentile_df,
-        on="cache_size",
-        how="left",
+
+def generate_experiment(config):
+    metrics = {}
+    stats = {}
+    for cache_size in CACHE_SIZES:
+        metrics_df = load_metrics(config, cache_size)
+        stats_df = load_stats(config, cache_size)
+        if metrics_df is not None:
+            metrics[cache_size] = metrics_df
+        if stats_df is not None:
+            stats[cache_size] = stats_df
+
+    if not metrics or not stats:
+        print(f"[WARN] Skipping {config['label']}: required metric or stats data is missing.")
+        return
+
+    config["output_dir"].mkdir(parents=True, exist_ok=True)
+    print(f"\n{config['label']} loaded cache sizes:")
+    print(f"  Metrics: {sorted(metrics)}")
+    print(f"  Stats:   {sorted(stats)}")
+
+    make_throughput_plot(config, stats)
+    make_time_series_plot(
+        config,
+        metrics,
+        "total_memory_mib",
+        "Total memory (MiB)",
+        "Total memory by cache size",
+        "06_total_memory.png",
     )
+    make_percentile_plot(config, stats)
 
-summary.to_csv(
-    OUTPUT_DIR / "cache_size_summary.csv",
-    index=False,
-)
+    print(f"Plots written to: {config['output_dir'].resolve()}")
+    for path in sorted(config["output_dir"].glob("*.png")):
+        print(f"  {path.name}")
 
 
-# ================================================================
-# Final report
-# ================================================================
-print("\nGenerated plots:")
-for path in sorted(OUTPUT_DIR.glob("*.png")):
-    print(f"  {path.name}")
-
-print(
-    f"\nSummary:\n  "
-    f"{OUTPUT_DIR / 'cache_size_summary.csv'}"
-)
-
-print("\nDone.")
+for experiment in EXPERIMENTS.values():
+    generate_experiment(experiment)
